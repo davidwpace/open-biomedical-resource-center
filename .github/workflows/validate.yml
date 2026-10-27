@@ -1,0 +1,25 @@
+name: Validate public directory
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+
+permissions:
+  contents: read
+
+jobs:
+  validate:
+    name: Catalog & syntax checks
+    runs-on: ubuntu-latest
+    steps:
+      - name: Check out repository
+        uses: actions/checkout@v4
+      - name: Validate JSON data and official URLs
+        run: python3 scripts/validate_catalog.py
+      - name: Validate browser JavaScript syntax
+        run: node --check assets/app.js
+      - name: Ensure no patient-facing data folder is committed
+        run: |
+          test ! -d patients
+          test ! -d clinical-records
