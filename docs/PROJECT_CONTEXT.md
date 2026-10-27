@@ -19,7 +19,7 @@ Help people find, understand, compare, and combine trustworthy biomedical resour
 6. Imaging and pathology.
 7. Data analysis, computing, and website infrastructure.
 
-Initial catalog: **41 records in `data/resources.json`**, grouped into 7 research fields. The data file is the source of truth. The original human-readable directory and blueprint are preserved in `docs/`.
+Initial catalog: **42 records in `data/resources.json`**, grouped into 7 research fields. The data file is the source of truth. The original human-readable directory and blueprint are preserved in `docs/`.
 
 ## MVP decisions
 - Public, readable, mobile-first static website hosted for free when GitHub Pages is enabled.
@@ -28,6 +28,10 @@ Initial catalog: **41 records in `data/resources.json`**, grouped into 7 researc
 - Preset discovery workflows (not AI-generated treatment recommendations).
 - No premature API mashups, autonomous experiments, unverified clinical conclusions, or large-scale scraping.
 - Original code MIT; third-party resource licensing unaffected.
+
+## Recent resource addition
+
+October 27, 2026: included Hi-TPH, published October 26 in *Nature Computational Science*, as a linked, noncommercial TCR–pHLA research dataset and model suite (see `docs/HI_TPH_RESEARCH_PROFILE.md`). We did **not** fork or copy the original project. Author-reported model improvements remain distinct from clinical efficacy.
 
 ## Later phases, after review
 - Schema validation and editorial workflow improvements.
