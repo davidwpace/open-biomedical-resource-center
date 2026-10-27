@@ -4,7 +4,7 @@
 
 A public, mobile-friendly directory of biomedical research resources, including New Approach Methodologies (NAMs), cancer genomics, drug discovery, cellular simulations, literature, clinical trials, imaging, and open analysis software.
 
-**Status:** First static-site MVP • **Seed catalog:** 41 resources across 7 areas • **Catalog last checked:** October 27, 2026.
+**Status:** First static-site MVP • **Seed catalog:** 42 resources across 7 areas • **Catalog last checked:** October 27, 2026.
 
 ## Preview and hosting
 
@@ -29,15 +29,20 @@ The site is intentionally **HTML + CSS + JavaScript with no build dependencies**
 index.html                      Static website
 assets/styles.css               Responsive design
 assets/app.js                   Directory rendering, filters, research pathways
-data/resources.json             Source-of-truth catalog (41 records)
+data/resources.json             Source-of-truth catalog (42 records)
 docs/RESOURCE_CATALOG.md       Human-readable initial catalog
 docs/WEBSITE_BLUEPRINT.md      MVP requirements and roadmap
 docs/SOURCE_POLICY.md          Access labels, provenance, review policy
 docs/PROJECT_CONTEXT.md        New-chat / Codex handoff and decisions
 docs/WORKFLOWS.md              Evidence-aware interdisciplinary research workflows
+docs/HI_TPH_RESEARCH_PROFILE.md Verified TCR–pHLA ML research resource guide
 scripts/validate_catalog.py    Offline data-quality checks
 .github/ISSUE_TEMPLATE/        Community suggestions
 ```
+
+## Recent addition
+
+**Hi-TPH (October 27, 2026):** A peer-reviewed TCR–peptide–HLA binding dataset and protein language model benchmark. [Original repository](https://github.com/Jiadong001/Hi-TpH) · [Paper](https://doi.org/10.1038/s43588-026-01073-y) · [Research profile](docs/HI_TPH_RESEARCH_PROFILE.md). Publicly accessible under noncommercial conditions; predicted binding is not a validated cancer treatment.
 
 ## Contribute a resource
 
