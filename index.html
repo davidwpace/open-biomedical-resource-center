@@ -4,10 +4,16 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta name="theme-color" content="#0e2433">
+  <link rel="canonical" href="https://davidwpace.github.io/open-biomedical-resource-center/">
+  <link rel="alternate" type="text/html" href="https://davidwpace.github.io/open-biomedical-resource-center/catalog.html" title="Complete HTML resource directory">
+  <link rel="alternate" type="application/json" href="https://davidwpace.github.io/open-biomedical-resource-center/data/resources.json" title="Public resource catalog JSON">
+  <link rel="alternate" type="application/json" href="https://davidwpace.github.io/open-biomedical-resource-center/openapi.json" title="OpenAPI definition for read-only catalog">
+  <link rel="alternate" type="text/plain" href="https://davidwpace.github.io/open-biomedical-resource-center/llms.txt" title="Optional index for AI assistants">
   <meta name="description" content="Spend less time searching for biomedical research tools. Explore credible resources in one place, understand what's free, and find a practical way to begin.">
   <meta property="og:title" content="Open Biomedical Resource Center">
   <meta property="og:description" content="Less time searching. More time exploring what matters. Find credible research tools, clear access details, and guided starting points.">
   <title>Open Biomedical Resource Center — Less searching. More progress.</title>
+  <script type="application/ld+json">[{"@context":"https://schema.org","@type":"WebSite","name":"Open Biomedical Resource Center","url":"https://davidwpace.github.io/open-biomedical-resource-center/","description":"A public biomedical research resource directory providing verified official links, access conditions and methodological limitations. Human- and AI-readable.","potentialAction":{"@type":"ViewAction","target":"https://davidwpace.github.io/open-biomedical-resource-center/catalog.html"}},{"@context":"https://schema.org","@type":"CollectionPage","name":"Public biomedical research resource directory","url":"https://davidwpace.github.io/open-biomedical-resource-center/catalog.html","mainEntity":{"@type":"DataCatalog","name":"Open Biomedical Resource Center public directory","url":"https://davidwpace.github.io/open-biomedical-resource-center/catalog.html","dataset":[{"@type":"Dataset","name":"Open Biomedical Resource Center resource metadata","url":"https://davidwpace.github.io/open-biomedical-resource-center/data/resources.json","distribution":[{"@type":"DataDownload","contentUrl":"https://davidwpace.github.io/open-biomedical-resource-center/data/resources.json","encodingFormat":"application/json"}]}]}}]</script>
   <link rel="stylesheet" href="assets/styles.css">
   <script src="assets/app.js" defer></script>
 </head>
@@ -21,6 +27,7 @@
       </a>
       <nav class="header-nav" aria-label="Main navigation">
         <a href="#directory">Directory</a>
+        <a href="agent-access.html">AI / Agents</a>
         <a href="#workflows">Research guides</a>
         <a href="#about">About</a>
         <a class="nav-github" href="https://github.com/davidwpace/open-biomedical-resource-center" target="_blank" rel="noopener noreferrer">GitHub <span aria-hidden="true">↗</span></a>
@@ -32,12 +39,12 @@
         <div class="hero-content">
           <span class="eyebrow"><span class="pulse" aria-hidden="true"></span> GOOD QUESTIONS DESERVE A WAY FORWARD</span>
           <h1 id="hero-title">Less time searching. <em>More time exploring what matters.</em></h1>
-          <p class="hero-description">You have a question worth investigating. But useful tools are scattered, costs are unclear, and it's hard to know where to start. Find credible research resources together, see what's really free, and take your next step with greater confidence.</p>
+          <p class="hero-description">You have a question worth investigating. But useful tools are scattered, costs are unclear, and it's hard to know where to start. Find credible research resources together, see what's really free, and take your next step with greater confidence—using the AI assistant you already prefer.</p>
           <div class="hero-buttons">
             <a class="primary-button" href="#directory">Find the right resources <span aria-hidden="true">↗</span></a>
             <a class="secondary-button" href="#workflows">Help me get started <span aria-hidden="true">→</span></a>
           </div>
-          <div class="hero-meta"><span><strong id="heroCount">42</strong> curated resources</span><i aria-hidden="true"></i><span><strong id="heroCategories">7</strong> research areas</span><i aria-hidden="true"></i><span>No signup required</span></div>
+          <div class="hero-meta"><span><strong id="heroCount">42</strong> curated resources</span><i aria-hidden="true"></i><span><strong id="heroCategories">7</strong> research areas</span><i aria-hidden="true"></i><span>Open to AI assistants · No signup required</span></div>
         </div>
         <aside class="hero-story" aria-label="An example research journey">
           <div class="story-eyebrow">FROM QUESTION TO FIRST STEPS</div>
@@ -62,7 +69,7 @@
       <section class="benefit-strip" aria-label="How this center works">
         <div><span class="strip-icon" aria-hidden="true">⌕</span><div><strong>Find your starting point</strong><small>Useful resources, together</small></div></div>
         <div><span class="strip-icon" aria-hidden="true">◎</span><div><strong>Know what you're getting</strong><small>Clear costs and limitations</small></div></div>
-        <div><span class="strip-icon" aria-hidden="true">↗</span><div><strong>Take the next step</strong><small>Explore, compare, and test ideas</small></div></div>
+        <div><span class="strip-icon" aria-hidden="true">↗</span><div><strong>Use your own AI</strong><small>Share the directory with your assistant</small></div></div>
       </section>
 
       <section id="directory" class="directory-section section-pad" aria-labelledby="directory-title">
@@ -87,6 +94,7 @@
           <div class="category-chips" id="categoryChips" aria-label="Filter by research field"></div>
         </div>
 
+        <p class="machine-entry">Prefer a plain-text catalog or want to bring your own assistant? <a href="catalog.html">Browse the complete directory</a> or <a href="agent-access.html">connect your AI</a>.</p>
         <div class="results-head"><p id="resultCount" aria-live="polite">Loading resources…</p><p class="results-tip">Official links open in a new tab <span aria-hidden="true">↗</span></p></div>
         <div id="results" class="resource-grid" aria-live="off"></div>
         <div id="empty" class="empty-state" hidden><div aria-hidden="true">⌕</div><h3>No matching resources</h3><p>Try fewer keywords or broaden the filters.</p><button id="emptyReset" type="button" class="primary-button">Reset search</button></div>
@@ -109,9 +117,10 @@
         <div class="contribute-panel"><span class="section-kicker">HELP IT GROW</span><h3>Know a resource we should feature?</h3><p>Suggest a tool, report a broken link, or help refine the catalog. Contributions are reviewed before publishing.</p><a class="primary-button" href="https://github.com/davidwpace/open-biomedical-resource-center/issues/new" target="_blank" rel="noopener noreferrer">Suggest a resource <span aria-hidden="true">↗</span></a><p class="fine-print">Please do not submit patient-identifying information or private records.</p></div>
       </section>
     </main>
-    <footer class="site-footer"><div><span class="footer-mark">✳</span><strong>OPEN BIOMED</strong><small>Knowledge belongs in motion.</small></div><div class="footer-links"><a href="#directory">Directory</a><a href="#about">About</a><a href="https://github.com/davidwpace/open-biomedical-resource-center" target="_blank" rel="noopener noreferrer">Source code ↗</a></div><p>© <span id="year"></span> Open Biomedical Resource Center. Research and education only. Original software content subject to repository license; source datasets retain their own terms.</p></footer>
+    <footer class="site-footer"><div><span class="footer-mark">✳</span><strong>OPEN BIOMED</strong><small>Knowledge belongs in motion.</small></div><div class="footer-links"><a href="#directory">Directory</a><a href="#about">About</a><a href="agent-access.html">For AI assistants</a><a href="https://github.com/davidwpace/open-biomedical-resource-center" target="_blank" rel="noopener noreferrer">Source code ↗</a></div><p>© <span id="year"></span> Open Biomedical Resource Center. Research and education only. Original software content subject to repository license; source datasets retain their own terms.</p></footer>
   </div>
 
+  <noscript><p class="js-fallback">JavaScript is disabled. <a href="catalog.html">View all biomedical resources in the accessible HTML directory</a>.</p></noscript>
   <dialog id="resourceDialog" aria-labelledby="dialogTitle">
     <div class="dialog-inner"><div class="dialog-top"><span class="section-kicker">RESOURCE DETAILS</span><button type="button" id="closeDialog" class="dialog-close" aria-label="Close resource details">×</button></div><div id="detailContent"></div></div>
   </dialog>
