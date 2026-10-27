@@ -1,0 +1,28 @@
+# Open Biomedical Resource Center
+
+> A free-to-browse, research-and-education-only directory of public biomedical resources. It helps researchers and AI assistants find scientific tools, evaluate access conditions and limitations, and identify official sources. The catalog currently contains 42 entries across seven fields.
+
+## Public, machine-readable access
+- [Complete resource catalog (JSON)](https://davidwpace.github.io/open-biomedical-resource-center/data/resources.json): All resource records. Read-only, publicly hosted metadata, no authentication.
+- [OpenAPI description](https://davidwpace.github.io/open-biomedical-resource-center/openapi.json): Documents the static public JSON endpoint; this is NOT an executable AI-agent server.
+- [Full HTML resource directory](https://davidwpace.github.io/open-biomedical-resource-center/catalog.html): Search-indexable human-readable listings that work without JavaScript.
+- [AI / agent developer guide](https://davidwpace.github.io/open-biomedical-resource-center/agent-access.html): Schema, access conditions, example workflows and safe interpretation.
+- [Interactive research directory](https://davidwpace.github.io/open-biomedical-resource-center/index.html#directory): Human-focused search and filtering.
+
+## What each resource contains
+Records include name, official_url, category, purpose, access, limitations, integration, priority, tags, verified_on and an official verification URL. Follow official URLs for current rules and facts. An entry in this directory is not a license to reuse any linked dataset, code or biological material.
+
+## Research pathways
+- Human cell models and New Approach Methodologies (NAMs).
+- Genomics, transcriptomics and molecular pathways.
+- Drug discovery, variant interpretation, TCR–pHLA recognition.
+- Systems biology simulations and virtual laboratories.
+- Literature, research trials, imaging and reproducible analysis.
+
+## Important interpretation boundaries
+This site is **not** a medical device, patient-specific clinical service, experimental validation platform, AI-agent execution service, or predictor of treatment benefit. Descriptions are editorial summaries with review dates and may become outdated. Free to view does not imply free to compute, commercialize or redistribute. Do not infer scientific or clinical validity from listing status. Do not upload private patient data or credentials.
+
+## Open development
+- [GitHub source and community issues](https://github.com/davidwpace/open-biomedical-resource-center)
+- [Source/provenance and licensing policy](https://github.com/davidwpace/open-biomedical-resource-center/blob/main/docs/SOURCE_POLICY.md)
+- [Research workflows](https://github.com/davidwpace/open-biomedical-resource-center/blob/main/docs/WORKFLOWS.md)
