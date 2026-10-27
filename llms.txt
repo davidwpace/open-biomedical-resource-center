@@ -3,7 +3,7 @@
 > A free-to-browse, research-and-education-only directory of public biomedical resources. It helps researchers and AI assistants find scientific tools, evaluate access conditions and limitations, and identify official sources. The catalog currently contains 42 entries across seven fields.
 
 ## Public, machine-readable access
-- [Complete resource catalog (JSON)](https://davidwpace.github.io/open-biomedical-resource-center/data/resources.json): All resource records. Read-only, publicly hosted metadata, no authentication.
+- [Fallback public JSON from GitHub](https://raw.githubusercontent.com/davidwpace/open-biomedical-resource-center/main/data/resources.json): Read-only raw file for tools that cannot reach GitHub Pages.\n- [Complete resource catalog (JSON)](https://davidwpace.github.io/open-biomedical-resource-center/data/resources.json): All resource records. Read-only, publicly hosted metadata, no authentication.
 - [OpenAPI description](https://davidwpace.github.io/open-biomedical-resource-center/openapi.json): Documents the static public JSON endpoint; this is NOT an executable AI-agent server.
 - [Full HTML resource directory](https://davidwpace.github.io/open-biomedical-resource-center/catalog.html): Search-indexable human-readable listings that work without JavaScript.
 - [AI / agent developer guide](https://davidwpace.github.io/open-biomedical-resource-center/agent-access.html): Schema, access conditions, example workflows and safe interpretation.
