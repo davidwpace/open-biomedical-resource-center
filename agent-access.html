@@ -8,7 +8,7 @@
 <link rel="alternate" type="text/plain" href="https://davidwpace.github.io/open-biomedical-resource-center/llms.txt" title="AI discovery index">
 <link rel="stylesheet" href="assets/styles.css">
 <title>For AI Assistants and Developers — Open Biomedical Resource Center</title>
-<style>.agent-main{max-width:1000px;margin:0 auto;padding:60px 25px 90px}.agent-main h1{font-size:clamp(33px,4vw,50px);letter-spacing:-.045em;line-height:1.18}.agent-main h2{margin-top:40px;font-size:25px}.agent-main>p{max-width:760px;color:#5a7580}.endpoint-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:15px;margin:30px 0}.endpoint{padding:24px;border:1px solid #d4e7e3;border-radius:11px;background:#f6fbf9}.endpoint h3{font-size:17px;margin:0 0 6px}.endpoint p{font-size:13px;color:#627e83;margin:0 0 15px}.endpoint a{font-size:13px;color:#157a79;font-weight:750;overflow-wrap:anywhere}.steps{padding:23px;background:#0f303f;border-radius:12px;color:#f0fff9}.steps p{font-size:13px;color:#cde3e1}.steps pre{overflow:auto;padding:14px;border:1px solid #50727b;border-radius:7px;color:#a6e9d6;font-size:12px;background:#102733}.agent-main code{overflow-wrap:anywhere}.disclaimer{border-left:4px solid #229a8e;padding:16px 19px;background:#edf9f4;font-size:13px}.agent-main ul li{margin-bottom:8px}@media(max-width:660px){.endpoint-grid{grid-template-columns:1fr}.agent-main{padding:40px 20px 60px}}</style>
+<style>.agent-main{max-width:1000px;margin:0 auto;padding:60px 25px 90px}.agent-main h1{font-size:clamp(33px,4vw,50px);letter-spacing:-.045em;line-height:1.18}.agent-main h2{margin-top:40px;font-size:25px}.agent-main>p{max-width:760px;color:#5a7580}.endpoint-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:15px;margin:30px 0}.endpoint{padding:24px;border:1px solid #d4e7e3;border-radius:11px;background:#f6fbf9}.endpoint h3{font-size:17px;margin:0 0 6px}.endpoint p{font-size:13px;color:#627e83;margin:0 0 15px}.endpoint a{font-size:13px;color:#157a79;font-weight:750;overflow-wrap:anywhere}.steps{padding:23px;background:#0f303f;border-radius:12px;color:#f0fff9}.steps p{font-size:13px;color:#cde3e1}.steps pre{overflow:auto;padding:14px;border:1px solid #50727b;border-radius:7px;color:#a6e9d6;font-size:12px;background:#102733}.agent-main code{overflow-wrap:anywhere}.disclaimer{border-left:4px solid #229a8e;padding:16px 19px;background:#edf9f4;font-size:13px}.agent-main ul li{margin-bottom:8px}@media(max-width:660px){.endpoint-grid{grid-template-columns:1fr}.agent-main{padding:40px 20px 60px}}.portable-panel{padding:26px;border-radius:13px;background:#ecf8f3;border:1px solid #b4d8cc;margin:25px 0 34px}.portable-panel h2{margin:0 0 8px;font-size:24px}.portable-panel p{font-size:13px;color:#4e6a6b}.portable-actions{display:flex;gap:12px;flex-wrap:wrap;margin:18px 0}.portable-actions .primary-button{background:#105d5e;color:white}.portable-actions .secondary-button{background:white;color:#125c62;border-color:#93c6bd}#manualCopy{margin-top:14px}#manualCopy textarea{width:100%;border:1px solid #aacfc4;border-radius:8px;margin:9px 0;padding:12px;line-height:1.5;font-size:12px;background:white;color:#26464b}#manualCopy label{display:block;font-weight:700;font-size:12px}#selectPortable{border:1px solid #4f928e;border-radius:7px;padding:8px 14px;background:white;color:#174f54;font-weight:700}@media(max-width:600px){.portable-panel{padding:18px}.portable-actions>*{width:100%;justify-content:space-between}}</style>
 </head><body>
 <a href="#content" class="skip-link">Skip to agent access information</a>
 <header class="site-header"><a class="brand" href="index.html"><span class="brand-mark" aria-hidden="true">✳</span><span class="brand-name">OPEN<span class="brand-break">BIOMED</span><small>RESOURCE CENTER</small></span></a><nav class="header-nav" aria-label="Navigation"><a href="index.html">Home</a><a href="catalog.html">All resources</a><a href="https://github.com/davidwpace/open-biomedical-resource-center">GitHub ↗</a></nav></header>
@@ -16,6 +16,21 @@
 <span class="section-kicker">OPEN DISCOVERY · PROVIDER AGNOSTIC</span>
 <h1>Bring your own AI. <span style="color:#168982">Find a better starting point.</span></h1>
 <p>The Open Biomedical Resource Center provides structured public information that research assistants can read without a login, paid API, or proprietary integration. We provide a directory—not a competing AI service.</p>
+<section class="portable-panel" aria-labelledby="portable-title">
+<h2 id="portable-title">When your AI can't open the link</h2>
+<p>Not every assistant can fetch public files. Open this page yourself and transfer the resource catalog in one tap. Your AI can then work from the actual records instead of guessing.</p>
+<div class="portable-actions">
+<button type="button" id="copyCatalog" class="primary-button">Copy all resources for my AI <span aria-hidden="true">⧉</span></button>
+<button type="button" id="downloadCatalog" class="secondary-button">Download plain-text catalog <span aria-hidden="true">↓</span></button>
+</div>
+<p id="catalogStatus" role="status" aria-live="polite">Includes all 42 records with official links, access conditions and limitations. No account required.</p>
+<div id="manualCopy" hidden>
+<label for="portableText">Select and copy this text into your AI conversation:</label>
+<textarea id="portableText" rows="9" readonly spellcheck="false"></textarea>
+<button type="button" id="selectPortable">Select all text</button>
+</div>
+<noscript><p><a href="catalog.html">Open the complete HTML catalog</a>, select the content and paste it into your AI, or <a href="data/resources.json" download>download resources.json</a> to attach to the conversation.</p></noscript>
+</section>
 <div class="endpoint-grid">
 <article class="endpoint"><h3>1. Public catalog JSON</h3><p>All entries with official links, research use, access conditions, known limitations and verification dates. Suitable for agents to read and filter.</p><a href="data/resources.json">data/resources.json ↗</a><p><a href="https://raw.githubusercontent.com/davidwpace/open-biomedical-resource-center/main/data/resources.json" target="_blank" rel="noopener noreferrer">Alternative: direct raw GitHub JSON ↗</a></p></article>
 <article class="endpoint"><h3>2. Complete readable directory</h3><p>Search-engine-friendly HTML listing with all resource descriptions. No JavaScript required.</p><a href="catalog.html">catalog.html ↗</a></article>
@@ -42,4 +57,86 @@ experimentally established findings. Do not use patient data.</code></pre></sect
 <h2>Contribute</h2><p>Help correct metadata, suggest new resources, or improve how agents discover credible science through <a href="https://github.com/davidwpace/open-biomedical-resource-center/issues">public GitHub Issues</a>. Please do not submit sensitive clinical information.</p>
 </main>
 <footer class="site-footer"><div><strong>OPEN BIOMED</strong><small>Open knowledge, multiple AI providers</small></div><div class="footer-links"><a href="index.html">Home</a><a href="catalog.html">Catalog</a><a href="https://github.com/davidwpace/open-biomedical-resource-center">Repository</a></div><p>© 2026 Open Biomedical Resource Center. Research discovery only.</p></footer>
+
+<script>
+(() => {
+  const status = document.getElementById("catalogStatus");
+  const manual = document.getElementById("manualCopy");
+  const area = document.getElementById("portableText");
+  let packetCache = null;
+  async function packet() {
+    if (packetCache) return packetCache;
+    const response = await fetch("data/resources.json", {cache:"no-store"});
+    if(!response.ok) throw new Error("Unable to fetch resource catalog");
+    const data = await response.json();
+    if(!Array.isArray(data.resources) || !data.resources.length) throw new Error("Catalog has no resource records");
+    const header = [
+      "OPEN BIOMEDICAL RESOURCE CENTER — PUBLIC RESOURCE DIRECTORY",
+      "Source: https://github.com/davidwpace/open-biomedical-resource-center",
+      "Catalog version: " + (data.version || "unspecified"),
+      "Resources: " + data.resources.length,
+      "This catalog is an educational resource directory, not evidence of clinical effectiveness.",
+      "Use the original provider URLs to verify details, permissions and current availability.",
+      "Do not infer that these resources grant commercial or clinical use rights.",
+      "",
+      "TASK FOR MY AI ASSISTANT:",
+      "Use the following catalog entries to identify relevant scientific resources for my question.",
+      "Tell me which records you used and cite their official URLs. Distinguish access conditions",
+      "from actual licenses, and computational predictions from experimentally validated findings.",
+      "Do not claim to have retrieved any live page that you have not actually opened.",
+      ""
+    ];
+    const lines = data.resources.map((r,i) => [
+      (i+1) + ". " + r.name + " (" + r.id + ")",
+      "   Category: " + r.category,
+      "   Official URL: " + r.official_url,
+      "   What it does: " + r.purpose,
+      "   Access: " + r.access,
+      "   Limitations: " + r.limitations,
+      "   Verified: " + (r.verified_on || "unknown")
+    ].join("\n"));
+    packetCache = header.concat(lines).join("\n\n");
+    return packetCache;
+  }
+  function showManual(content) {
+    area.value=content;
+    manual.hidden=false;
+    area.focus();
+    area.select();
+  }
+  document.getElementById("selectPortable").addEventListener("click", () => {
+    area.focus(); area.select(); area.setSelectionRange(0,area.value.length);
+  });
+  document.getElementById("copyCatalog").addEventListener("click", async () => {
+    try {
+      const content=await packet();
+      if(!navigator.clipboard || !navigator.clipboard.writeText) throw new Error("Clipboard unavailable");
+      await navigator.clipboard.writeText(content);
+      status.textContent="Copied " + content.length.toLocaleString() + " characters. Paste them into your favorite AI chat.";
+      manual.hidden=true;
+    } catch(err) {
+      try {
+        showManual(await packet());
+        status.textContent="Automatic copying is unavailable in this browser. Select the text below and copy it manually.";
+      } catch {
+        status.textContent="The catalog could not be loaded. Download the JSON above and attach it to your AI chat instead.";
+      }
+    }
+  });
+  document.getElementById("downloadCatalog").addEventListener("click", async () => {
+    try {
+      const content=await packet();
+      const blob = new Blob([content],{type:"text/plain;charset=utf-8"});
+      const url = URL.createObjectURL(blob);
+      const a=document.createElement("a");
+      a.href=url; a.download="open-biomedical-research-resources.txt";
+      document.body.appendChild(a); a.click(); a.remove();
+      setTimeout(()=>URL.revokeObjectURL(url),3000);
+      status.textContent="Plain-text catalog prepared. Attach the downloaded file to your AI conversation.";
+    } catch {
+      status.textContent="Unable to prepare the text file. Use the JSON download link above instead.";
+    }
+  });
+})();
+</script>
 </body></html>
