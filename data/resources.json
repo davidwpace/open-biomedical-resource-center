@@ -1,0 +1,813 @@
+{
+  "project": "Open Biomedical Research Resource Center",
+  "version": "2026-10-27-initial",
+  "scope": "Public resource directory; research and education only",
+  "resources": [
+    {
+      "id": "brainxell-brainblox",
+      "name": "BrainXell BrainBloX",
+      "category": "NAMs and human models",
+      "official_url": "https://brainxell.com/about-us/nams/",
+      "access": "Commercial research products; public overview",
+      "integration": "External link",
+      "purpose": "Modular human iPSC-derived central nervous system cultures, cocultures and spheroids",
+      "limitations": "Physical cells and custom platforms are not free; CNS models do not automatically represent peripheral nerve tumors",
+      "official_verification_url": "https://brainxell.com/about-us/nams/",
+      "origin": "Original",
+      "priority": "P1",
+      "tags": [
+        "NAMs",
+        "neurons",
+        "astrocytes",
+        "microglia"
+      ],
+      "verified_on": "2026-10-27",
+      "source_type": "official or institutional documentation"
+    },
+    {
+      "id": "brainxell-resource-library",
+      "name": "BrainXell Resource Library",
+      "category": "NAMs and human models",
+      "official_url": "https://brainxell.com/resource-library/",
+      "access": "Public learning materials",
+      "integration": "External link",
+      "purpose": "Posters, protocols, publications and videos on human neuronal models",
+      "limitations": "Availability of individual downloadable materials or reuse licenses varies",
+      "official_verification_url": "https://brainxell.com/resource-library/",
+      "origin": "Original",
+      "priority": "P1",
+      "tags": [
+        "education",
+        "protocols",
+        "NAMs"
+      ],
+      "verified_on": "2026-10-27",
+      "source_type": "official or institutional documentation"
+    },
+    {
+      "id": "nih-ncats-tissue-chip-program",
+      "name": "NIH NCATS Tissue Chip Program",
+      "category": "NAMs and human models",
+      "official_url": "https://ncats.nih.gov/research/research-activities/tissue-chip",
+      "access": "Free public information; chips not supplied free",
+      "integration": "External link",
+      "purpose": "Organ-on-chip principles, projects and research partnerships",
+      "limitations": "Program resources are not equivalent to free tissue-chip hardware or experiment access",
+      "official_verification_url": "https://ncats.nih.gov/research/research-activities/tissue-chip",
+      "origin": "Expanded",
+      "priority": "P1",
+      "tags": [
+        "organ-on-chip",
+        "NAMs",
+        "translation"
+      ],
+      "verified_on": "2026-10-27",
+      "source_type": "official or institutional documentation"
+    },
+    {
+      "id": "niehs-niceatm-iccvam-resources",
+      "name": "NIEHS NICEATM / ICCVAM Resources",
+      "category": "NAMs and human models",
+      "official_url": "https://ntp.niehs.nih.gov/whatwestudy/niceatm/resources-for-test-method-developers",
+      "access": "Free guidance and linked databases",
+      "integration": "External link",
+      "purpose": "Alternative method validation, qualification, regulatory guidance and data",
+      "limitations": "Guidelines do not validate an individual experimental model by themselves",
+      "official_verification_url": "https://ntp.niehs.nih.gov/whatwestudy/niceatm/resources-for-test-method-developers",
+      "origin": "Expanded",
+      "priority": "P2",
+      "tags": [
+        "NAMs",
+        "validation",
+        "regulation"
+      ],
+      "verified_on": "2026-10-27",
+      "source_type": "official or institutional documentation"
+    },
+    {
+      "id": "epa-comptox-chemicals-dashboard",
+      "name": "EPA CompTox Chemicals Dashboard",
+      "category": "NAMs and human models",
+      "official_url": "https://comptox.epa.gov/dashboard/",
+      "access": "Free public data",
+      "integration": "Public APIs and downloads; confirm terms",
+      "purpose": "Chemical bioactivity, hazard and computational toxicology, including NAM assays",
+      "limitations": "Toxicity screens are not evidence that a substance treats cancer",
+      "official_verification_url": "https://www.epa.gov/comptox-tools/comptox-chemicals-dashboard-about",
+      "origin": "Expanded",
+      "priority": "P1",
+      "tags": [
+        "NAMs",
+        "toxicology",
+        "chemicals"
+      ],
+      "verified_on": "2026-10-27",
+      "source_type": "official or institutional documentation"
+    },
+    {
+      "id": "sparc-portal",
+      "name": "SPARC Portal",
+      "category": "NAMs and human models",
+      "official_url": "https://sparc.science/",
+      "access": "Free public portal",
+      "integration": "Downloads; model and data links",
+      "purpose": "Peripheral nervous-system anatomy, functional physiology datasets and models",
+      "limitations": "Multi-species data; neural maps do not directly establish cancer signaling",
+      "official_verification_url": "https://sparc.science/",
+      "origin": "Expanded",
+      "priority": "P1",
+      "tags": [
+        "neuroscience",
+        "peripheral-nerves",
+        "models"
+      ],
+      "verified_on": "2026-10-27",
+      "source_type": "official or institutional documentation"
+    },
+    {
+      "id": "nci-patient-derived-models-repository",
+      "name": "NCI Patient-Derived Models Repository",
+      "category": "NAMs and human models",
+      "official_url": "https://dctd.cancer.gov/drug-discovery-development/reagents-materials/pdmr",
+      "access": "Public genomic data; physical models fee-based",
+      "integration": "Public data download; material requests separately",
+      "purpose": "Patient-derived organoids, cell cultures, xenografts and associated data",
+      "limitations": "Materials require application, fees and qualified facilities",
+      "official_verification_url": "https://pdmr.cancer.gov/request/default.htm",
+      "origin": "Original",
+      "priority": "P1",
+      "tags": [
+        "cancer",
+        "organoids",
+        "patient-derived-models"
+      ],
+      "verified_on": "2026-10-27",
+      "source_type": "official or institutional documentation"
+    },
+    {
+      "id": "cancermodels-org",
+      "name": "CancerModels.Org",
+      "category": "NAMs and human models",
+      "official_url": "https://www.cancermodels.org/",
+      "access": "Free public discovery portal; model acquisition varies",
+      "integration": "External link and provider follow-through",
+      "purpose": "Cross-repository catalog of patient-derived cancer models and their annotations",
+      "limitations": "Some listed models belong to commercial suppliers or require material transfer agreements",
+      "official_verification_url": "https://www.cancer.gov/about-nci/organization/cssi/resources/informatics-tools",
+      "origin": "Expanded",
+      "priority": "P2",
+      "tags": [
+        "cancer",
+        "PDX",
+        "organoids"
+      ],
+      "verified_on": "2026-10-27",
+      "source_type": "official or institutional documentation"
+    },
+    {
+      "id": "depmap",
+      "name": "DepMap",
+      "category": "Genomics, transcriptomics and pathways",
+      "official_url": "https://depmap.org/portal/",
+      "access": "Free public data",
+      "integration": "Data downloads; portal",
+      "purpose": "CRISPR gene essentiality, cancer cell lines, drug-response and gene expression",
+      "limitations": "Cell-line dependencies are not personalized tumor treatment evidence",
+      "official_verification_url": "https://depmap.org/portal/data_page/",
+      "origin": "Original",
+      "priority": "P1",
+      "tags": [
+        "CRISPR",
+        "cancer",
+        "drug-response"
+      ],
+      "verified_on": "2026-10-27",
+      "source_type": "official or institutional documentation"
+    },
+    {
+      "id": "cbioportal",
+      "name": "cBioPortal",
+      "category": "Genomics, transcriptomics and pathways",
+      "official_url": "https://www.cbioportal.org/",
+      "access": "Free public genomics studies",
+      "integration": "Web API and downloads",
+      "purpose": "Visualize cancer alterations, multiomic profiles and cohort findings",
+      "limitations": "Many studies are not representative of rare tumor subtypes",
+      "official_verification_url": "https://docs.cbioportal.org/user-guide/faq/",
+      "origin": "Original",
+      "priority": "P1",
+      "tags": [
+        "cancer",
+        "variants",
+        "cohorts"
+      ],
+      "verified_on": "2026-10-27",
+      "source_type": "official or institutional documentation"
+    },
+    {
+      "id": "nci-genomic-data-commons-gdc",
+      "name": "NCI Genomic Data Commons (GDC)",
+      "category": "Genomics, transcriptomics and pathways",
+      "official_url": "https://portal.gdc.cancer.gov/",
+      "access": "Free public subset; controlled data require authorization",
+      "integration": "Public API and bulk data download",
+      "purpose": "Harmonized genomic and clinical cancer datasets, including TCGA",
+      "limitations": "Controlled files require dbGaP approval; respect data-use policies",
+      "official_verification_url": "https://gdc.cancer.gov/access-data/data-access-processes-and-tools",
+      "origin": "Original",
+      "priority": "P1",
+      "tags": [
+        "cancer",
+        "TCGA",
+        "sequencing"
+      ],
+      "verified_on": "2026-10-27",
+      "source_type": "official or institutional documentation"
+    },
+    {
+      "id": "nci-proteomic-data-commons-pdc",
+      "name": "NCI Proteomic Data Commons (PDC)",
+      "category": "Genomics, transcriptomics and pathways",
+      "official_url": "https://pdc.cancer.gov/",
+      "access": "Open cancer proteomics data",
+      "integration": "Portal and available data services",
+      "purpose": "Proteomic datasets linking tumors with protein abundance",
+      "limitations": "Availability and suitability differ by tumor type",
+      "official_verification_url": "https://pdc.cancer.gov/",
+      "origin": "Original",
+      "priority": "P1",
+      "tags": [
+        "proteomics",
+        "cancer"
+      ],
+      "verified_on": "2026-10-27",
+      "source_type": "official or institutional documentation"
+    },
+    {
+      "id": "ncbi-gene-expression-omnibus-geo",
+      "name": "NCBI Gene Expression Omnibus (GEO)",
+      "category": "Genomics, transcriptomics and pathways",
+      "official_url": "https://www.ncbi.nlm.nih.gov/geo/",
+      "access": "Free public repository",
+      "integration": "Programmatic query, downloads, GEO2R",
+      "purpose": "Gene-expression experiments including injury, perturbation and drug studies",
+      "limitations": "Sample annotation and experimental design vary widely; validate washout and controls",
+      "official_verification_url": "https://www.ncbi.nlm.nih.gov/geo/",
+      "origin": "Original",
+      "priority": "P1",
+      "tags": [
+        "gene-expression",
+        "transcriptomics"
+      ],
+      "verified_on": "2026-10-27",
+      "source_type": "official or institutional documentation"
+    },
+    {
+      "id": "cz-cellxgene-discover",
+      "name": "CZ CELLxGENE Discover",
+      "category": "Genomics, transcriptomics and pathways",
+      "official_url": "https://cellxgene.cziscience.com/",
+      "access": "Free public data",
+      "integration": "Public Census and Curation APIs",
+      "purpose": "Search and visualize single-cell data and cell-type-specific gene expression",
+      "limitations": "Cell-type harmonization, disease representation and batch effects require review",
+      "official_verification_url": "https://cellxgene.cziscience.com/docs/01__CellxGene",
+      "origin": "Original",
+      "priority": "P1",
+      "tags": [
+        "single-cell",
+        "cell-atlas"
+      ],
+      "verified_on": "2026-10-27",
+      "source_type": "official or institutional documentation"
+    },
+    {
+      "id": "cell-model-passports",
+      "name": "Cell Model Passports",
+      "category": "Genomics, transcriptomics and pathways",
+      "official_url": "https://cellmodelpassports.sanger.ac.uk/",
+      "access": "Free model catalog and datasets",
+      "integration": "REST API and downloads",
+      "purpose": "Cancer cell model annotations, genomics, drug sensitivity and gene dependency",
+      "limitations": "Physical model access is separate; model annotations must be checked",
+      "official_verification_url": "https://cellmodelpassports.sanger.ac.uk/documentation",
+      "origin": "Original",
+      "priority": "P1",
+      "tags": [
+        "cell-lines",
+        "GDSC",
+        "organoids"
+      ],
+      "verified_on": "2026-10-27",
+      "source_type": "official or institutional documentation"
+    },
+    {
+      "id": "human-protein-atlas",
+      "name": "Human Protein Atlas",
+      "category": "Genomics, transcriptomics and pathways",
+      "official_url": "https://www.proteinatlas.org/",
+      "access": "Open access",
+      "integration": "Public browsing and downloadable data subject to conditions",
+      "purpose": "Protein and RNA expression by tissue, cell type and cancer",
+      "limitations": "Antibody and expression estimates require evidence-level checks",
+      "official_verification_url": "https://www.proteinatlas.org/about",
+      "origin": "Expanded",
+      "priority": "P1",
+      "tags": [
+        "proteomics",
+        "tissue",
+        "normal-controls"
+      ],
+      "verified_on": "2026-10-27",
+      "source_type": "official or institutional documentation"
+    },
+    {
+      "id": "human-biomolecular-atlas-program-hubmap",
+      "name": "Human BioMolecular Atlas Program (HuBMAP)",
+      "category": "Genomics, transcriptomics and pathways",
+      "official_url": "https://portal.hubmapconsortium.org/",
+      "access": "Open atlas; dataset-specific restrictions may apply",
+      "integration": "Portal and dataset tools",
+      "purpose": "Normal human tissue, spatial and single-cell molecular maps",
+      "limitations": "Healthy tissue references do not reproduce diseased tumor tissue",
+      "official_verification_url": "https://portal.hubmapconsortium.org/",
+      "origin": "Expanded",
+      "priority": "P2",
+      "tags": [
+        "spatial",
+        "healthy-tissue",
+        "single-cell"
+      ],
+      "verified_on": "2026-10-27",
+      "source_type": "official or institutional documentation"
+    },
+    {
+      "id": "embl-ebi-expression-atlas",
+      "name": "EMBL-EBI Expression Atlas",
+      "category": "Genomics, transcriptomics and pathways",
+      "official_url": "https://www.ebi.ac.uk/gxa/",
+      "access": "Free curated expression data",
+      "integration": "Web downloads",
+      "purpose": "Curated patterns of RNA/protein expression across tissues and conditions",
+      "limitations": "Cross-experiment normalization and organism differences matter",
+      "official_verification_url": "https://www.ebi.ac.uk/gxa/about.html",
+      "origin": "Expanded",
+      "priority": "P2",
+      "tags": [
+        "gene-expression",
+        "controls"
+      ],
+      "verified_on": "2026-10-27",
+      "source_type": "official or institutional documentation"
+    },
+    {
+      "id": "reactome",
+      "name": "Reactome",
+      "category": "Genomics, transcriptomics and pathways",
+      "official_url": "https://reactome.org/",
+      "access": "Free open-source pathway knowledge",
+      "integration": "APIs and data downloads",
+      "purpose": "Curated reactions and pathways linking genes to biological processes",
+      "limitations": "Pathway association does not establish causality in a tumor",
+      "official_verification_url": "https://reactome.org/",
+      "origin": "Expanded",
+      "priority": "P1",
+      "tags": [
+        "pathways",
+        "knowledge-graph"
+      ],
+      "verified_on": "2026-10-27",
+      "source_type": "official or institutional documentation"
+    },
+    {
+      "id": "string",
+      "name": "STRING",
+      "category": "Genomics, transcriptomics and pathways",
+      "official_url": "https://string-db.org/",
+      "access": "Free data under CC BY 4.0",
+      "integration": "Downloads and APIs",
+      "purpose": "Functional protein associations and network enrichment",
+      "limitations": "Networks include predicted and indirect associations; scores are not proof of contact",
+      "official_verification_url": "https://string-db.org/cgi/access.pl",
+      "origin": "Expanded",
+      "priority": "P1",
+      "tags": [
+        "protein-networks",
+        "knowledge-graph"
+      ],
+      "verified_on": "2026-10-27",
+      "source_type": "official or institutional documentation"
+    },
+    {
+      "id": "open-targets-platform",
+      "name": "Open Targets Platform",
+      "category": "Drug discovery and variant interpretation",
+      "official_url": "https://platform.opentargets.org/",
+      "access": "Free publicly available platform",
+      "integration": "GraphQL API; bulk downloads",
+      "purpose": "Disease–target evidence, candidate drugs and target prioritization",
+      "limitations": "Association scores are prioritization aids, not patient-level efficacy",
+      "official_verification_url": "https://platform.opentargets.org/",
+      "origin": "Original",
+      "priority": "P1",
+      "tags": [
+        "drug-targets",
+        "knowledge-graph"
+      ],
+      "verified_on": "2026-10-27",
+      "source_type": "official or institutional documentation"
+    },
+    {
+      "id": "chembl",
+      "name": "ChEMBL",
+      "category": "Drug discovery and variant interpretation",
+      "official_url": "https://www.ebi.ac.uk/chembl/",
+      "access": "Free public bioactivity database; CC BY-SA 3.0",
+      "integration": "Web services and downloads",
+      "purpose": "Compound bioactivity, drug-like molecules and biological targets",
+      "limitations": "In-vitro activity is not clinical efficacy; license requires attribution/share-alike where applicable",
+      "official_verification_url": "https://www.ebi.ac.uk/chembl/",
+      "origin": "Original",
+      "priority": "P1",
+      "tags": [
+        "drug-discovery",
+        "chemistry"
+      ],
+      "verified_on": "2026-10-27",
+      "source_type": "official or institutional documentation"
+    },
+    {
+      "id": "pubchem",
+      "name": "PubChem",
+      "category": "Drug discovery and variant interpretation",
+      "official_url": "https://pubchem.ncbi.nlm.nih.gov/",
+      "access": "Free public scientific chemistry information",
+      "integration": "PUG-REST API and downloads",
+      "purpose": "Chemical structures, properties, biological assays and identifiers",
+      "limitations": "Third-party annotations have separate provenance and reuse terms",
+      "official_verification_url": "https://pubchem.ncbi.nlm.nih.gov/docs/programmatic-access",
+      "origin": "Expanded",
+      "priority": "P1",
+      "tags": [
+        "drug-discovery",
+        "chemistry"
+      ],
+      "verified_on": "2026-10-27",
+      "source_type": "official or institutional documentation"
+    },
+    {
+      "id": "civic-cancer-variant-knowledgebase",
+      "name": "CIViC Cancer Variant Knowledgebase",
+      "category": "Drug discovery and variant interpretation",
+      "official_url": "https://civicdb.org/",
+      "access": "Free CC0 curated database",
+      "integration": "GraphQL API and bulk downloads",
+      "purpose": "Evidence-linked cancer molecular variants and clinical assertions",
+      "limitations": "Educational use; curator submissions have varying review status; not clinical decision software",
+      "official_verification_url": "https://civicdb.org/releases/licensing",
+      "origin": "Expanded",
+      "priority": "P1",
+      "tags": [
+        "variants",
+        "precision-oncology",
+        "open-data"
+      ],
+      "verified_on": "2026-10-27",
+      "source_type": "official or institutional documentation"
+    },
+    {
+      "id": "physicell",
+      "name": "PhysiCell",
+      "category": "Simulation and systems biology",
+      "official_url": "https://physicell.org/",
+      "access": "Free BSD-licensed open-source software",
+      "integration": "Download and self-run simulations",
+      "purpose": "Agent-based multicellular tumor and tissue simulation",
+      "limitations": "Requires mechanistic assumptions and experimental calibration; not for individual medical decisions",
+      "official_verification_url": "https://physicell.org/Downloads.html",
+      "origin": "Original",
+      "priority": "P1",
+      "tags": [
+        "simulation",
+        "tumor",
+        "agents"
+      ],
+      "verified_on": "2026-10-27",
+      "source_type": "official or institutional documentation"
+    },
+    {
+      "id": "morpheus",
+      "name": "Morpheus",
+      "category": "Simulation and systems biology",
+      "official_url": "https://morpheus.gitlab.io/",
+      "access": "Free BSD-licensed open-source software",
+      "integration": "Local application; MorpheusML",
+      "purpose": "Cellular Potts, PDE/ODE and multiscale simulation with GUI",
+      "limitations": "Model parameters and biological validity remain investigator responsibility",
+      "official_verification_url": "https://morpheus.gitlab.io/",
+      "origin": "Original",
+      "priority": "P1",
+      "tags": [
+        "simulation",
+        "multicellular",
+        "GUI"
+      ],
+      "verified_on": "2026-10-27",
+      "source_type": "official or institutional documentation"
+    },
+    {
+      "id": "biomodels",
+      "name": "BioModels",
+      "category": "Simulation and systems biology",
+      "official_url": "https://www.ebi.ac.uk/biomodels/",
+      "access": "Free public published models",
+      "integration": "Models and web services",
+      "purpose": "Reuse curated computational models of biochemical systems",
+      "limitations": "Published models can be context-specific and need independent validation",
+      "official_verification_url": "https://www.ebi.ac.uk/training/online/courses/biomodels-quick-tour/what-is-biomodels/",
+      "origin": "Original",
+      "priority": "P1",
+      "tags": [
+        "SBML",
+        "simulation",
+        "pathways"
+      ],
+      "verified_on": "2026-10-27",
+      "source_type": "official or institutional documentation"
+    },
+    {
+      "id": "pubmed",
+      "name": "PubMed",
+      "category": "Literature, trials and education",
+      "official_url": "https://pubmed.ncbi.nlm.nih.gov/",
+      "access": "Free search; some publisher full texts paywalled",
+      "integration": "NCBI E-utilities",
+      "purpose": "Find indexed biomedical studies and abstracts",
+      "limitations": "Not all articles are free full text; publication is not proof of quality",
+      "official_verification_url": "https://pubmed.ncbi.nlm.nih.gov/about/",
+      "origin": "Original",
+      "priority": "P1",
+      "tags": [
+        "papers",
+        "evidence"
+      ],
+      "verified_on": "2026-10-27",
+      "source_type": "official or institutional documentation"
+    },
+    {
+      "id": "europe-pmc",
+      "name": "Europe PMC",
+      "category": "Literature, trials and education",
+      "official_url": "https://europepmc.org/",
+      "access": "Free search and open-access texts where licensed",
+      "integration": "REST API",
+      "purpose": "Search papers, preprints and accessible full-text literature",
+      "limitations": "Licensing varies by article; distinguish preprints from peer-reviewed papers",
+      "official_verification_url": "https://www.ebi.ac.uk/training/online/courses/europepmc-quick-tour/what-is-europe-pmc/",
+      "origin": "Expanded",
+      "priority": "P1",
+      "tags": [
+        "papers",
+        "open-access",
+        "text-mining"
+      ],
+      "verified_on": "2026-10-27",
+      "source_type": "official or institutional documentation"
+    },
+    {
+      "id": "clinicaltrials-gov",
+      "name": "ClinicalTrials.gov",
+      "category": "Literature, trials and education",
+      "official_url": "https://clinicaltrials.gov/",
+      "access": "Free public trial records",
+      "integration": "REST API v2",
+      "purpose": "Search interventional and observational studies, status and eligibility",
+      "limitations": "Recruitment status changes; registry listing does not prove eligibility or effectiveness",
+      "official_verification_url": "https://www.nlm.nih.gov/pubs/techbull/ma24/ma24_clinicaltrials_api.html",
+      "origin": "Original",
+      "priority": "P1",
+      "tags": [
+        "trials",
+        "clinical-research"
+      ],
+      "verified_on": "2026-10-27",
+      "source_type": "official or institutional documentation"
+    },
+    {
+      "id": "nci-itcr-open-tool-catalog",
+      "name": "NCI ITCR Open Tool Catalog",
+      "category": "Literature, trials and education",
+      "official_url": "https://www.cancer.gov/about-nci/organization/cssi/resources/informatics-tools",
+      "access": "Free for academic/nonprofit use; individual licenses vary",
+      "integration": "Links to software repositories",
+      "purpose": "Directory of cancer analytics, imaging, genomics and clinical informatics tools",
+      "limitations": "Do not assume every tool permits commercial reuse or is hosted free of charge",
+      "official_verification_url": "https://www.cancer.gov/about-nci/organization/cssi/resources/informatics-tools",
+      "origin": "Original",
+      "priority": "P1",
+      "tags": [
+        "directory",
+        "software",
+        "cancer"
+      ],
+      "verified_on": "2026-10-27",
+      "source_type": "official or institutional documentation"
+    },
+    {
+      "id": "galaxy-training-network",
+      "name": "Galaxy Training Network",
+      "category": "Literature, trials and education",
+      "official_url": "https://training.galaxyproject.org/training-material/",
+      "access": "Free openly licensed training",
+      "integration": "Tutorials, course and workflow links",
+      "purpose": "Hands-on training in bioinformatics and reproducible analysis",
+      "limitations": "Tutorials may require separate data download or compute capacity",
+      "official_verification_url": "https://training.galaxyproject.org/training-material/about.html",
+      "origin": "Expanded",
+      "priority": "P1",
+      "tags": [
+        "training",
+        "bioinformatics"
+      ],
+      "verified_on": "2026-10-27",
+      "source_type": "official or institutional documentation"
+    },
+    {
+      "id": "the-cancer-imaging-archive-tcia",
+      "name": "The Cancer Imaging Archive (TCIA)",
+      "category": "Imaging and pathology",
+      "official_url": "https://www.cancerimagingarchive.net/",
+      "access": "Many open collections; some controlled or license-restricted",
+      "integration": "Collections and downloads",
+      "purpose": "Public cancer imaging collections, including radiology and pathology",
+      "limitations": "Each collection has separate access/license constraints; research images not a diagnostic service",
+      "official_verification_url": "https://www.cancerimagingarchive.net/browse-collections/",
+      "origin": "Expanded",
+      "priority": "P1",
+      "tags": [
+        "imaging",
+        "cancer",
+        "DICOM"
+      ],
+      "verified_on": "2026-10-27",
+      "source_type": "official or institutional documentation"
+    },
+    {
+      "id": "3d-slicer",
+      "name": "3D Slicer",
+      "category": "Imaging and pathology",
+      "official_url": "https://www.slicer.org/",
+      "access": "Free open source desktop software",
+      "integration": "Desktop workflow; Python scripting",
+      "purpose": "Medical-image visualization, segmentation, quantitative analysis",
+      "limitations": "Research use needs validated workflows; not automatically approved for clinical use",
+      "official_verification_url": "https://www.cancer.gov/about-nci/organization/cssi/resources/informatics-tools",
+      "origin": "Expanded",
+      "priority": "P1",
+      "tags": [
+        "imaging",
+        "segmentation"
+      ],
+      "verified_on": "2026-10-27",
+      "source_type": "official or institutional documentation"
+    },
+    {
+      "id": "galaxy-usegalaxy",
+      "name": "Galaxy / UseGalaxy",
+      "category": "Analysis and website infrastructure",
+      "official_url": "https://usegalaxy.org/",
+      "access": "Free public server with usage quotas",
+      "integration": "Web-based workflows; APIs",
+      "purpose": "Run bioinformatics pipelines without managing servers",
+      "limitations": "Public instances have quotas and are unsuitable for uploading identifiable patient records",
+      "official_verification_url": "https://galaxyproject.org/main/",
+      "origin": "Expanded",
+      "priority": "P1",
+      "tags": [
+        "bioinformatics",
+        "cloud-analysis",
+        "workflows"
+      ],
+      "verified_on": "2026-10-27",
+      "source_type": "official or institutional documentation"
+    },
+    {
+      "id": "bioconductor",
+      "name": "Bioconductor",
+      "category": "Analysis and website infrastructure",
+      "official_url": "https://bioconductor.org/",
+      "access": "Free open-source software",
+      "integration": "R packages",
+      "purpose": "Reproducible RNA-seq, genomics and multiomics workflows",
+      "limitations": "Requires R and analysis expertise; compute/data costs separate",
+      "official_verification_url": "https://www.cancer.gov/about-nci/organization/cssi/resources/informatics-tools",
+      "origin": "Expanded",
+      "priority": "P2",
+      "tags": [
+        "analysis",
+        "R",
+        "omics"
+      ],
+      "verified_on": "2026-10-27",
+      "source_type": "official or institutional documentation"
+    },
+    {
+      "id": "kaggle-notebooks",
+      "name": "Kaggle Notebooks",
+      "category": "Analysis and website infrastructure",
+      "official_url": "https://www.kaggle.com/code",
+      "access": "Free hosted notebooks with limits",
+      "integration": "Notebook exports; public datasets",
+      "purpose": "Python/R execution and limited free accelerators for demonstrations",
+      "limitations": "Free computing availability and quotas change; no confidential data in public notebooks",
+      "official_verification_url": "https://www.kaggle.com/docs/notebooks",
+      "origin": "Expanded",
+      "priority": "P2",
+      "tags": [
+        "computing",
+        "notebooks"
+      ],
+      "verified_on": "2026-10-27",
+      "source_type": "official or institutional documentation"
+    },
+    {
+      "id": "github-pages",
+      "name": "GitHub Pages",
+      "category": "Analysis and website infrastructure",
+      "official_url": "https://pages.github.com/",
+      "access": "Free hosting for public repositories on GitHub Free",
+      "integration": "Git-based static deployment",
+      "purpose": "Deploy searchable static resource catalog at zero hosting cost",
+      "limitations": "GitHub Free requires public repository for Pages; avoid secrets and private data",
+      "official_verification_url": "https://docs.github.com/en/pages/getting-started-with-github-pages/creating-a-github-pages-site",
+      "origin": "Expanded",
+      "priority": "P1",
+      "tags": [
+        "website",
+        "hosting",
+        "git"
+      ],
+      "verified_on": "2026-10-27",
+      "source_type": "official or institutional documentation"
+    },
+    {
+      "id": "cloudflare-pages",
+      "name": "Cloudflare Pages",
+      "category": "Analysis and website infrastructure",
+      "official_url": "https://pages.cloudflare.com/",
+      "access": "Free tier with build/deployment limits",
+      "integration": "Git deployments",
+      "purpose": "Alternative hosting for static directory",
+      "limitations": "Check usage quotas, platform terms and advanced function costs",
+      "official_verification_url": "https://developers.cloudflare.com/pages/platform/limits/",
+      "origin": "Expanded",
+      "priority": "P2",
+      "tags": [
+        "website",
+        "hosting",
+        "git"
+      ],
+      "verified_on": "2026-10-27",
+      "source_type": "official or institutional documentation"
+    },
+    {
+      "id": "nci-ai-in-cancer-research-resources",
+      "name": "NCI AI in Cancer Research Resources",
+      "category": "Literature, trials and education",
+      "official_url": "https://www.cancer.gov/research/resources/ai-cancer-research/resources-tools",
+      "access": "Free public directory",
+      "integration": "Links to external tools and resources",
+      "purpose": "NCI-curated index of AI/ML cancer models and software",
+      "limitations": "Tools linked from directory may have separate eligibility and use restrictions",
+      "official_verification_url": "https://www.cancer.gov/research/resources/ai-cancer-research/resources-tools",
+      "origin": "Expanded",
+      "priority": "P2",
+      "tags": [
+        "AI",
+        "directory",
+        "cancer"
+      ],
+      "verified_on": "2026-10-27",
+      "source_type": "official or institutional documentation"
+    },
+    {
+      "id": "ucsc-xena",
+      "name": "UCSC Xena",
+      "category": "Genomics, transcriptomics and pathways",
+      "official_url": "https://xenabrowser.net/",
+      "access": "Free cancer genomic exploration",
+      "integration": "Public data hubs and software tools",
+      "purpose": "Explore gene expression and clinical patterns across public cohorts",
+      "limitations": "Correlative visualizations do not establish patient-level relationships",
+      "official_verification_url": "https://www.cancer.gov/about-nci/organization/cssi/resources/informatics-tools",
+      "origin": "Expanded",
+      "priority": "P2",
+      "tags": [
+        "TCGA",
+        "visualization"
+      ],
+      "verified_on": "2026-10-27",
+      "source_type": "official or institutional documentation"
+    }
+  ]
+}
