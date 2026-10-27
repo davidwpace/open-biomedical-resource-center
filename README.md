@@ -14,6 +14,24 @@ The site is intentionally **HTML + CSS + JavaScript with no build dependencies**
 - **GitHub Pages:** Repository **Settings → Pages → Build and deployment → Deploy from a branch → main → /(root) → Save**. The published URL is expected to have the pattern `https://davidwpace.github.io/open-biomedical-resource-center/` **only after GitHub Pages is enabled and the first deployment succeeds**.
 - This is a public directory. It does not require a backend, account, cookies, analytics, or personal information.
 
+## AI and search-engine discovery (provider agnostic)
+
+The public catalog can be read by **ChatGPT, Claude, Gemini, Copilot, web search, coding agents, or other user-chosen assistants** with appropriate web access; none of them is required or officially integrated. No paid model backend or agent-specific account is needed to read this directory.
+
+- **All resource details as accessible HTML:** [catalog.html](catalog.html)
+- **Public catalog JSON:** [data/resources.json](data/resources.json) · [direct raw GitHub JSON](https://raw.githubusercontent.com/davidwpace/open-biomedical-resource-center/main/data/resources.json)
+- **Instructions for other agents:** [agent-access.html](agent-access.html)
+- **Optional AI navigation:** [llms.txt](llms.txt) (an emerging convention, not a promise of indexing)
+- **Read-only OpenAPI description:** [openapi.json](openapi.json) (static GET endpoint only)
+- **Search sitemap:** [sitemap.xml](sitemap.xml)
+- **Design limitations and integration roadmap:** [docs/AI_DISCOVERY.md](docs/AI_DISCOVERY.md)
+
+The site includes machine-readable Schema.org metadata for the **directory's own catalog**, not a claim of ownership over providers' biomedical datasets.
+
+**Important:** A static JSON file is **not** an MCP server or Agent2Agent service. There is no tool-calling backend, chat service, dynamic search endpoint, or clinical analysis service. We may build a genuine, safely hosted, read-only MCP server later if demand warrants one. Discovery is possible, but automatic indexing or recommendation by any individual AI provider is not guaranteed.
+
+Because GitHub Pages uses a project subpath, `llms.txt` lives below `/open-biomedical-resource-center/`, not automatically at the host domain root. The HTML and README link to it explicitly. Search Console ownership and sitemap submission are separate, optional launch steps.
+
 ## What the site can do
 
 - Search name, description, tags, and access notes.
@@ -34,7 +52,7 @@ docs/RESOURCE_CATALOG.md       Human-readable initial catalog
 docs/WEBSITE_BLUEPRINT.md      MVP requirements and roadmap
 docs/SOURCE_POLICY.md          Access labels, provenance, review policy
 docs/PROJECT_CONTEXT.md        New-chat / Codex handoff and decisions
-docs/WORKFLOWS.md              Evidence-aware interdisciplinary research workflows
+docs/WORKFLOWS.md              Evidence-aware interdisciplinary research workflows\ndocs/AI_DISCOVERY.md           Agent discovery conventions and integration roadmap
 docs/HI_TPH_RESEARCH_PROFILE.md Verified TCR–pHLA ML research resource guide
 scripts/validate_catalog.py    Offline data-quality checks
 .github/ISSUE_TEMPLATE/        Community suggestions
