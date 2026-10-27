@@ -53,6 +53,9 @@ def validate():
     index = (ROOT / "index.html").read_text(encoding="utf-8")
     llms = (ROOT / "llms.txt").read_text(encoding="utf-8")
     agent = (ROOT / "agent-access.html").read_text(encoding="utf-8")
+    for marker in ('id="copyCatalog"', 'id="downloadCatalog"', 'id="manualCopy"', 'data/resources.json'):
+        if marker not in agent:
+            errors.append(f"AI access page is missing portable fallback: {marker}")
     for target in ("catalog.html", "agent-access.html", "data/resources.json", "llms.txt"):
         if target not in index:
             errors.append(f"Home page does not link to {target}")
