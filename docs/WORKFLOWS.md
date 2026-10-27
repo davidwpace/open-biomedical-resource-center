@@ -39,3 +39,11 @@ A target, compound hit, or trial listing is **not** a treatment recommendation.
 3. Observe provider permissions, data security requirements, and compute quotas.
 4. Share non-sensitive code and metadata, including failures and limitations.
 5. Submit new useful public resources to this directory with primary official links.
+
+## 6. Evaluate immune-recognition models responsibly (Hi-TPH)
+1. Read the [Hi-TPH research profile](HI_TPH_RESEARCH_PROFILE.md) and the October 26, 2026 peer-reviewed paper.
+2. Determine whether the research dataset has adequate peptide, HLA and full paired TCR sequences for the question.
+3. Review sources, data splits, on-the-fly negatives and leak-resistant benchmarking in the original GitHub repo.
+4. Download only necessary research datasets or model checkpoints from authors' original GitHub, Zenodo and Hugging Face resources; respect CC BY-NC 4.0 and computational costs.
+5. Reproduce a held-out test and confirm behavior on an independent dataset; evaluate calibration and false positives.
+6. Interpret binding scores as preliminary predictions requiring biological confirmation, not patient-specific immunotherapy decisions.
