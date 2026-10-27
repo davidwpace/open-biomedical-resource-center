@@ -47,7 +47,6 @@
 | [ChEMBL](https://www.ebi.ac.uk/chembl/) | Free public bioactivity database; CC BY-SA 3.0 | Compound bioactivity, drug-like molecules and biological targets | In-vitro activity is not clinical efficacy; license requires attribution/share-alike where applicable |
 | [PubChem](https://pubchem.ncbi.nlm.nih.gov/) | Free public scientific chemistry information | Chemical structures, properties, biological assays and identifiers | Third-party annotations have separate provenance and reuse terms |
 | [CIViC Cancer Variant Knowledgebase](https://civicdb.org/) | Free CC0 curated database | Evidence-linked cancer molecular variants and clinical assertions | Educational use; curator submissions have varying review status; not clinical decision software |
-
 | [Hi-TPH — TCR–pHLA Binding Dataset and Protein Language Models](https://github.com/Jiadong001/Hi-TpH) | Free public research code and data for noncommercial use (CC BY-NC 4.0) | Hierarchical TCR–peptide–HLA datasets, benchmark scripts and protein language model checkpoints | Study-reported 19.2% relative gain does not establish clinical validity; nonbinding labels and source generalization require scrutiny; compute may cost money |
 
 ### Simulation and systems biology (3)
