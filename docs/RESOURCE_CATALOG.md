@@ -2,7 +2,7 @@
 
 **Verified/reviewed:** October 27, 2026. This is a starter catalogue, not every biomedical resource on the internet.
 
-**41 catalog entries.** Access descriptions refer to the described public interface or software—not guaranteed free hosting, data redistribution, commercial permissions, lab materials, compute, or clinical use.
+**42 catalog entries.** Access descriptions refer to the described public interface or software—not guaranteed free hosting, data redistribution, commercial permissions, lab materials, compute, or clinical use.
 
 **Safety boundary:** Public research and educational directory only. No identifiable patient data, automated clinical treatment recommendations or simulated results presented as validated drug evidence.
 
@@ -39,7 +39,7 @@
 | [STRING](https://string-db.org/) | Free data under CC BY 4.0 | Functional protein associations and network enrichment | Networks include predicted and indirect associations; scores are not proof of contact |
 | [UCSC Xena](https://xenabrowser.net/) | Free cancer genomic exploration | Explore gene expression and clinical patterns across public cohorts | Correlative visualizations do not establish patient-level relationships |
 
-### Drug discovery and variant interpretation (4)
+### Drug discovery and variant interpretation (5)
 
 | Resource | Access | What it offers | Critical limitation |
 |---|---|---|---|
@@ -47,6 +47,8 @@
 | [ChEMBL](https://www.ebi.ac.uk/chembl/) | Free public bioactivity database; CC BY-SA 3.0 | Compound bioactivity, drug-like molecules and biological targets | In-vitro activity is not clinical efficacy; license requires attribution/share-alike where applicable |
 | [PubChem](https://pubchem.ncbi.nlm.nih.gov/) | Free public scientific chemistry information | Chemical structures, properties, biological assays and identifiers | Third-party annotations have separate provenance and reuse terms |
 | [CIViC Cancer Variant Knowledgebase](https://civicdb.org/) | Free CC0 curated database | Evidence-linked cancer molecular variants and clinical assertions | Educational use; curator submissions have varying review status; not clinical decision software |
+
+| [Hi-TPH — TCR–pHLA Binding Dataset and Protein Language Models](https://github.com/Jiadong001/Hi-TpH) | Free public research code and data for noncommercial use (CC BY-NC 4.0) | Hierarchical TCR–peptide–HLA datasets, benchmark scripts and protein language model checkpoints | Study-reported 19.2% relative gain does not establish clinical validity; nonbinding labels and source generalization require scrutiny; compute may cost money |
 
 ### Simulation and systems biology (3)
 
@@ -103,6 +105,10 @@
 ## Catalog fields
 
 `id`, `name`, `category`, `official_url`, `access`, `integration`, `purpose`, `limitations`, `official_verification_url`, `origin`, `priority`, `tags`, `verified_on`, `source_type`.
+
+## Featured research tools
+
+- [Hi-TPH immunoinformatics research profile](HI_TPH_RESEARCH_PROFILE.md) — paper, model checkpoints, Zenodo, research validation plan, noncommercial conditions and methodological caveats.
 
 ## Attribution and licensing rules
 
