@@ -808,6 +808,33 @@
       ],
       "verified_on": "2026-10-27",
       "source_type": "official or institutional documentation"
+    },
+    {
+      "id": "hi-tph-tcr-phla",
+      "name": "Hi-TPH — TCR–pHLA Binding Dataset and Protein Language Models",
+      "category": "Drug discovery and variant interpretation",
+      "official_url": "https://github.com/Jiadong001/Hi-TpH",
+      "access": "Free public code, datasets and model checkpoints for noncommercial research (CC BY-NC 4.0); computing costs may apply",
+      "integration": "GitHub dataset and benchmark code; Zenodo DOI 10.5281/zenodo.22647655; Hugging Face Jiadong001/Hi-TPH-PLMs",
+      "purpose": "Hierarchical T-cell receptor (TCR)–peptide–HLA binding datasets and protein language model benchmarks for antigen recognition and immunotherapy research",
+      "limitations": "Published 19.2% relative benchmark improvement is study-specific, not clinical accuracy. Negative sampling may not reflect true nonbinding; external validation, full TCR sequence data and GPU resources may be needed. CC BY-NC restricts commercial reuse.",
+      "official_verification_url": "https://www.nature.com/articles/s43588-026-01073-y",
+      "origin": "User suggested; official peer-reviewed article and source repository verified",
+      "priority": "P1",
+      "tags": [
+        "TCR",
+        "pHLA",
+        "immunoinformatics",
+        "antigen recognition",
+        "T cell",
+        "immunotherapy",
+        "protein language models",
+        "HLA",
+        "benchmark",
+        "Zenodo"
+      ],
+      "verified_on": "2026-10-27",
+      "source_type": "peer-reviewed research (Nature Computational Science, published 2026-10-26) and official repository"
     }
   ]
 }
