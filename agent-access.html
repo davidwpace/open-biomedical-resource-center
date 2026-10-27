@@ -1,0 +1,45 @@
+<!doctype html>
+<html lang="en"><head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="description" content="Let ChatGPT, Claude, Gemini and other research assistants discover and use the Open Biomedical Resource Center's public resource directory using structured JSON and links.">
+<link rel="canonical" href="https://davidwpace.github.io/open-biomedical-resource-center/agent-access.html">
+<link rel="alternate" type="application/json" href="https://davidwpace.github.io/open-biomedical-resource-center/data/resources.json" title="Complete resource catalog">
+<link rel="alternate" type="application/json" href="https://davidwpace.github.io/open-biomedical-resource-center/openapi.json" title="Public catalog OpenAPI description">
+<link rel="alternate" type="text/plain" href="https://davidwpace.github.io/open-biomedical-resource-center/llms.txt" title="AI discovery index">
+<link rel="stylesheet" href="assets/styles.css">
+<title>For AI Assistants and Developers — Open Biomedical Resource Center</title>
+<style>.agent-main{max-width:1000px;margin:0 auto;padding:60px 25px 90px}.agent-main h1{font-size:clamp(33px,4vw,50px);letter-spacing:-.045em;line-height:1.18}.agent-main h2{margin-top:40px;font-size:25px}.agent-main>p{max-width:760px;color:#5a7580}.endpoint-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:15px;margin:30px 0}.endpoint{padding:24px;border:1px solid #d4e7e3;border-radius:11px;background:#f6fbf9}.endpoint h3{font-size:17px;margin:0 0 6px}.endpoint p{font-size:13px;color:#627e83;margin:0 0 15px}.endpoint a{font-size:13px;color:#157a79;font-weight:750;overflow-wrap:anywhere}.steps{padding:23px;background:#0f303f;border-radius:12px;color:#f0fff9}.steps p{font-size:13px;color:#cde3e1}.steps pre{overflow:auto;padding:14px;border:1px solid #50727b;border-radius:7px;color:#a6e9d6;font-size:12px;background:#102733}.agent-main code{overflow-wrap:anywhere}.disclaimer{border-left:4px solid #229a8e;padding:16px 19px;background:#edf9f4;font-size:13px}.agent-main ul li{margin-bottom:8px}@media(max-width:660px){.endpoint-grid{grid-template-columns:1fr}.agent-main{padding:40px 20px 60px}}</style>
+</head><body>
+<a href="#content" class="skip-link">Skip to agent access information</a>
+<header class="site-header"><a class="brand" href="index.html"><span class="brand-mark" aria-hidden="true">✳</span><span class="brand-name">OPEN<span class="brand-break">BIOMED</span><small>RESOURCE CENTER</small></span></a><nav class="header-nav" aria-label="Navigation"><a href="index.html">Home</a><a href="catalog.html">All resources</a><a href="https://github.com/davidwpace/open-biomedical-resource-center">GitHub ↗</a></nav></header>
+<main id="content" class="agent-main">
+<span class="section-kicker">OPEN DISCOVERY · PROVIDER AGNOSTIC</span>
+<h1>Bring your own AI. <span style="color:#168982">Find a better starting point.</span></h1>
+<p>The Open Biomedical Resource Center provides structured public information that research assistants can read without a login, paid API, or proprietary integration. We provide a directory—not a competing AI service.</p>
+<div class="endpoint-grid">
+<article class="endpoint"><h3>1. Public catalog JSON</h3><p>All entries with official links, research use, access conditions, known limitations and verification dates. Suitable for agents to read and filter.</p><a href="data/resources.json">data/resources.json ↗</a></article>
+<article class="endpoint"><h3>2. Complete readable directory</h3><p>Search-engine-friendly HTML listing with all resource descriptions. No JavaScript required.</p><a href="catalog.html">catalog.html ↗</a></article>
+<article class="endpoint"><h3>3. Machine-readable interface description</h3><p>OpenAPI describes the one public read-only JSON endpoint; it does not imply dynamic queries or actions.</p><a href="openapi.json">openapi.json ↗</a></article>
+<article class="endpoint"><h3>4. AI indexing guide</h3><p>llms.txt offers optional navigation for compatible clients; it is not an official requirement or guarantee that any AI platform will index the site.</p><a href="llms.txt">llms.txt ↗</a></article>
+</div>
+<section class="steps"><h2>For an AI assistant or coding agent</h2><p>Fetch the catalog and select items relevant to the user's question. Explain why each fits, distinguish free access from limitations, and provide the official resource links. Never imply a listed resource proves a biological hypothesis or clinical treatment.</p><pre><code>GET https://davidwpace.github.io/open-biomedical-resource-center/data/resources.json
+# Returns a static JSON object with a "resources" array.
+# All filtering and scoring happen in your own client.
+# No API token, user account, or patient information needed.</code></pre>
+<p>Copy-ready instruction for another assistant:</p><pre><code>Use the Open Biomedical Resource Center's public JSON
+catalog: https://davidwpace.github.io/open-biomedical-resource-center/data/resources.json
+Find relevant scientific tools for my research question.
+Cite each official resource URL, explain access restrictions
+and limitations, and distinguish research hypotheses from
+experimentally established findings. Do not use patient data.</code></pre></section>
+<h2>What works now—and what doesn't</h2>
+<ul>
+<li><strong>Available now:</strong> Public read-only catalog, documented field names, static HTML listings, website search, links to provider documentation.</li>
+<li><strong>Not yet provided:</strong> live multi-resource search API, model inference, database proxy, hosted MCP server, Agent2Agent (A2A) endpoint, personalized biomedical recommendations or agent-run experiments.</li>
+<li><strong>Future option:</strong> A small, security-reviewed read-only MCP service could expose <code>search_resources</code> and <code>get_resource</code>, with rate limits and versioned schemas. This requires a running server or suitable worker hosting, not just static GitHub Pages.</li>
+</ul>
+<p class="disclaimer"><strong>Safety and source terms:</strong> Research and education only. No patient identifiers or private records. A link does not grant authorization to use licensed data, paid laboratory services, or clinical systems. Each upstream provider is responsible for its own claims, licensing and availability.</p>
+<h2>Contribute</h2><p>Help correct metadata, suggest new resources, or improve how agents discover credible science through <a href="https://github.com/davidwpace/open-biomedical-resource-center/issues">public GitHub Issues</a>. Please do not submit sensitive clinical information.</p>
+</main>
+<footer class="site-footer"><div><strong>OPEN BIOMED</strong><small>Open knowledge, multiple AI providers</small></div><div class="footer-links"><a href="index.html">Home</a><a href="catalog.html">Catalog</a><a href="https://github.com/davidwpace/open-biomedical-resource-center">Repository</a></div><p>© 2026 Open Biomedical Resource Center. Research discovery only.</p></footer>
+</body></html>
