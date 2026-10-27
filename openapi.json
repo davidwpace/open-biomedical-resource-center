@@ -1,0 +1,143 @@
+{
+  "openapi": "3.1.0",
+  "info": {
+    "title": "Open Biomedical Resource Center — Public Catalog",
+    "version": "2026-10-27",
+    "description": "Read-only public directory metadata for biomedical research resources. This is a static JSON download, not a dynamic search service, an MCP endpoint or a clinical tool. No account required. Original external resource licensing remains with each owner."
+  },
+  "servers": [
+    {
+      "url": "https://davidwpace.github.io/open-biomedical-resource-center/",
+      "description": "Public GitHub Pages project website, when deployment is live"
+    }
+  ],
+  "paths": {
+    "/data/resources.json": {
+      "get": {
+        "operationId": "getResourceCatalog",
+        "summary": "Get the complete public resource directory",
+        "description": "Returns all 42 curated records. Filter by category, tags and keywords client-side. This static endpoint accepts no query parameters, authentication or POST actions; catalog accuracy should be verified with each upstream resource provider.",
+        "tags": [
+          "Public metadata"
+        ],
+        "responses": {
+          "200": {
+            "description": "JSON catalog metadata",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Catalog"
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  },
+  "components": {
+    "schemas": {
+      "Catalog": {
+        "type": "object",
+        "required": [
+          "project",
+          "version",
+          "scope",
+          "resources"
+        ],
+        "properties": {
+          "project": {
+            "type": "string"
+          },
+          "version": {
+            "type": "string"
+          },
+          "scope": {
+            "type": "string"
+          },
+          "resources": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/Resource"
+            }
+          }
+        }
+      },
+      "Resource": {
+        "type": "object",
+        "required": [
+          "id",
+          "name",
+          "category",
+          "official_url",
+          "access",
+          "integration",
+          "purpose",
+          "limitations",
+          "official_verification_url",
+          "priority",
+          "tags",
+          "verified_on"
+        ],
+        "properties": {
+          "id": {
+            "type": "string",
+            "description": "Stable resource slug"
+          },
+          "name": {
+            "type": "string"
+          },
+          "category": {
+            "type": "string"
+          },
+          "official_url": {
+            "type": "string",
+            "format": "uri"
+          },
+          "access": {
+            "type": "string"
+          },
+          "integration": {
+            "type": "string"
+          },
+          "purpose": {
+            "type": "string"
+          },
+          "limitations": {
+            "type": "string"
+          },
+          "official_verification_url": {
+            "type": "string",
+            "format": "uri"
+          },
+          "priority": {
+            "type": "string",
+            "enum": [
+              "P1",
+              "P2",
+              "P3"
+            ],
+            "description": "Editorial priority, not strength of scientific evidence"
+          },
+          "tags": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            }
+          },
+          "verified_on": {
+            "type": "string",
+            "format": "date"
+          },
+          "source_type": {
+            "type": "string"
+          },
+          "origin": {
+            "type": "string"
+          }
+        },
+        "additionalProperties": true
+      }
+    }
+  }
+}
