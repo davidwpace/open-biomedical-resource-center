@@ -1,0 +1,109 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#0e2433">
+  <meta name="description" content="Discover credible biomedical research databases, human-cell models, virtual laboratories, drug-discovery tools, and educational resources—clearly labeled by access and limitations.">
+  <meta property="og:title" content="Open Biomedical Resource Center">
+  <meta property="og:description" content="Explore public biomedical data, NAMs, simulations, and research tools in one transparent directory.">
+  <title>Open Biomedical Resource Center — Discover tools. Advance research.</title>
+  <link rel="stylesheet" href="assets/styles.css">
+  <script src="assets/app.js" defer></script>
+</head>
+<body>
+  <a class="skip-link" href="#directory">Skip to resource directory</a>
+  <div class="site-shell">
+    <header class="site-header">
+      <a class="brand" href="#top" aria-label="Open Biomedical Resource Center home">
+        <span class="brand-mark" aria-hidden="true">✳</span>
+        <span class="brand-name">OPEN<span class="brand-break">BIOMED</span><small>RESOURCE CENTER</small></span>
+      </a>
+      <nav class="header-nav" aria-label="Main navigation">
+        <a href="#directory">Directory</a>
+        <a href="#workflows">Research guides</a>
+        <a href="#about">About</a>
+        <a class="nav-github" href="https://github.com/davidwpace/open-biomedical-resource-center" target="_blank" rel="noopener noreferrer">GitHub <span aria-hidden="true">↗</span></a>
+      </nav>
+    </header>
+
+    <main id="top">
+      <section class="hero" aria-labelledby="hero-title">
+        <div class="hero-content">
+          <span class="eyebrow"><span class="pulse" aria-hidden="true"></span> OPEN KNOWLEDGE / REAL-WORLD TOOLS</span>
+          <h1 id="hero-title">Science moves faster <em>when knowledge is shared.</em></h1>
+          <p class="hero-description">A hand-curated gateway to biomedical datasets, human-cell models, drug discovery platforms, virtual laboratories, and research education. Find the right tools, understand the limitations, and connect the dots.</p>
+          <div class="hero-buttons">
+            <a class="primary-button" href="#directory">Explore resources <span aria-hidden="true">↗</span></a>
+            <a class="secondary-button" href="#workflows">Start with a research guide <span aria-hidden="true">→</span></a>
+          </div>
+          <div class="hero-meta"><span><strong id="heroCount">41</strong> curated resources</span><i aria-hidden="true"></i><span><strong id="heroCategories">7</strong> research areas</span><i aria-hidden="true"></i><span>No signup required</span></div>
+        </div>
+        <div class="hero-art" aria-hidden="true">
+          <div class="orbit orbit-a"></div><div class="orbit orbit-b"></div><div class="orbit orbit-c"></div>
+          <div class="connection con-a"></div><div class="connection con-b"></div><div class="connection con-c"></div>
+          <span class="node node-1"></span><span class="node node-2"></span><span class="node node-3"></span><span class="node node-4"></span><span class="node node-5"></span>
+          <div class="core"><span>DATA</span><span class="core-symbol">✳</span><span>DISCOVERY</span></div>
+          <div class="art-label art-label-top">HUMAN-CELL MODELS</div>
+          <div class="art-label art-label-bottom">COMPUTATIONAL BIOLOGY</div>
+        </div>
+      </section>
+
+      <section class="benefit-strip" aria-label="How this center works">
+        <div><span class="strip-icon" aria-hidden="true">⌕</span><div><strong>Discover</strong><small>Search across disciplines</small></div></div>
+        <div><span class="strip-icon" aria-hidden="true">◎</span><div><strong>Evaluate</strong><small>Know what's actually free</small></div></div>
+        <div><span class="strip-icon" aria-hidden="true">↗</span><div><strong>Connect</strong><small>Go to the official source</small></div></div>
+      </section>
+
+      <section id="directory" class="directory-section section-pad" aria-labelledby="directory-title">
+        <div class="section-heading">
+          <div><span class="section-kicker">01 / RESEARCH LIBRARY</span><h2 id="directory-title">The resource directory<span class="period">.</span></h2><p>Tools worth knowing about, with access conditions and important caveats up front.</p></div>
+          <div class="verified-note"><span class="verified-dot" aria-hidden="true"></span><span>Curated catalog<br><small>Source checks dated Oct 27, 2026</small></span></div>
+        </div>
+
+        <div class="directory-panel">
+          <div class="search-area">
+            <label class="sr-only" for="search">Search resources</label>
+            <span class="search-glass" aria-hidden="true">⌕</span>
+            <input id="search" type="search" placeholder="Try “sarcoma”, “neurons”, “simulations”, “clinical trials”…" autocomplete="off">
+            <kbd class="search-hint" aria-hidden="true">/</kbd>
+          </div>
+          <div class="toolbar">
+            <label for="category">Field <select id="category"><option value="all">All fields</option></select></label>
+            <label for="access">Access <select id="access"><option value="all">All access levels</option><option value="free">Free tools & data</option><option value="mixed">Free with limits</option><option value="commercial">Commercial / learning</option></select></label>
+            <label for="sort">Sort <select id="sort"><option value="recommended">Recommended first</option><option value="name">Name A–Z</option><option value="category">Field A–Z</option></select></label>
+            <button id="reset" type="button" class="reset-button">Clear filters</button>
+          </div>
+          <div class="category-chips" id="categoryChips" aria-label="Filter by research field"></div>
+        </div>
+
+        <div class="results-head"><p id="resultCount" aria-live="polite">Loading resources…</p><p class="results-tip">Official links open in a new tab <span aria-hidden="true">↗</span></p></div>
+        <div id="results" class="resource-grid" aria-live="off"></div>
+        <div id="empty" class="empty-state" hidden><div aria-hidden="true">⌕</div><h3>No matching resources</h3><p>Try fewer keywords or broaden the filters.</p><button id="emptyReset" type="button" class="primary-button">Reset search</button></div>
+        <div id="loadError" class="error-state" hidden><h3>Could not load the directory</h3><p>The catalog was unavailable. Reload this page or view the dataset on GitHub.</p><a href="https://github.com/davidwpace/open-biomedical-resource-center/blob/main/data/resources.json">Open the catalog on GitHub</a></div>
+      </section>
+
+      <section id="workflows" class="workflows-section section-pad" aria-labelledby="workflows-title">
+        <div class="section-heading"><div><span class="section-kicker">02 / START SOMEWHERE</span><h2 id="workflows-title">From curiosity to a research plan<span class="period">.</span></h2><p>Not sure where to begin? Follow a guided pathway using complementary resources.</p></div></div>
+        <div class="workflows-grid">
+          <article class="workflow-card"><span class="workflow-number">01</span><span class="workflow-icon" aria-hidden="true">◌</span><h3>Understand human-cell models</h3><p>Explore alternatives to animal testing and learn when organoids or cell-based systems are appropriate.</p><button class="workflow-link" data-query="NAMs" data-category="NAMs and human models">Explore this path <span aria-hidden="true">→</span></button></article>
+          <article class="workflow-card"><span class="workflow-number">02</span><span class="workflow-icon" aria-hidden="true">⌘</span><h3>Investigate cancer biology</h3><p>Move from genomic observations to molecular hypotheses using independent public datasets.</p><button class="workflow-link" data-query="" data-category="Genomics, transcriptomics and pathways">Explore this path <span aria-hidden="true">→</span></button></article>
+          <article class="workflow-card"><span class="workflow-number">03</span><span class="workflow-icon" aria-hidden="true">⌬</span><h3>Discover drug targets</h3><p>Connect disease evidence, genes, compounds, and published response data—without mistaking predictions for treatments.</p><button class="workflow-link" data-query="" data-category="Drug discovery and variant interpretation">Explore this path <span aria-hidden="true">→</span></button></article>
+          <article class="workflow-card"><span class="workflow-number">04</span><span class="workflow-icon" aria-hidden="true">◈</span><h3>Run a virtual experiment</h3><p>Compare modeling platforms and find reusable systems-biology models to test explicit assumptions.</p><button class="workflow-link" data-query="" data-category="Simulation and systems biology">Explore this path <span aria-hidden="true">→</span></button></article>
+        </div>
+      </section>
+
+      <section id="about" class="about-section section-pad" aria-labelledby="about-title">
+        <div class="about-text"><span class="section-kicker">03 / OUR PRINCIPLES</span><h2 id="about-title">Accessible knowledge.<br><em>Evidence without shortcuts.</em></h2><p>Open Biomedical Resource Center is a community-minded directory—not a medical device, clinical decision-support system, or substitute for specialist interpretation. Every listing links back to its official provider and reports known limitations.</p>
+        <div class="about-points"><span>✓ Transparent access labels</span><span>✓ Provenance and verification dates</span><span>✓ Public information only</span><span>✓ Independent from commercial listings</span></div></div>
+        <div class="contribute-panel"><span class="section-kicker">HELP IT GROW</span><h3>Know a resource we should feature?</h3><p>Suggest a tool, report a broken link, or help refine the catalog. Contributions are reviewed before publishing.</p><a class="primary-button" href="https://github.com/davidwpace/open-biomedical-resource-center/issues/new" target="_blank" rel="noopener noreferrer">Suggest a resource <span aria-hidden="true">↗</span></a><p class="fine-print">Please do not submit patient-identifying information or private records.</p></div>
+      </section>
+    </main>
+    <footer class="site-footer"><div><span class="footer-mark">✳</span><strong>OPEN BIOMED</strong><small>Knowledge belongs in motion.</small></div><div class="footer-links"><a href="#directory">Directory</a><a href="#about">About</a><a href="https://github.com/davidwpace/open-biomedical-resource-center" target="_blank" rel="noopener noreferrer">Source code ↗</a></div><p>© <span id="year"></span> Open Biomedical Resource Center. Research and education only. Original software content subject to repository license; source datasets retain their own terms.</p></footer>
+  </div>
+
+  <dialog id="resourceDialog" aria-labelledby="dialogTitle">
+    <div class="dialog-inner"><div class="dialog-top"><span class="section-kicker">RESOURCE DETAILS</span><button type="button" id="closeDialog" class="dialog-close" aria-label="Close resource details">×</button></div><div id="detailContent"></div></div>
+  </dialog>
+</body>
+</html>
