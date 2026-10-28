@@ -50,7 +50,20 @@ def validate():
     if openapi.get("servers", [{}])[0].get("url") != BASE:
         errors.append("OpenAPI server base URL mismatch")
 
+    lab = (ROOT / "lab/braf-melanoma.html").read_text(encoding="utf-8")
+    for required in ('demo.js', 'demo.css', 'id="downloadReport"', 'id="copyReport"',
+                     'https://www.cancer.gov/types/skin/hp/melanoma-treatment-pdq',
+                     'https://depmap.org/portal/data_explorer_2/',
+                     'https://platform.opentargets.org/target/ENSG00000157764',
+                     'https://www.proteinatlas.org/ENSG00000157764-BRAF'):
+        if required not in lab:
+            errors.append(f"Lab missing asset or source: {required}")
+    for asset in ('lab/demo.js', 'lab/demo.css'):
+        if not (ROOT / asset).is_file():
+            errors.append(f"Missing lab file: {asset}")
     index = (ROOT / "index.html").read_text(encoding="utf-8")
+    if 'lab/braf-melanoma.html' not in index:
+        errors.append("Homepage does not link to the BioDiscovery Lab")
     llms = (ROOT / "llms.txt").read_text(encoding="utf-8")
     agent = (ROOT / "agent-access.html").read_text(encoding="utf-8")
     for marker in ('id="copyCatalog"', 'id="downloadCatalog"', 'id="manualCopy"', 'data/resources.json'):
@@ -64,7 +77,7 @@ def validate():
             errors.append(f"Agent documentation does not expose {target}")
     tree = ET.parse(ROOT / "sitemap.xml")
     locs = {node.text for node in tree.iter() if node.tag.endswith("}loc")}
-    for target in ("", "catalog.html", "agent-access.html"):
+    for target in ("", "catalog.html", "agent-access.html", "lab/braf-melanoma.html"):
         if BASE + target not in locs:
             errors.append(f"Missing sitemap location: {target or '(homepage)'}")
     for loc in locs:
