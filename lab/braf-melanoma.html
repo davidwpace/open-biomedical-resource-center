@@ -22,7 +22,7 @@
       <span class="kicker"><span class="live-dot" aria-hidden="true"></span> FREE, NO LOGIN · GUIDED DISCOVERY 001</span>
       <h1>What if a gene change revealed <em>a weakness in cancer?</em></h1>
       <p>Follow the evidence behind a real scientific breakthrough in BRAF-mutant melanoma. Start with a question, explore the biology, follow authentic research sources, and leave with a report you can share with your favorite AI.</p>
-      <div class="hero-actions"><a class="solid-btn" href="#investigation">Start the investigation <span aria-hidden="true">↓</span></a><span class="est">4 checkpoints · Research &amp; education only</span></div>
+      <div class="hero-actions"><a class="solid-btn" href="#story-guide">Walk me through the discovery <span aria-hidden="true">↓</span></a><span class="est">5 short chapters · Research &amp; education only</span></div>
     </div>
     <div class="hero-graphic" aria-hidden="true">
       <span class="halo halo-one"></span><span class="halo halo-two"></span><span class="hero-cell"><span class="hero-cell-core">BRAF</span></span>
@@ -34,13 +34,73 @@
   <div class="container">
     <section id="investigation" class="investigation" aria-labelledby="inv-title">
       <div class="section-label">YOUR RESEARCH JOURNEY</div>
-      <h2 id="inv-title">A scientific question is a good place to start.</h2>
-      <p class="subhead">You don't need to know bioinformatics. Work through four checkpoints and see how independent sources contribute different pieces of the answer.</p>
+      <h2 id="inv-title">Start with the story behind a breakthrough.</h2>
+      <p class="subhead">First, follow how researchers connected a gene change to a tested treatment. Then explore modern scientific resources for yourself.</p>
       <div class="progress-block"><div class="progress-label"><strong id="completedText">0 of 4 checkpoints reviewed</strong><span>Mark each source after you inspect it</span></div><div class="progress-track" role="progressbar" aria-label="Source review progress" aria-valuemin="0" aria-valuemax="4" aria-valuenow="0" id="progress"><div id="progressFill"></div></div></div>
       <div class="case-band">
         <div class="case-sign"><span class="case-dot" aria-hidden="true"></span><div><span class="case-over">DOCUMENTED EXAMPLE</span><strong>BRAF V600-mutant melanoma</strong></div></div>
         <p>This example is about a defined melanoma subgroup. It is <strong>not</strong> an explanation of all cancers or a recommendation for any individual's treatment.</p>
       </div>
+      <section id="story-guide" class="story-guide" aria-labelledby="story-guide-heading">
+        <div class="story-guide-intro">
+          <span class="story-guide-kicker">YOUR GUIDE · A TRUE DISCOVERY STORY</span>
+          <h3 id="story-guide-heading">“Let me show you how scientists found it.”</h3>
+          <p>We'll take this one small step at a time. Each chapter explains what researchers learned, why it mattered, and what you can try. No scientific training required.</p>
+        </div>
+        <div class="story-guide-body">
+          <div class="story-guide-status"><span id="storyStepLabel" role="status" aria-live="polite">Chapter 1 of 5</span><span id="storyProgressLabel">The question</span></div>
+          <div class="story-chapter-track" role="progressbar" id="storyProgress" aria-label="Discovery story progress" aria-valuemin="1" aria-valuemax="5" aria-valuenow="1"><div id="storyProgressFill"></div></div>
+          <section class="story-slide" data-story-step="0" aria-labelledby="story-chapter-0">
+            <span class="story-date">FIRST, THE QUESTION</span>
+            <h4 id="story-chapter-0" tabindex="-1">What if cancer depends on a broken instruction?</h4>
+            <p>Think of a cell as a busy city. Genes help control how messages move around it. When cancer keeps growing, one question is whether a specific message has become stuck in the “on” position.</p>
+            <div class="story-takeaway"><strong>Your first job:</strong> Look for a repeatable difference between cancer cells and ordinary cells. One suspicious gene isn't yet a proven treatment target.</div>
+            <p class="story-instruction">↓ Tap <strong>Next: See what they found</strong>. I'll guide you.</p>
+          </section>
+          <section class="story-slide" data-story-step="1" aria-labelledby="story-chapter-1" hidden>
+            <span class="story-date">2002 · THE CLUE</span>
+            <h4 id="story-chapter-1" tabindex="-1">They looked at cancer DNA. One gene kept appearing.</h4>
+            <p>A research team led by Helen Davies examined genes in a known growth-signaling pathway and reported <strong>BRAF mutations in 66% of the malignant melanomas they studied</strong>. This was a finding in their study samples—not a claim about every melanoma today.</p>
+            <div class="story-takeaway"><strong>Why this mattered:</strong> BRAF became a compelling suspect. But finding a mutation didn't prove that blocking BRAF would help people.</div>
+            <p class="story-source">See the original discovery: <a href="https://doi.org/10.1038/nature00766" target="_blank" rel="noopener noreferrer">Davies and colleagues, <em>Nature</em> (2002) ↗</a></p>
+            <p class="story-instruction">Next, we'll see what that gene does inside a cell.</p>
+          </section>
+          <section class="story-slide" data-story-step="2" aria-labelledby="story-chapter-2" hidden>
+            <span class="story-date">THE MECHANISM · FOLLOW THE SIGNAL</span>
+            <h4 id="story-chapter-2" tabindex="-1">Imagine the growth message is stuck on.</h4>
+            <p>BRAF helps relay signals through two proteins called <strong>MEK</strong> and <strong>ERK</strong>. Some BRAF V600 changes can push the signaling chain into overactivity. This suggested a testable idea: <em>could interrupting the chain slow a susceptible tumor?</em></p>
+            <button type="button" class="story-try" data-story-mode="mutant">Show me the altered pathway ↓</button>
+            <div class="story-takeaway"><strong>Try it:</strong> In the diagram below, compare <em>Usual signaling</em> with <em>BRAF V600 alteration</em>. The colors and explanation are conceptual—not measured activity.</div>
+            <p class="story-instruction">Use <strong>Back to the walkthrough</strong> beneath the diagram, then continue to the clinical test.</p>
+          </section>
+          <section class="story-slide" data-story-step="3" aria-labelledby="story-chapter-3" hidden>
+            <span class="story-date">2011 · THE CLINICAL TEST</span>
+            <h4 id="story-chapter-3" tabindex="-1">Did a targeted drug actually help people?</h4>
+            <p>In the randomized BRIM-3 trial, <strong>675 people with previously untreated, advanced BRAF V600E melanoma</strong> were assigned to receive the BRAF inhibitor vemurafenib or chemotherapy (dacarbazine).</p>
+            <div class="trial-result" role="group" aria-label="Confirmed tumor response rates from the 2011 BRIM-3 trial: 48 percent with vemurafenib and 5 percent with dacarbazine">
+              <div class="trial-result-title">Confirmed tumor response rates · Original 2011 trial</div>
+              <div class="trial-row"><span>Vemurafenib</span><div class="trial-bar-track"><div class="trial-bar trial-bar-treatment" style="width:48%"></div></div><strong>48%</strong></div>
+              <div class="trial-row"><span>Dacarbazine</span><div class="trial-bar-track"><div class="trial-bar trial-bar-comparison" style="width:5%"></div></div><strong>5%</strong></div>
+              <small>Published historical trial data, not a simulation. Response is not cure or overall survival. These figures apply to the study population, not every patient or today's treatment choices.</small>
+            </div>
+            <div class="story-takeaway"><strong>Why this mattered:</strong> A genetic clue led to a treatment strategy tested in a clinical trial. But treatment had side effects and resistance could develop.</div>
+            <p class="story-source">Original trial: <a href="https://doi.org/10.1056/NEJMoa1103782" target="_blank" rel="noopener noreferrer">Chapman and colleagues, <em>NEJM</em> (2011) ↗</a> · <a href="https://www.cancer.gov/types/skin/hp/melanoma-treatment-pdq" target="_blank" rel="noopener noreferrer">NCI evidence ↗</a></p>
+          </section>
+          <section class="story-slide" data-story-step="4" aria-labelledby="story-chapter-4" hidden>
+            <span class="story-date">YOUR TURN · FOLLOW THE EVIDENCE</span>
+            <h4 id="story-chapter-4" tabindex="-1">Now you know the story. What would you investigate?</h4>
+            <p>The process was: <strong>spot a recurring change → explain its biology → test whether it matters → validate the result.</strong> Different kinds of evidence build confidence.</p>
+            <p>Below are <strong>today's research tools</strong>. They're ways to re-check and extend questions—not a claim that the original research teams used these modern websites.</p>
+            <div class="story-takeaway"><strong>Your next move:</strong> Open a scientific source below, mark it reviewed, and create a report to share with your own AI.</div>
+            <p class="story-instruction">You've finished the story. Continue below to try the resources yourself.</p>
+          </section>
+          <div class="story-navigation">
+            <button type="button" id="storyBack" class="story-back" disabled>← Back</button>
+            <button type="button" id="storyNext" class="story-next">Next: See what they found →</button>
+          </div>
+          <div class="story-skip"><a href="#evidence-title">Already comfortable? Skip to the research sources ↓</a></div>
+        </div>
+      </section>
       <div class="flow-and-sidebar">
         <section class="pathway-card" aria-labelledby="pathway-title">
           <div class="module-top"><span class="module-tag">INTERACTIVE BIOLOGY EXPLAINER</span><span class="legend-badge">Conceptual schematic</span></div>
@@ -61,14 +121,14 @@
             <div class="path-node active" id="node-erk"><small>PROTEIN</small><strong>ERK</strong></div>
           </div>
           <div class="interpretation" aria-live="polite"><div class="interpretation-kicker" id="scenarioLabel">USUAL SIGNALING</div><p id="scenarioText">In healthy signaling contexts, BRAF helps relay upstream cues through MEK and ERK. The actual activity depends on cell type and regulatory feedback.</p></div>
-          <p class="schematic-note"><strong>Evidence boundary:</strong> This diagram is a qualitative teaching aid. Pathway biology is more complex; mutations, drugs, feedback, and resistance vary across models and patients.</p>
+          <a class="pathway-return" href="#story-guide">↑ Back to the narrated walkthrough</a><p class="schematic-note"><strong>Evidence boundary:</strong> This diagram is a qualitative teaching aid. Pathway biology is more complex; mutations, drugs, feedback, and resistance vary across models and patients.</p>
         </section>
         <aside class="discovery-note" aria-labelledby="note-title"><span class="small-tag">THE SCIENTIFIC THINKING</span><h3 id="note-title">The surprise isn't just the mutation.</h3><p>A useful hypothesis has to survive several checks. A gene may be altered in cancer, but that alone doesn't establish that disrupting it will selectively harm cancer cells.</p><ol><li><strong>Association:</strong> Is BRAF biologically relevant?</li><li><strong>Functional evidence:</strong> Do cancer models depend on it?</li><li><strong>Context:</strong> What happens in normal tissues?</li><li><strong>Validation:</strong> Did clinical studies actually support a treatment in a defined group?</li></ol><p class="note-callout">You are examining a proven example of the discovery process—not conducting an experiment on cells.</p></aside>
       </div>
       <section aria-labelledby="evidence-title" class="evidence-section">
         <div class="section-label">FOUR CHECKPOINTS · ORIGINAL SOURCES</div>
-        <h2 id="evidence-title">Follow the evidence yourself.</h2>
-        <p class="subhead">Open each scientific resource, then mark it reviewed. You can finish the demo without a login or payment, although upstream tools may have their own conditions.</p>
+        <h2 id="evidence-title">Now investigate with today's tools.</h2>
+        <p class="subhead">These modern databases weren't all part of the original discovery. They help you ask fresh questions in the same evidence-based spirit. Open a source, check what it actually says, then mark it reviewed.</p>
         <div class="evidence-grid">
           <article class="evidence-card">
             <div class="evidence-num">01 <span>MOLECULAR CLUE</span></div><h3>Find the target</h3><p>Open Targets identifies BRAF (ENSG00000157764) and connects it to pathway, drug, and disease evidence. Its target page links to underlying datasets.</p>
