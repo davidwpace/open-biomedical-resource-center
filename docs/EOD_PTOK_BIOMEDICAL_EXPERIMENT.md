@@ -6,7 +6,7 @@
 
 ### 1. Mission and boundary
 
-**Long-term ambition:** Make it ordinary for people of many practical ages, backgrounds, and levels of formal education to make *useful, auditable contributions* to biomedical research and, where appropriate, the early stages of drug discovery.
+**Long-term ambition:** Make it ordinary for people of many practical ages, backgrounds, and levels of formal education to make *useful, auditable contributions* across the full range of scientific and technical functions supported by the Resource Center—not only drug discovery. A contribution can be a verified observation, dataset annotation, replication, inconsistency report, research question, analysis, modeling result, or appropriately governed sharing of a carefully de-identified case or experience.
 
 The immediate claim is **not** that an untrained person can create a safe, effective medicine or replace professional scientists. Candidate targets, predictive models, and computer simulations require independent biological validation, quality control, safety testing, and properly regulated clinical trials before any therapeutic claim.
 
@@ -27,7 +27,7 @@ The immediate claim is **not** that an untrained person can create a safe, effec
 
 A visitor arrives with a question, a known disease, a gene, a molecule, an image, or a school assignment. The guide uses Level 1 explanations to choose **one fitting starting tool** and explain why; it never requests private patient information.
 
-A small first achievement might be: verify a published gene–disease link, find the original source, note what the result does *not* prove, record an inconsistency, or reproduce a documented public-data visualization.
+A small first achievement might be: verify a published gene–disease link, find the original source, note what the result does *not* prove, record an inconsistency, reproduce a documented public-data visualization, improve an annotation, or propose a responsibly de-identified observational contribution.
 
 That contribution becomes a **structured evidence card**:
 - question and scope
@@ -38,7 +38,7 @@ That contribution becomes a **structured evidence card**:
 - provenance and contributor acknowledgment/consent
 - editorial/expert review status
 
-The card can improve the public knowledge base if quality controls accept it. Some visitors may progress to new hypotheses or computational models, with expert validation before scientific or therapeutic claims.
+The card can improve the public knowledge base if quality controls accept it. Some visitors may progress to new hypotheses or computational models, with expert validation before scientific or therapeutic claims. **A voluntarily contributed case is an observation, not independently verified evidence of causation or a clinically validated finding.**
 
 **Illustrative achievement ladder:** Understand → Verify → Reproduce → Compare → Hypothesize → Propose a test → Expert validation. The first three rungs should be approachable even by novices.
 
@@ -48,7 +48,7 @@ The card can improve the public knowledge base if quality controls accept it. So
 
 **H2 — Structured routing value (PToK):** A knowledge representation with explicit node type, attributes, evidence provenance, context/oddity tags, unknowns and relationship metadata will improve correct tool/expert retrieval, or reduce compute/interaction costs **without lowering correctness**, compared with a simpler keyword/tag baseline. The practical data schema, additional symbols and dimensional semantics must be specified before claiming the mechanism works.
 
-**H3 — Useful public contribution:** With appropriate training and review, a measurable fraction of novice participants can produce reproducible, source-grounded research annotations or comparisons that experts rate as genuinely useful, rather than merely generating plausible prose.
+**H3 — Useful public contribution:** With appropriate training and review, a measurable fraction of novice participants can produce reproducible, source-grounded research annotations, comparisons, documentation corrections, or responsibly reviewed observational contributions that experts rate as genuinely useful, rather than merely generating plausible prose. Any case-derived data require their own consent, privacy and quality gates.
 
 ### 5. Pilot: smallest credible test
 
@@ -69,7 +69,24 @@ The card can improve the public knowledge base if quality controls accept it. So
 
 The project can succeed educationally even if no new biological finding is made. A novel drug target, meaningful therapeutic candidate or evidence of changed biological evolution is **not** a realistic pilot success criterion.
 
-### 6. Editorial program
+### 6. Future opt-in case contribution: separate protected intake, not public GitHub
+
+**User-originated extension (October 28, 2026):** A person may contribute meaningfully simply by adding their **PII-free case** or observation to a broader research pool, including for tool functions other than drug discovery. This idea is recorded as a **future option** requiring privacy safeguards, not authorization to collect personal health data on the existing website.
+
+**Crucial distinction:** Removing names, addresses and obvious personally identifiable information does **not** automatically make health stories anonymous. Rare conditions, chronology, treatment combinations, geography, family information, unique lab trends and free-text narratives can enable re-identification. "PII-free," "de-identified," and "safe for public release" must not be treated as interchangeable.
+
+**Proposed safeguards before accepting actual case contributions:**
+1. A separate secure, consent-based intake service with clear purpose, eligibility, permitted research uses, governance, retention, withdrawal limits and contacts—not an HTML form or GitHub Issue in the public static repository.
+2. Collect only the minimum necessary structured attributes; suppress precise dates, rare combinations and indirect identifiers as appropriate; prevent free-text uploads by default until safe review exists.
+3. Apply applicable privacy, research ethics and institutional/legal requirements. Depending on the setting, obtaining ethics/IRB oversight, a data-use agreement, or other permissions may be necessary; do not presume a public volunteer form satisfies them.
+4. Review re-identification risks, integrity, duplicates, provenance and possible adverse effects before an observation is analyzed, combined or shared. Use controlled access or aggregate summaries when individual records are not appropriate for public release.
+5. Explicitly label evidence status: **self-reported / externally documented / independently verified**. Do not treat self-reports as clinical records or aggregate them as representative epidemiology without assessing selection bias and comparability.
+6. For minors, require additional safeguards and appropriate guardian or institution permissions; design education contributions so children can participate without sharing health data.
+7. Keep intake infrastructure and any consent records completely separate from GitHub Pages and public project code; the resource center may link to an appropriately vetted system, but must not store sensitive case data.
+
+**Phased scope:** First prove safe contributions with source-citation corrections, non-sensitive educational cases, public dataset annotations and synthetic examples clearly labeled as synthetic. Do not enable open medical-case submission before governance and security review.
+
+### 7. Editorial program
 
 Build a source-checked library of landmark discoveries from across scientific history, with recent peer-reviewed findings prioritized when noteworthy. Label historical discovery year separately from the story's publication and last-review dates. Preliminary studies, preprints and hypotheses must be clearly distinguished.
 
@@ -81,16 +98,16 @@ Each story uses escalating depth:
 
 A daily cadence is an eventual editorial goal, not a promise to publish unreviewed science. Contributors should be credited with permission and protected against inadvertent disclosure of sensitive records.
 
-### 7. Current next implementation step
+### 8. Current next implementation step
 
 Improve the BRAF lab's first-task experience: let visitors state **what they already know**, recommend one resource with a plain-language "why this tool" explanation, and invite an authenticated-by-source (not account-authenticated) contribution such as a cited observation or correction. Initially, save a portable local report; review any public contributions through a separate editorial process rather than automatic publication.
 
 Link the EoD/PToK experimental hypothesis from the project context and evaluate visitor understanding before expanding the feature set.
 
-### 8. Guardrails
+### 9. Guardrails
 
 - Scientific predictions ≠ laboratory results ≠ clinical outcomes.
-- Public contribution ≠ anonymous submission of patient health records.
+- A public contribution mechanism must **not** accept sensitive patient health records. Any future case intake requires independent security/privacy governance; removing direct PII alone is not enough to prevent re-identification.
 - Link to original sources; observe external dataset/model licenses and rate limits.
 - No medical treatment recommendations, patient-specific risk scoring or claims of validated drug discovery without appropriate evidence.
 - Test routing systems against error propagation: cheap Level 1 should escalate uncertainty, missing evidence and high-stakes questions to deeper validation.
