@@ -18,7 +18,9 @@ jobs:
       - name: Validate JSON data and official URLs
         run: python3 scripts/validate_catalog.py
       - name: Validate browser JavaScript syntax
-        run: node --check assets/app.js
+        run: |
+          node --check assets/app.js
+          node --check lab/demo.js
       - name: Validate static human/AI discovery endpoints
         run: python3 scripts/validate_discovery.py
       - name: Ensure no patient-facing data folder is committed
