@@ -60,6 +60,57 @@
       if (radio.checked) setScenario(radio.value);
     });
   });
+  // Guide readers through the genuine discovery sequence; no invented biological outputs.
+  const storyChapters = Array.from(document.querySelectorAll(".story-slide"));
+  const storyNames = ["The question", "The 2002 clue", "The mechanism", "The 2011 trial", "Your turn"];
+  const storyNextLabels = [
+    "Next: See what they found →",
+    "Next: How does it work? →",
+    "Next: Did it help people? →",
+    "Next: Your turn →",
+    "Explore the research tools ↓"
+  ];
+  let storyIndex = 0;
+  const reducedMotion = window.matchMedia("(prefers-reduced-motion: reduce)");
+  function showStoryStep(index, moveFocus = true) {
+    storyIndex = Math.max(0, Math.min(storyChapters.length - 1, index));
+    storyChapters.forEach((chapter, i) => { chapter.hidden = i !== storyIndex; });
+    $("storyStepLabel").textContent = "Chapter " + (storyIndex + 1) + " of " + storyChapters.length;
+    $("storyProgressLabel").textContent = storyNames[storyIndex];
+    $("storyProgress").setAttribute("aria-valuenow", String(storyIndex + 1));
+    $("storyProgressFill").style.width = (100 * (storyIndex + 1) / storyChapters.length) + "%";
+    $("storyBack").disabled = storyIndex === 0;
+    $("storyNext").textContent = storyNextLabels[storyIndex];
+    if (moveFocus) {
+      $("story-guide").scrollIntoView({ behavior: reducedMotion.matches ? "instant" : "smooth", block: "start" });
+      const title = storyChapters[storyIndex].querySelector("h4");
+      if (title) title.focus({ preventScroll: true });
+    }
+  }
+  $("storyBack").addEventListener("click", () => showStoryStep(storyIndex - 1));
+  $("storyNext").addEventListener("click", () => {
+    if (storyIndex < storyChapters.length - 1) {
+      showStoryStep(storyIndex + 1);
+    } else {
+      $("evidence-title").scrollIntoView({ behavior: reducedMotion.matches ? "instant" : "smooth", block: "start" });
+      $("evidence-title").setAttribute("tabindex", "-1");
+      $("evidence-title").focus({ preventScroll: true });
+    }
+  });
+  document.querySelectorAll("[data-story-mode]").forEach((button) => {
+    button.addEventListener("click", () => {
+      const mode = button.dataset.storyMode;
+      const radio = document.querySelector('input[name="mode"][value="' + mode + '"]');
+      if (!radio) return;
+      radio.checked = true;
+      radio.dispatchEvent(new Event("change", { bubbles: true }));
+      $("pathway-title").scrollIntoView({ behavior: reducedMotion.matches ? "instant" : "smooth", block: "start" });
+      $("pathway-title").setAttribute("tabindex", "-1");
+      $("pathway-title").focus({ preventScroll: true });
+    });
+  });
+  if (storyChapters.length) showStoryStep(0, false);
+
   const reviews = Array.from(document.querySelectorAll("[data-review]"));
   function updateProgress() {
     const count = reviews.filter((item) => item.checked).length;
@@ -87,6 +138,13 @@
       "## Known biology (conceptual)",
       "BRAF is part of a signaling chain involving MEK and ERK. Selected BRAF V600 alterations can drive dysregulated MAPK signaling. In certain BRAF V600 melanoma settings, BRAF and MEK inhibitors have clinical evidence.",
       "The pathway illustration is not a quantitative simulation or experimental measurement.",
+      "",
+      "## Historical discovery milestones (reported observations)",
+      "2002 — Davies et al., Nature 417:949–954. BRAF mutations were reported in 66% of malignant melanoma samples in the original study (not a population-wide contemporary estimate).",
+      "Original paper: https://doi.org/10.1038/nature00766",
+      "2011 — Chapman et al., New England Journal of Medicine 364:2507–2516. BRIM-3 randomized 675 patients with advanced BRAF V600E melanoma to vemurafenib or dacarbazine. Published confirmed tumor response rates: 48% vs 5%. Historical trial results are not a guarantee of individual benefit or cure.",
+      "Original paper: https://doi.org/10.1056/NEJMoa1103782",
+      "NCI current clinical evidence: https://www.cancer.gov/types/skin/hp/melanoma-treatment-pdq",
       "",
       "## Source checkpoints"
     ];
