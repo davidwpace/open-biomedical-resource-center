@@ -8,7 +8,7 @@
 ## User benefit
 
 A person with no coding or specialist biomedical training can open one page and:
-1. Ask how a mutation could reveal a cancer vulnerability.
+1. Follow a five-chapter narrated story of how BRAF became a research clue and clinical target.
 2. Switch between three qualitative BRAF → MEK → ERK pathway explanations.
 3. Follow four independently verifiable scientific-resource links.
 4. Mark sources they personally reviewed and export a Markdown evidence report to share with an AI.
@@ -32,6 +32,28 @@ The demo does not generate synthetic measurement results or claim to perform rea
 | DepMap checkpoint | External source/link and proposed analysis path | No data imported; no quantitative claims |
 | NCI targeted-treatment background | Clinical evidence in specified melanoma contexts | Not a personalized treatment suggestion |
 | Report/download | User-generated educational notes with source links | Not automatically externally validated or a new discovery |
+
+## First-visitor narrated story (added after usability feedback)
+
+The primary hero action now opens **"Let me show you how scientists found it"**—a five-chapter, one-step-at-a-time walkthrough with Back/Next buttons, visible chapter progress and the option to skip straight to the scientific sources.
+
+| Chapter | Visitor question / historical finding | Actual source |
+|---|---|---|
+| 1. The question | Could a cancer have a recurring, actionable change? | Framing, not an original experimental finding |
+| 2. The clue (2002) | Davies et al. identified BRAF somatic missense mutations in **66% of malignant melanoma samples examined** | [Nature 2002, DOI 10.1038/nature00766](https://doi.org/10.1038/nature00766) |
+| 3. The mechanism | Some BRAF V600 mutations activate BRAF→MEK→ERK signaling in defined contexts | Simplified pathway diagram, not a quantitative simulation |
+| 4. The clinical test (2011) | BRIM-3 randomized **675** advanced BRAF V600E melanoma patients to vemurafenib or dacarbazine; **48% vs 5% confirmed response rates** in original report | [NEJM 2011, DOI 10.1056/NEJMoa1103782](https://doi.org/10.1056/NEJMoa1103782) and [NCI PDQ](https://www.cancer.gov/types/skin/hp/melanoma-treatment-pdq) |
+| 5. Your turn | Follow present-day public sources and document what you actually checked | Linked Open Targets, DepMap, Human Protein Atlas, NCI |
+
+**Interpretation safeguards:**
+- The original 2002 mutation proportion is *within the study samples*, not a present-day population estimate.
+- The 2011 trial response rates are historical, **not cure, overall survival, or today's standard-of-care comparison**; the treatment was associated with side effects and resistance.
+- The modern websites featured in the evidence section are for today's visitor, not a historical claim that 2002/2011 teams accessed them.
+- The 48% and 5% bars reproduce the original publication's percentages; no synthetic patient values.
+- Source-review progress now appears *after* the walkthrough, where it belongs.
+- The exported report includes the 2002 and 2011 original publications, with limitations.
+
+**Phone usability acceptance check:** First tap should be "Walk me through the discovery", then tap **Next** through five chapters, interact with the pathway when prompted, follow "Back to the narrated walkthrough", inspect the clinical trial comparison, and finally use "Explore the research tools." Test the Back button, chapter numbering and report on Android. Avoid forcing a modal tutorial.
 
 ## Technical design
 
