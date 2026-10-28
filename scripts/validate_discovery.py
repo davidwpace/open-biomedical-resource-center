@@ -51,6 +51,19 @@ def validate():
         errors.append("OpenAPI server base URL mismatch")
 
     lab = (ROOT / "lab/braf-melanoma.html").read_text(encoding="utf-8")
+    for marker in ('id="story-guide"', 'id="storyNext"', 'id="storyBack"',
+                   'data-story-step="0"', 'data-story-step="1"', 'data-story-step="2"',
+                   'data-story-step="3"', 'data-story-step="4"',
+                   'https://doi.org/10.1038/nature00766',
+                   'https://doi.org/10.1056/NEJMoa1103782',
+                   '48%', '5%', 'Back to the narrated walkthrough'):
+        if marker not in lab:
+            errors.append(f"Guided BRAF story missing: {marker}")
+    demo_js = (ROOT / "lab/demo.js").read_text(encoding="utf-8")
+    for marker in ('function showStoryStep(', 'storyNext', 'storyBack',
+                   '## Historical discovery milestones'):
+        if marker not in demo_js:
+            errors.append(f"Lab guide script missing: {marker}")
     for required in ('demo.js', 'demo.css', 'id="downloadReport"', 'id="copyReport"',
                      'https://www.cancer.gov/types/skin/hp/melanoma-treatment-pdq',
                      'https://depmap.org/portal/data_explorer_2/',
