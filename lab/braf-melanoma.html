@@ -1,0 +1,114 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="theme-color" content="#0a2735">
+<meta name="description" content="Take a free interactive biomedical research journey. Explore a verified BRAF–melanoma example with four public resources, an interactive pathway schematic and downloadable evidence report.">
+<link rel="canonical" href="https://davidwpace.github.io/open-biomedical-resource-center/lab/braf-melanoma.html">
+<link rel="stylesheet" href="demo.css">
+<script src="demo.js" defer></script>
+<title>BioDiscovery Lab — Can a gene change reveal a cancer weakness?</title>
+</head>
+<body>
+<a class="skip" href="#main">Skip to the experiment</a>
+<header class="topbar">
+  <a href="../index.html" class="sitebrand"><span aria-hidden="true">✳</span> OPEN BIOMED <small>RESOURCE CENTER</small></a>
+  <a class="back-link" href="../index.html#workflows">← Explore the resource center</a>
+</header>
+<main id="main">
+  <section class="intro">
+    <div class="intro-inner">
+      <span class="kicker"><span class="live-dot" aria-hidden="true"></span> FREE, NO LOGIN · GUIDED DISCOVERY 001</span>
+      <h1>What if a gene change revealed <em>a weakness in cancer?</em></h1>
+      <p>Follow the evidence behind a real scientific breakthrough in BRAF-mutant melanoma. Start with a question, explore the biology, follow authentic research sources, and leave with a report you can share with your favorite AI.</p>
+      <div class="hero-actions"><a class="solid-btn" href="#investigation">Start the investigation <span aria-hidden="true">↓</span></a><span class="est">4 checkpoints · Research &amp; education only</span></div>
+    </div>
+    <div class="hero-graphic" aria-hidden="true">
+      <span class="halo halo-one"></span><span class="halo halo-two"></span><span class="hero-cell"><span class="hero-cell-core">BRAF</span></span>
+      <span class="dna-label dna-one">GENE</span><span class="dna-label dna-two">PATHWAY</span><span class="dna-label dna-three">EVIDENCE</span>
+      <span class="spark sp1"></span><span class="spark sp2"></span><span class="spark sp3"></span>
+    </div>
+  </section>
+  <div class="promise"><div><strong>Real sources</strong><span>Official NIH, NCI, Open Targets &amp; DepMap links</span></div><div><strong>Honest limits</strong><span>Diagrams ≠ experiments</span></div><div><strong>Your takeaway</strong><span>A cited report, ready to share</span></div></div>
+  <div class="container">
+    <section id="investigation" class="investigation" aria-labelledby="inv-title">
+      <div class="section-label">YOUR RESEARCH JOURNEY</div>
+      <h2 id="inv-title">A scientific question is a good place to start.</h2>
+      <p class="subhead">You don't need to know bioinformatics. Work through four checkpoints and see how independent sources contribute different pieces of the answer.</p>
+      <div class="progress-block"><div class="progress-label"><strong id="completedText">0 of 4 checkpoints reviewed</strong><span>Mark each source after you inspect it</span></div><div class="progress-track" role="progressbar" aria-label="Source review progress" aria-valuemin="0" aria-valuemax="4" aria-valuenow="0" id="progress"><div id="progressFill"></div></div></div>
+      <div class="case-band">
+        <div class="case-sign"><span class="case-dot" aria-hidden="true"></span><div><span class="case-over">DOCUMENTED EXAMPLE</span><strong>BRAF V600-mutant melanoma</strong></div></div>
+        <p>This example is about a defined melanoma subgroup. It is <strong>not</strong> an explanation of all cancers or a recommendation for any individual's treatment.</p>
+      </div>
+      <div class="flow-and-sidebar">
+        <section class="pathway-card" aria-labelledby="pathway-title">
+          <div class="module-top"><span class="module-tag">INTERACTIVE BIOLOGY EXPLAINER</span><span class="legend-badge">Conceptual schematic</span></div>
+          <h3 id="pathway-title">Explore the signaling chain</h3>
+          <p class="panel-explain">Choose a scenario to see a simplified pathway story. There are <strong>no simulated cell counts, treatment-effect calculations, or new experimental results</strong> here.</p>
+          <fieldset class="mode-choice"><legend>Choose a scenario</legend><div class="mode-options">
+            <label><input name="mode" type="radio" value="normal" checked><span>Usual signaling</span></label>
+            <label><input name="mode" type="radio" value="mutant"><span>BRAF V600 alteration</span></label>
+            <label><input name="mode" type="radio" value="inhibited"><span>Targeted pathway inhibition</span></label>
+          </div></fieldset>
+          <div class="signal-path" aria-label="Simplified growth signaling pathway">
+            <div class="path-node" id="node-signal"><small>UPSTREAM</small><strong>Growth signal</strong></div>
+            <span class="path-arrow" aria-hidden="true">→</span>
+            <div class="path-node active" id="node-braf"><small>GENE / PROTEIN</small><strong>BRAF</strong></div>
+            <span class="path-arrow" aria-hidden="true">→</span>
+            <div class="path-node active" id="node-mek"><small>PROTEIN</small><strong>MEK</strong></div>
+            <span class="path-arrow" aria-hidden="true">→</span>
+            <div class="path-node active" id="node-erk"><small>PROTEIN</small><strong>ERK</strong></div>
+          </div>
+          <div class="interpretation" aria-live="polite"><div class="interpretation-kicker" id="scenarioLabel">USUAL SIGNALING</div><p id="scenarioText">In healthy signaling contexts, BRAF helps relay upstream cues through MEK and ERK. The actual activity depends on cell type and regulatory feedback.</p></div>
+          <p class="schematic-note"><strong>Evidence boundary:</strong> This diagram is a qualitative teaching aid. Pathway biology is more complex; mutations, drugs, feedback, and resistance vary across models and patients.</p>
+        </section>
+        <aside class="discovery-note" aria-labelledby="note-title"><span class="small-tag">THE SCIENTIFIC THINKING</span><h3 id="note-title">The surprise isn't just the mutation.</h3><p>A useful hypothesis has to survive several checks. A gene may be altered in cancer, but that alone doesn't establish that disrupting it will selectively harm cancer cells.</p><ol><li><strong>Association:</strong> Is BRAF biologically relevant?</li><li><strong>Functional evidence:</strong> Do cancer models depend on it?</li><li><strong>Context:</strong> What happens in normal tissues?</li><li><strong>Validation:</strong> Did clinical studies actually support a treatment in a defined group?</li></ol><p class="note-callout">You are examining a proven example of the discovery process—not conducting an experiment on cells.</p></aside>
+      </div>
+      <section aria-labelledby="evidence-title" class="evidence-section">
+        <div class="section-label">FOUR CHECKPOINTS · ORIGINAL SOURCES</div>
+        <h2 id="evidence-title">Follow the evidence yourself.</h2>
+        <p class="subhead">Open each scientific resource, then mark it reviewed. You can finish the demo without a login or payment, although upstream tools may have their own conditions.</p>
+        <div class="evidence-grid">
+          <article class="evidence-card">
+            <div class="evidence-num">01 <span>MOLECULAR CLUE</span></div><h3>Find the target</h3><p>Open Targets identifies BRAF (ENSG00000157764) and connects it to pathway, drug, and disease evidence. Its target page links to underlying datasets.</p>
+            <p class="evidence-limit"><strong>Don't assume:</strong> A disease–target association automatically proves drug benefit.</p>
+            <a class="evidence-link" href="https://platform.opentargets.org/target/ENSG00000157764" target="_blank" rel="noopener noreferrer">Explore BRAF in Open Targets ↗</a>
+            <label class="review-check"><input type="checkbox" data-review="0"><span>I've reviewed this source</span></label>
+          </article>
+          <article class="evidence-card">
+            <div class="evidence-num">02 <span>FUNCTIONAL QUESTION</span></div><h3>Test the dependency idea</h3><p>DepMap lets you investigate public cancer cell-line CRISPR dependencies. Try comparing BRAF gene effect with BRAF mutation context across melanoma models.</p>
+            <p class="evidence-limit"><strong>Don't assume:</strong> We have downloaded or analyzed DepMap measurements in this demonstration.</p>
+            <a class="evidence-link" href="https://depmap.org/portal/data_explorer_2/" target="_blank" rel="noopener noreferrer">Open DepMap Data Explorer ↗</a>
+            <label class="review-check"><input type="checkbox" data-review="1"><span>I've reviewed this source</span></label>
+          </article>
+          <article class="evidence-card">
+            <div class="evidence-num">03 <span>NORMAL-TISSUE CONTEXT</span></div><h3>Look beyond the tumor</h3><p>The Human Protein Atlas documents BRAF expression across normal human tissues and cell types. That matters when thinking about specificity and potential harm.</p>
+            <p class="evidence-limit"><strong>Don't assume:</strong> Normal expression alone predicts clinical side effects or safety.</p>
+            <a class="evidence-link" href="https://www.proteinatlas.org/ENSG00000157764-BRAF" target="_blank" rel="noopener noreferrer">Inspect BRAF in Human Protein Atlas ↗</a>
+            <label class="review-check"><input type="checkbox" data-review="2"><span>I've reviewed this source</span></label>
+          </article>
+          <article class="evidence-card">
+            <div class="evidence-num">04 <span>CLINICAL VALIDATION</span></div><h3>See what has been tested</h3><p>The National Cancer Institute summarizes randomized studies of BRAF and MEK inhibitors for specified BRAF V600 melanoma settings. Eligibility and clinical context are essential.</p>
+            <p class="evidence-limit"><strong>Don't assume:</strong> Findings extend to BRAF-wild-type melanoma, every BRAF variant, or another cancer.</p>
+            <a class="evidence-link" href="https://www.cancer.gov/types/skin/hp/melanoma-treatment-pdq" target="_blank" rel="noopener noreferrer">Read NCI melanoma treatment evidence ↗</a>
+            <label class="review-check"><input type="checkbox" data-review="3"><span>I've reviewed this source</span></label>
+          </article>
+        </div>
+      </section>
+    </section>
+    <section class="takeaway" id="report" aria-labelledby="report-title">
+      <div class="report-header"><div><span class="section-label">YOUR TAKEAWAY</span><h2 id="report-title">Make your research traceable.</h2><p>Export a brief, source-linked summary of this investigation, including what you reviewed, what remains untested, and where to go next.</p></div><div class="report-symbol" aria-hidden="true">↗</div></div>
+      <label for="researchQuestion" class="input-label">A research question you'd explore next (optional)</label>
+      <textarea id="researchQuestion" rows="3" maxlength="700" placeholder="For example: Do melanoma cell lines with different BRAF variants show distinct gene dependencies? Please don't enter private medical details."></textarea>
+      <div class="report-actions"><button type="button" id="downloadReport" class="solid-btn">Download evidence report ↓</button><button type="button" id="copyReport" class="outline-btn">Copy for my AI ⧉</button></div>
+      <div id="reportMessage" role="status" aria-live="polite"></div>
+      <div id="fallback" hidden><label for="reportText">Select and copy this summary</label><textarea id="reportText" readonly rows="9"></textarea><button type="button" id="selectReport" class="mini-btn">Select all</button></div>
+      <p class="privacy">Your notes remain in this browser tab until you choose to copy or download them. The demo does not save them to our servers. Avoid entering patient information.</p>
+    </section>
+    <section class="outro" aria-labelledby="outro-title"><div><span class="section-label">THE BIGGER PICTURE</span><h2 id="outro-title">One question. Four public resources. A new way to learn.</h2><p>Try the same evidence-building approach with another problem—or share this report with the AI assistant you already use. The next step in science is a better question, not an unsupported claim of discovery.</p></div><a class="outline-btn" href="../index.html#directory">Explore 42 more starting points ↗</a></section>
+  </div>
+</main>
+<footer class="footer"><span>OPEN BIOMED RESOURCE CENTER · <strong>BIODISCOVERY LAB 001</strong></span><a href="../agent-access.html">Bring your own AI ↗</a><p>Research and education only. This demonstration does not provide clinical advice, validate new targets, or process patient data. Scientific source notes reviewed October 27, 2026.</p></footer>
+</body>
+</html>
