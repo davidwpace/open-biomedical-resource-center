@@ -32,6 +32,15 @@ The site includes machine-readable Schema.org metadata for the **directory's own
 
 Because GitHub Pages uses a project subpath, `llms.txt` lives below `/open-biomedical-resource-center/`, not automatically at the host domain root. The HTML and README link to it explicitly. Search Console ownership and sitemap submission are separate, optional launch steps.
 
+## Try the BioDiscovery Lab (free interactive prototype)
+
+A visitor can investigate a documented **BRAF V600 melanoma** signaling example in a mobile-friendly guided page: [BioDiscovery Lab 001](lab/braf-melanoma.html). It includes a qualitative BRAF→MEK→ERK schematic, four links to scientific evidence sources, self-marked checkpoints and a shareable/downloadable Markdown evidence report.
+
+- Published address after Pages deployment: https://davidwpace.github.io/open-biomedical-resource-center/lab/braf-melanoma.html
+- Source and evidence boundaries: [docs/BIODISCOVERY_LAB_001.md](docs/BIODISCOVERY_LAB_001.md).
+- It is **not** an experimental drug-discovery engine, quantitative simulation or personalized medical tool. No DepMap CRISPR results are calculated or imported by this demo.
+- No API key, AI subscription, user account, or backend required. Visitors can paste the report into their own AI assistant.
+
 ## What the site can do
 
 - Search name, description, tags, and access notes.
