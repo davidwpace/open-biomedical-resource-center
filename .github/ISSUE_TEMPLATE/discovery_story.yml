@@ -1,0 +1,54 @@
+name: "Suggest a discovery story"
+description: "Propose a historic or current scientific discovery that can teach one useful research skill."
+title: "[Story idea] "
+body:
+  - type: markdown
+    attributes:
+      value: |
+        We welcome **landmark breakthroughs from any era** and especially well-supported new findings. Every story must teach how investigators found something and give readers a safe source-checking task. This is a **public form**: do not share identifiable medical cases or private information.
+  - type: input
+    id: question
+    attributes:
+      label: "The short mystery or question"
+      placeholder: "Why did the bacteria disappear near the mold?"
+    validations:
+      required: true
+  - type: input
+    id: source
+    attributes:
+      label: "Original research or credible historical source"
+      description: "Use a DOI, institutional historical account, or official publication."
+      placeholder: "https://..."
+    validations:
+      required: true
+  - type: input
+    id: year
+    attributes:
+      label: "Year of the scientific event"
+      description: "Not the year this article is being suggested or published."
+      placeholder: "1928"
+    validations:
+      required: true
+  - type: textarea
+    id: lesson
+    attributes:
+      label: "What did scientists observe, test, and learn?"
+      description: "A few plain sentences. Note what remains uncertain."
+    validations:
+      required: true
+  - type: textarea
+    id: mission
+    attributes:
+      label: "One simple research task a beginner could try"
+      placeholder: "Use [public resource] to look up [checkable fact], because [why the tool fits]."
+    validations:
+      required: true
+  - type: checkboxes
+    id: safety
+    attributes:
+      label: "Public information and evidence"
+      options:
+        - label: "I have not included private records, identifiable patient information, or confidential material."
+          required: true
+        - label: "I understand a story proposal is not peer review or evidence of a clinical breakthrough."
+          required: true
