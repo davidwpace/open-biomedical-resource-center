@@ -1,0 +1,63 @@
+name: "Research observation (public sources only)"
+description: "Share a source-backed observation, correction, or reproducibility note. No private cases or health data."
+title: "[Public evidence] "
+body:
+  - type: markdown
+    attributes:
+      value: |
+        ## Share something useful—with sources.
+        **PUBLIC FOREVER WARNING:** GitHub issues can be indexed, cloned, quoted, and retained in history. **Do not post medical cases, medical history, diagnoses about identifiable people, records, scans, lab results, genetic information, identifying dates, addresses, screenshots, names, or private data—even if direct identifiers were removed.** This form is only for work on **already public research information**.
+        You do not need a new discovery. Checking a source or finding a catalog error helps.
+  - type: dropdown
+    id: kind
+    attributes:
+      label: "What kind of public-source contribution is this?"
+      options:
+        - "I checked or corrected an existing research source"
+        - "I found an inconsistency in public scientific information"
+        - "I reproduced a published public-data result"
+        - "I propose a research question grounded in published evidence"
+        - "I improved a resource description or tool instructions"
+    validations:
+      required: true
+  - type: input
+    id: source
+    attributes:
+      label: "Link to an original, publicly available source"
+      description: "DOI, official provider URL, or public dataset page (not a personal record)."
+      placeholder: "https://..."
+    validations:
+      required: true
+  - type: textarea
+    id: observation
+    attributes:
+      label: "What did you actually observe in that source?"
+      description: "Report only what is supported; separate facts from guesses."
+      placeholder: "The public page lists [finding], under [heading], as of [date]."
+    validations:
+      required: true
+  - type: textarea
+    id: check
+    attributes:
+      label: "How can someone else check this?"
+      description: "Source location, method, dataset version, steps, or comparison."
+      placeholder: "1. Open the public link. 2. Go to ... 3. Compare ..."
+    validations:
+      required: true
+  - type: textarea
+    id: caveat
+    attributes:
+      label: "What is uncertain or outside the scope?"
+      description: "Include limitations and alternate interpretations."
+      placeholder: "This does not establish ..."
+    validations:
+      required: true
+  - type: checkboxes
+    id: safety
+    attributes:
+      label: "Public submission safeguards"
+      options:
+        - label: "I confirm this contribution uses public, lawfully shareable research information only and contains no personal health/case information, indirect identifiers, private data, or confidential material."
+          required: true
+        - label: "I understand this is a public submission and that review is required before anything is treated as an accepted research contribution."
+          required: true
