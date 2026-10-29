@@ -18,7 +18,8 @@
           "action": "Read one story. Write down the question that made the scientists curious.",
           "caution": "A story explains a finding; it isn't proof that the same idea works in a different case.",
           "special_url": "stories.html",
-          "special_label": "Start with a discovery story"
+          "special_label": "Start with a discovery story",
+          "special_title": "Discovery story library"
         },
         {
           "id": "papers",
@@ -164,7 +165,8 @@
           "action": "Find a resource or citation that needs attention. Submit only its public URL, what is wrong, and how to verify it.",
           "caution": "Do not include personal health details in GitHub Issues; they are publicly visible.",
           "special_url": "contribute.html",
-          "special_label": "Choose a safe way to contribute"
+          "special_label": "Choose a safe way to contribute",
+          "special_title": "Safe public research contributions"
         },
         {
           "id": "reproduce",
