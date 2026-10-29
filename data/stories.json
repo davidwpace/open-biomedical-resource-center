@@ -1,0 +1,149 @@
+{
+  "version": "1.0",
+  "editorial_statement": "Historical discoveries with modern educational research tasks; not breaking news, clinical advice, or claims of new experimental results",
+  "updated_on": "2026-10-28",
+  "stories": [
+    {
+      "slug": "penicillin",
+      "title": "The mold that changed medicine",
+      "eyebrow": "A surprising clue · 1928",
+      "topic": "Chemistry and medicines",
+      "hook": "Why weren't bacteria growing near the mold?",
+      "intro": "One unexpected observation grew into a powerful new way to treat infections—but only after many people did the hard work.",
+      "original_year": 1928,
+      "published_on": "2026-10-28",
+      "reviewed_on": "2026-10-28",
+      "reading_minutes": 3,
+      "category": "Landmark discovery",
+      "theme": "mold",
+      "chapters": [
+        {
+          "kicker": "THE MYSTERY",
+          "title": "Something unusual appeared in a dish.",
+          "body": "In 1928, Alexander Fleming noticed mold growing on a plate of bacteria. Around the mold, the bacteria were not growing normally.",
+          "takeaway": "A surprise is only a clue. The first question is: can we observe it again?",
+          "source": "acs"
+        },
+        {
+          "kicker": "THE CLUE",
+          "title": "Could the mold be releasing something?",
+          "body": "Fleming investigated whether something made by the mold was stopping certain bacteria. He called the substance penicillin.",
+          "takeaway": "Notice the difference between observing a result and explaining what caused it.",
+          "source": "nobel"
+        },
+        {
+          "kicker": "THE TEAMWORK",
+          "title": "A finding in a dish was not yet a medicine.",
+          "body": "Howard Florey, Ernst Chain, Norman Heatley and colleagues helped develop ways to isolate, test and produce penicillin. Moving from laboratory observations to patient treatment required years of additional work.",
+          "takeaway": "Discovering a promising substance is different from proving it can be used safely and reliably.",
+          "source": "acs"
+        },
+        {
+          "kicker": "THE LESSON",
+          "title": "Scientific progress often takes many hands.",
+          "body": "Penicillin helped transform treatment for many bacterial infections. The original clue mattered, but later testing, production and medical evaluation mattered just as much.",
+          "takeaway": "One verified observation can be valuable even when someone else performs the next experiment.",
+          "source": "nobel"
+        }
+      ],
+      "resource_id": "pubchem",
+      "tool_title": "PubChem",
+      "tool_why": "The original story is about a substance. PubChem helps researchers identify exactly which chemical they are talking about.",
+      "tool_url": "https://pubchem.ncbi.nlm.nih.gov/compound/Penicillin-G",
+      "tool_task": "Open the Penicillin G page. Find the PubChem CID (compound ID). Write down the number and one alternate name.",
+      "tool_answer": "The page lists CID 5904 and the synonym benzylpenicillin.",
+      "tool_limitation": "Penicillin is a family of related antibiotics; this activity examines Penicillin G specifically. A chemical listing doesn't establish which medicine anyone should take.",
+      "sources": [
+        {
+          "id": "acs",
+          "label": "American Chemical Society — Discovery and development of penicillin",
+          "url": "https://www.acs.org/education/whatischemistry/landmarks/flemingpenicillin.html",
+          "kind": "Historical research overview"
+        },
+        {
+          "id": "nobel",
+          "label": "Nobel Prize — Alexander Fleming and penicillin",
+          "url": "https://www.nobelprize.org/prizes/medicine/1945/summary/",
+          "kind": "Prize/historical record"
+        },
+        {
+          "id": "pubchem",
+          "label": "NIH PubChem — Penicillin G (CID 5904)",
+          "url": "https://pubchem.ncbi.nlm.nih.gov/compound/Penicillin-G",
+          "kind": "Current chemical data"
+        }
+      ]
+    },
+    {
+      "slug": "insulin",
+      "title": "The teamwork that unlocked insulin",
+      "eyebrow": "A lifesaving question · 1921–1922",
+      "topic": "Genes and human biology",
+      "hook": "Could a missing body signal be replaced?",
+      "intro": "Scientists suspected the pancreas made something that controlled blood sugar. A team's experiments turned that idea into a treatment.",
+      "original_year": 1921,
+      "published_on": "2026-10-28",
+      "reviewed_on": "2026-10-28",
+      "reading_minutes": 3,
+      "category": "Landmark discovery",
+      "theme": "pancreas",
+      "chapters": [
+        {
+          "kicker": "THE MYSTERY",
+          "title": "Why did losing the pancreas cause diabetes?",
+          "body": "Researchers had linked the pancreas to blood sugar control, but the key internal substance was hard to isolate and use.",
+          "takeaway": "A useful question often starts with an observation and something still missing.",
+          "source": "fda"
+        },
+        {
+          "kicker": "THE EARLY EXPERIMENTS",
+          "title": "Banting and Best tested a possibility.",
+          "body": "In 1921, Frederick Banting and Charles Best, working with laboratory resources arranged by J. J. R. Macleod, tested pancreatic extracts in diabetic animals. The results were promising.",
+          "takeaway": "Promising animal findings aren't proof that a treatment will work in people.",
+          "source": "fda"
+        },
+        {
+          "kicker": "THE IMPROVEMENT",
+          "title": "Cleaner extracts changed the outcome.",
+          "body": "Biochemist James Collip improved purification. In January 1922, a more purified preparation produced a clear benefit for Leonard Thompson, an early patient. The first preparation had been less successful.",
+          "takeaway": "Research often advances by improving and repeating an imperfect first attempt.",
+          "source": "fda"
+        },
+        {
+          "kicker": "THE LESSON",
+          "title": "Breakthroughs need different skills.",
+          "body": "Experimental design, laboratory work, chemical purification, clinical care and later large-scale production all contributed. The story is about collaboration, not a single magical moment.",
+          "takeaway": "A contribution can be a better method, a verification, or a key improvement.",
+          "source": "diabetes"
+        }
+      ],
+      "resource_id": "human-protein-atlas",
+      "tool_title": "Human Protein Atlas",
+      "tool_why": "Insulin is made in a specific part of the body. The Human Protein Atlas lets you explore where the INS gene and insulin protein are found.",
+      "tool_url": "https://www.proteinatlas.org/ENSG00000254647-INS/tissue/pancreas",
+      "tool_task": "Open the INS pancreas page. Find which cells show high insulin protein expression, then note the location.",
+      "tool_answer": "The page reports high expression in pancreatic endocrine cells, with cytoplasmic staining in beta cells.",
+      "tool_limitation": "Tissue expression helps explain biology but does not establish a diagnosis, treatment dose, or outcome for an individual.",
+      "sources": [
+        {
+          "id": "fda",
+          "label": "US FDA — 100 Years of Insulin",
+          "url": "https://www.fda.gov/about-fda/fda-history-exhibits/100-years-insulin",
+          "kind": "Historical review"
+        },
+        {
+          "id": "diabetes",
+          "label": "Diabetes UK — Discovery of insulin",
+          "url": "https://www.diabetes.org.uk/our-research/about-our-research/our-impact/discovery-of-insulin",
+          "kind": "Historical timeline"
+        },
+        {
+          "id": "hpa",
+          "label": "Human Protein Atlas — INS in the pancreas",
+          "url": "https://www.proteinatlas.org/ENSG00000254647-INS/tissue/pancreas",
+          "kind": "Current tissue-expression data"
+        }
+      ]
+    }
+  ]
+}
