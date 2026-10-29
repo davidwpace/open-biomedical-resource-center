@@ -4,9 +4,14 @@ on:
   push:
     branches: [main]
   pull_request:
+  workflow_dispatch:
 
 permissions:
   contents: read
+
+concurrency:
+  group: public-site-${{ github.ref }}
+  cancel-in-progress: true
 
 jobs:
   validate:
@@ -20,12 +25,42 @@ jobs:
       - name: Validate browser JavaScript syntax
         run: |
           node --check assets/app.js
-          node --check lab/demo.js
           node --check assets/guide.js
           node --check assets/story.js
+          node --check lab/demo.js
       - name: Validate static human/AI discovery endpoints
         run: python3 scripts/validate_discovery.py
       - name: Ensure no patient-facing data folder is committed
         run: |
           test ! -d patients
           test ! -d clinical-records
+      - name: Build only approved public files and check internal links
+        run: python3 scripts/prepare_pages.py
+      # Upload the approved artifact only after EVERY check above passed.
+      # While Pages is publishing from main, GitHub's branch publishing
+      # remains active. To fully gate publication, switch Pages Source to
+      # GitHub Actions AND set repository variable PAGES_ACTIONS_READY=true.
+      - name: Upload approved GitHub Pages artifact
+        if: github.event_name != 'pull_request'
+        uses: actions/upload-pages-artifact@v4
+        with:
+          path: dist
+
+  deploy:
+    name: Deploy approved site
+    # Disabled until the repository owner completes the documented
+    # GitHub Pages Source switch. Do NOT enable before that transition.
+    if: github.event_name != 'pull_request' && vars.PAGES_ACTIONS_READY == 'true'
+    needs: validate
+    runs-on: ubuntu-latest
+    permissions:
+      contents: read
+      pages: write
+      id-token: write
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    steps:
+      - name: Deploy validated website
+        id: deployment
+        uses: actions/deploy-pages@v4
