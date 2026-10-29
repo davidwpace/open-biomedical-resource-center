@@ -59,11 +59,11 @@
       return;
     }
     stepTwo.hidden = true;
-    $("toolName").textContent = resource.name;
+    $("toolName").textContent = option.special_title || resource.name;
     $("toolWhy").textContent = option.why;
     $("firstAction").textContent = option.action;
     $("toolLimit").textContent = option.caution;
-    $("toolTerms").textContent = "Provider access: " + resource.access + ". Catalog notes: " + resource.limitations;
+    $("toolTerms").textContent = option.special_url ? "You can read without a login. Public GitHub contribution forms generally require an account and editorial review. Do not post private medical data." : "Provider access: " + resource.access + ". Catalog notes: " + resource.limitations;
     const a = $("toolLink");
     a.href = safeUrl(option.special_url || resource.official_url);
     a.textContent = (option.special_label || "Open "+resource.name) + " ↗";
