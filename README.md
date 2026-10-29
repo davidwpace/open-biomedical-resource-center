@@ -32,6 +32,21 @@ The site includes machine-readable Schema.org metadata for the **directory's own
 
 Because GitHub Pages uses a project subpath, `llms.txt` lives below `/open-biomedical-resource-center/`, not automatically at the host domain root. The HTML and README link to it explicitly. Search Console ownership and sitemap submission are separate, optional launch steps.
 
+## Start here: beginner tool finder, landmark stories and safe contributions
+
+**The first click is now simple:** [Find my starting tool](start.html). People choose what they already know (question, condition, gene, molecule, imaging, experimental data, or interest in helping) and one research goal. The site recommends **one resource**, gives the reason, a first verification task, and a methodological limitation. No personal data input or AI subscription.
+
+- [Live tool finder](https://davidwpace.github.io/open-biomedical-resource-center/start.html)
+- [Routing data](data/tool_routes.json) (7 situations / 14 paths, all linked to IDs in the 42-resource catalog)
+- [Discovery story archive](stories.html): historical landmark stories about penicillin and insulin, plus the more detailed BRAF-melanoma walkthrough
+- [Story metadata](data/stories.json): editorial review dates, historical event years, cited institutions, linked modern resource and a mini source-check task
+- [Start a safe public contribution](contribute.html), or [read the public-only policy](CONTRIBUTING.md)
+- [Live contribution hub](https://davidwpace.github.io/open-biomedical-resource-center/contribute.html)
+
+**Important distinction:** The story publication date does not imply that the historical finding happened recently. External data and medical conclusions require independent review; the challenge tasks are educational and do not run patient-specific experiments. The public GitHub submission forms **must never** receive medical cases, images, lab results, private records or identifiable/indirectly identifying details.
+
+We aim for concise text and clear calls to action on mobile, so beginners can focus on the science instead of learning navigation jargon. More accurate story pages are added through editorial review, not automatic AI news publication.
+
 ## Try the BioDiscovery Lab (free interactive prototype)
 
 A visitor can investigate a documented **BRAF V600 melanoma** signaling example in a mobile-friendly guided page: [BioDiscovery Lab 001](lab/braf-melanoma.html). It includes a qualitative BRAF→MEK→ERK schematic, four links to scientific evidence sources, self-marked checkpoints and a shareable/downloadable Markdown evidence report.
