@@ -21,6 +21,8 @@ jobs:
         run: |
           node --check assets/app.js
           node --check lab/demo.js
+          node --check assets/guide.js
+          node --check assets/story.js
       - name: Validate static human/AI discovery endpoints
         run: python3 scripts/validate_discovery.py
       - name: Ensure no patient-facing data folder is committed
