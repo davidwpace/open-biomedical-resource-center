@@ -6,6 +6,19 @@ A public, mobile-friendly directory of biomedical research resources, including 
 
 **Status:** First static-site MVP • **Seed catalog:** 42 resources across 7 areas • **Catalog last checked:** October 27, 2026.
 
+## Publication safety
+
+The `main`-branch GitHub Pages publisher currently runs independently of validation.
+A fail-closed GitHub Actions release pipeline and allowlisted static artifact are
+**prepared but not activated**; this intentionally avoids interrupting the site.
+See **[docs/PUBLISHING_SAFETY.md](docs/PUBLISHING_SAFETY.md)** for the one-time
+GitHub Pages **Source → GitHub Actions** change and repository variable
+`PAGES_ACTIONS_READY=true` required to activate it.
+
+When activated, deployment depends on successful catalog, syntax, discovery,
+privacy-safety, and internal-link checks. Pull requests do not publish.
+The public repository itself must never contain sensitive records or credentials.
+
 ## Preview and hosting
 
 The site is intentionally **HTML + CSS + JavaScript with no build dependencies**.
