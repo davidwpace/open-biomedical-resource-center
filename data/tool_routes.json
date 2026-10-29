@@ -1,0 +1,180 @@
+{
+  "version": "1.0",
+  "updated_on": "2026-10-28",
+  "purpose": "Simple read-only educational routing based on what visitors know, not their personal medical records",
+  "privacy": "No text intake; no identifiers; never submit case information",
+  "choices": [
+    {
+      "id": "question",
+      "icon": "?",
+      "label": "I only have a question",
+      "sub": "I'm curious but don't know the science words yet.",
+      "options": [
+        {
+          "id": "story",
+          "label": "Show me a discovery story",
+          "resource_id": "pubmed",
+          "why": "A short, sourced story teaches the basics before any searching.",
+          "action": "Read one story. Write down the question that made the scientists curious.",
+          "caution": "A story explains a finding; it isn't proof that the same idea works in a different case.",
+          "special_url": "stories.html",
+          "special_label": "Start with a discovery story"
+        },
+        {
+          "id": "papers",
+          "label": "Find what scientists have published",
+          "resource_id": "pubmed",
+          "why": "PubMed helps you find research papers and summaries by topic.",
+          "action": "Open PubMed. Search two or three words about your question. Find one paper's title, date, and study type.",
+          "caution": "One paper may be preliminary or contradicted; a published abstract is not a medical recommendation."
+        }
+      ]
+    },
+    {
+      "id": "condition",
+      "icon": "♡",
+      "label": "I know a condition",
+      "sub": "A health condition or disease name.",
+      "options": [
+        {
+          "id": "genes",
+          "label": "Which genes are linked to it?",
+          "resource_id": "open-targets-platform",
+          "why": "Open Targets collects research evidence connecting diseases and genes.",
+          "action": "Use the disease name to find a disease profile. Look for a linked gene and check what kind of evidence supports it.",
+          "caution": "Linked genes are not necessarily causes or drug targets. Do not enter personal health details."
+        },
+        {
+          "id": "studies",
+          "label": "What clinical studies exist?",
+          "resource_id": "clinicaltrials-gov",
+          "why": "ClinicalTrials.gov lists publicly registered studies and eligibility information.",
+          "action": "Search the condition, then open one study and find its status, eligibility, location and last update date.",
+          "caution": "A listed trial does not mean it is recruiting, suitable, proven effective or medically recommended."
+        }
+      ]
+    },
+    {
+      "id": "gene",
+      "icon": "DNA",
+      "label": "I know a gene",
+      "sub": "A name like BRAF, TP53, or INS.",
+      "options": [
+        {
+          "id": "tissue",
+          "label": "Where is it active in the body?",
+          "resource_id": "human-protein-atlas",
+          "why": "The Human Protein Atlas shows where genes and proteins are found in different tissues.",
+          "action": "Search the gene symbol, open its normal-tissue information, and note one tissue with documented expression.",
+          "caution": "Expression does not prove a disease cause or predict treatment safety."
+        },
+        {
+          "id": "essential",
+          "label": "Do cancer models need it to grow?",
+          "resource_id": "depmap",
+          "why": "DepMap includes experiments that disable genes in laboratory cancer cell lines.",
+          "action": "Find the gene in DepMap. Look for gene-effect data and the cell-model context before comparing values.",
+          "caution": "A cell-line result is not a response prediction for a person. Some functions need extra statistical knowledge."
+        }
+      ]
+    },
+    {
+      "id": "molecule",
+      "icon": "◈",
+      "label": "I know a molecule or drug",
+      "sub": "A chemical, medicine, or lab compound.",
+      "options": [
+        {
+          "id": "identity",
+          "label": "What exactly is this substance?",
+          "resource_id": "pubchem",
+          "why": "PubChem gives chemical names, structures, identifiers and linked scientific information.",
+          "action": "Search the substance, open its compound page, and note its exact name and compound ID.",
+          "caution": "A chemical profile is not proof of effectiveness or safety; compounds with similar names can differ."
+        },
+        {
+          "id": "experiments",
+          "label": "What lab activity has been reported?",
+          "resource_id": "chembl",
+          "why": "ChEMBL collects published bioactivity measurements for molecules and biological targets.",
+          "action": "Search a compound name. Open a reported activity and look for the assay type and measured value.",
+          "caution": "Lab activity is not the same as clinical benefit; check assay conditions and licenses."
+        }
+      ]
+    },
+    {
+      "id": "image",
+      "icon": "▧",
+      "label": "I want to explore an image",
+      "sub": "A microscope image or research scan.",
+      "options": [
+        {
+          "id": "samples",
+          "label": "Find public images I can study",
+          "resource_id": "the-cancer-imaging-archive-tcia",
+          "why": "TCIA provides collections of imaging data shared for cancer research.",
+          "action": "Browse a public collection. Record the modality, dataset description, and access terms.",
+          "caution": "Never upload someone’s private scan to a public repository or chat."
+        },
+        {
+          "id": "view",
+          "label": "Learn how to view a 3D scan",
+          "resource_id": "3d-slicer",
+          "why": "3D Slicer is a free desktop program for exploring and analyzing medical images.",
+          "action": "Open Slicer's beginner documentation and find an example dataset and viewing tutorial.",
+          "caution": "This software requires a compatible computer; interpreting clinical scans requires qualified review."
+        }
+      ]
+    },
+    {
+      "id": "experiment",
+      "icon": "⚗",
+      "label": "I want to explore experiments",
+      "sub": "Data, cell models, or virtual experiments.",
+      "options": [
+        {
+          "id": "data",
+          "label": "Find results from published experiments",
+          "resource_id": "ncbi-gene-expression-omnibus-geo",
+          "why": "NCBI GEO stores public gene-expression and other functional-genomics datasets.",
+          "action": "Search for a topic, choose one study and record its GEO accession and what was measured.",
+          "caution": "Studies may use different conditions or species; comparing them requires care."
+        },
+        {
+          "id": "simulate",
+          "label": "Try a virtual cell experiment",
+          "resource_id": "physicell",
+          "why": "PhysiCell is open-source software for simulating cells and their interactions.",
+          "action": "Explore the official examples and identify what a model assumes before changing a setting.",
+          "caution": "A simulation is only as good as its inputs and validation; software setup may require a computer."
+        }
+      ]
+    },
+    {
+      "id": "contribute",
+      "icon": "✦",
+      "label": "I want to help research",
+      "sub": "Check a source, suggest a tool, or share a finding.",
+      "options": [
+        {
+          "id": "correction",
+          "label": "Suggest a source or fix an error",
+          "resource_id": "pubmed",
+          "why": "A well-documented correction improves the Resource Center for every visitor.",
+          "action": "Find a resource or citation that needs attention. Submit only its public URL, what is wrong, and how to verify it.",
+          "caution": "Do not include personal health details in GitHub Issues; they are publicly visible.",
+          "special_url": "https://github.com/davidwpace/open-biomedical-resource-center/issues/new",
+          "special_label": "Suggest a public-source correction"
+        },
+        {
+          "id": "reproduce",
+          "label": "Try reproducing a published result",
+          "resource_id": "galaxy-training-network",
+          "why": "Galaxy's free, guided lessons teach how to follow reproducible bioinformatics procedures.",
+          "action": "Choose a beginner tutorial, complete one activity and record its lesson URL and exact result.",
+          "caution": "Training data are not patient data. Reproducing a tutorial is not a new medical discovery."
+        }
+      ]
+    }
+  ]
+}
