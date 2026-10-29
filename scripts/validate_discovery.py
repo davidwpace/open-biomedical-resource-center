@@ -31,6 +31,61 @@ def validate():
     resources = catalog["resources"]
     ids = {r["id"] for r in resources}
 
+    # Every beginner route must point to a real curated resource, never a guessed tool.
+    guide = json.loads((ROOT / "data/tool_routes.json").read_text(encoding="utf-8"))
+    if len(guide.get("choices", [])) < 6:
+        errors.append("Tool finder has too few beginner entry points")
+    seen = set()
+    for choice in guide.get("choices", []):
+        if choice.get("id") in seen:
+            errors.append(f"Duplicate guide choice: {choice.get('id')}")
+        seen.add(choice.get("id"))
+        if len(choice.get("options", [])) < 1:
+            errors.append(f"Guide choice has no goals: {choice.get('id')}")
+        for option in choice.get("options", []):
+            if option.get("resource_id") not in ids:
+                errors.append(f"Guide references missing resource: {option.get('resource_id')}")
+            if not all(option.get(k) for k in ("why", "action", "caution")):
+                errors.append(f"Guide route missing plain-language explanation: {choice.get('id')}")
+    start = (ROOT / "start.html").read_text(encoding="utf-8")
+    for value in ("id=\"choiceGrid\"", "id=\"goalChoices\"", "id=\"toolLink\"", "guide.js", "guide.css"):
+        if value not in start:
+            errors.append(f"Guide page missing: {value}")
+    for value in ("assets/guide.js", "assets/guide.css", "assets/story.js", "assets/story.css"):
+        if not (ROOT / value).is_file():
+            errors.append(f"Missing beginner asset: {value}")
+
+    # New stories are sourced and prerendered as accessible HTML, not invented at runtime.
+    stories_data = json.loads((ROOT / "data/stories.json").read_text(encoding="utf-8"))
+    slugs = set()
+    story_index = (ROOT / "stories.html").read_text(encoding="utf-8")
+    for story in stories_data.get("stories", []):
+        slug = story.get("slug")
+        if slug in slugs:
+            errors.append(f"Duplicate discovery story: {slug}")
+        slugs.add(slug)
+        if not slug or not slug.replace("-", "").isalnum():
+            errors.append(f"Invalid story slug: {slug}")
+            continue
+        path = ROOT / "stories" / (slug + ".html")
+        if not path.exists():
+            errors.append(f"Missing prerendered story: {path}")
+            continue
+        rendered = path.read_text(encoding="utf-8")
+        if "stories/" + slug + ".html" not in story_index:
+            errors.append(f"Story archive missing: {slug}")
+        if story.get("resource_id") not in ids:
+            errors.append(f"Story references nonexistent resource: {slug}")
+        if len(story.get("chapters", [])) < 3 or len(story.get("sources", [])) < 2:
+            errors.append(f"Insufficient chapters or evidence: {slug}")
+        for source in story.get("sources", []):
+            if not source.get("url", "").startswith("https://") or source["url"] not in rendered:
+                errors.append(f"Story source missing from rendered page: {slug}")
+        if story.get("tool_url") not in rendered:
+            errors.append(f"Story first-action link missing: {slug}")
+    if "lab/braf-melanoma.html" not in story_index:
+        errors.append("Story archive missing the BRAF lab")
+
     html = (ROOT / "catalog.html").read_text(encoding="utf-8")
     parser = ListingParser()
     parser.feed(html)
@@ -90,7 +145,7 @@ def validate():
             errors.append(f"Agent documentation does not expose {target}")
     tree = ET.parse(ROOT / "sitemap.xml")
     locs = {node.text for node in tree.iter() if node.tag.endswith("}loc")}
-    for target in ("", "catalog.html", "agent-access.html", "lab/braf-melanoma.html"):
+    for target in ("", "catalog.html", "agent-access.html", "lab/braf-melanoma.html", "start.html", "stories.html", "stories/penicillin.html", "stories/insulin.html"):
         if BASE + target not in locs:
             errors.append(f"Missing sitemap location: {target or '(homepage)'}")
     for loc in locs:
