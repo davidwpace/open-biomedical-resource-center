@@ -86,6 +86,19 @@ def validate():
     if "lab/braf-melanoma.html" not in story_index:
         errors.append("Story archive missing the BRAF lab")
 
+    contribution_page = (ROOT / "contribute.html").read_text(encoding="utf-8")
+    for path in ("CONTRIBUTING.md", ".github/ISSUE_TEMPLATE/research_observation.yml",
+                 ".github/ISSUE_TEMPLATE/discovery_story.yml"):
+        if not (ROOT / path).is_file():
+            errors.append(f"Missing safe-contribution document: {path}")
+    for field in ("research_observation.yml", "discovery_story.yml", "resource_suggestion.md"):
+        if field not in contribution_page:
+            errors.append(f"Contribution page missing expected form: {field}")
+    for risky in ("medical records", "PII-free", "public"):
+        if risky not in contribution_page:
+            errors.append(f"Contribution page missing privacy warning: {risky}")
+
+
     html = (ROOT / "catalog.html").read_text(encoding="utf-8")
     parser = ListingParser()
     parser.feed(html)
@@ -145,7 +158,7 @@ def validate():
             errors.append(f"Agent documentation does not expose {target}")
     tree = ET.parse(ROOT / "sitemap.xml")
     locs = {node.text for node in tree.iter() if node.tag.endswith("}loc")}
-    for target in ("", "catalog.html", "agent-access.html", "lab/braf-melanoma.html", "start.html", "stories.html", "stories/penicillin.html", "stories/insulin.html"):
+    for target in ("", "catalog.html", "agent-access.html", "lab/braf-melanoma.html", "start.html", "stories.html", "stories/penicillin.html", "stories/insulin.html", "contribute.html"):
         if BASE + target not in locs:
             errors.append(f"Missing sitemap location: {target or '(homepage)'}")
     for loc in locs:
