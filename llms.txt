@@ -3,7 +3,8 @@
 > A free-to-browse, research-and-education-only directory of public biomedical resources. It helps researchers and AI assistants find scientific tools, evaluate access conditions and limitations, and identify official sources. The catalog currently contains 42 entries across seven fields.
 
 ## Public, machine-readable access
-- [Fallback public JSON from GitHub](https://raw.githubusercontent.com/davidwpace/open-biomedical-resource-center/main/data/resources.json): Read-only raw file for tools that cannot reach GitHub Pages.\n- [Complete resource catalog (JSON)](https://davidwpace.github.io/open-biomedical-resource-center/data/resources.json): All resource records. Read-only, publicly hosted metadata, no authentication.
+- [Fallback public JSON from GitHub](https://raw.githubusercontent.com/davidwpace/open-biomedical-resource-center/main/data/resources.json): Read-only raw file for tools that cannot reach GitHub Pages.
+- [Complete resource catalog (JSON)](https://davidwpace.github.io/open-biomedical-resource-center/data/resources.json): All resource records. Read-only, publicly hosted metadata, no authentication.
 - [OpenAPI description](https://davidwpace.github.io/open-biomedical-resource-center/openapi.json): Documents the static public JSON endpoint; this is NOT an executable AI-agent server.
 - [Full HTML resource directory](https://davidwpace.github.io/open-biomedical-resource-center/catalog.html): Search-indexable human-readable listings that work without JavaScript.
 - [AI / agent developer guide](https://davidwpace.github.io/open-biomedical-resource-center/agent-access.html): Schema, access conditions, example workflows and safe interpretation.
@@ -11,6 +12,12 @@
 
 ## What each resource contains
 Records include name, official_url, category, purpose, access, limitations, integration, priority, tags, verified_on and an official verification URL. Follow official URLs for current rules and facts. An entry in this directory is not a license to reuse any linked dataset, code or biological material.
+
+## Beginner guide and evidence-based story lessons
+- [Find your first research tool](https://davidwpace.github.io/open-biomedical-resource-center/start.html): Two-choice, no-PII educational tool selection. Uses curated resource IDs and explicit limitations.
+- [Tool routing rules (JSON)](https://davidwpace.github.io/open-biomedical-resource-center/data/tool_routes.json): Seven situations, fourteen source-linked routes. Not personal advice or clinical triage.
+- [Discovery story library](https://davidwpace.github.io/open-biomedical-resource-center/stories.html): Beginner-friendly short science histories with original citations and a small task.
+- [Discovery story metadata (JSON)](https://davidwpace.github.io/open-biomedical-resource-center/data/stories.json): Historical event dates, editorial review dates, sources and linked tools. Human-readable pages are prerendered.
 
 ## Research pathways
 - Human cell models and New Approach Methodologies (NAMs).
