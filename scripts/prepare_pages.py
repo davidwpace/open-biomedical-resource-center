@@ -62,7 +62,7 @@ class LocalReferences(HTMLParser):
 
 
 def _safe_path(path: str) -> Path:
-    if path.startswith("/") or "\" in path:
+    if path.startswith("/") or chr(92) in path:
         raise ValueError(f"Unexpected absolute or backslash path: {path}")
     normalized = posixpath.normpath(path)
     if normalized in {".", ".."} or normalized.startswith("../"):
