@@ -163,8 +163,8 @@
           "why": "A well-documented correction improves the Resource Center for every visitor.",
           "action": "Find a resource or citation that needs attention. Submit only its public URL, what is wrong, and how to verify it.",
           "caution": "Do not include personal health details in GitHub Issues; they are publicly visible.",
-          "special_url": "https://github.com/davidwpace/open-biomedical-resource-center/issues/new",
-          "special_label": "Suggest a public-source correction"
+          "special_url": "contribute.html",
+          "special_label": "Choose a safe way to contribute"
         },
         {
           "id": "reproduce",
