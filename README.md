@@ -4,7 +4,7 @@
 
 A public, mobile-friendly directory of biomedical research resources, including New Approach Methodologies (NAMs), cancer genomics, drug discovery, cellular simulations, literature, clinical trials, imaging, and open analysis software.
 
-**Status:** First static-site MVP • **Seed catalog:** 42 resources across 7 areas • **Catalog last checked:** October 27, 2026.
+**Status:** First static-site MVP • **Seed catalog:** 43 resources across 7 areas • **Original catalog checked:** October 27, 2026 • **Latest addition:** November 6, 2026.
 
 ## Publication safety
 
@@ -50,7 +50,7 @@ Because GitHub Pages uses a project subpath, `llms.txt` lives below `/open-biome
 **The first click is now simple:** [Find my starting tool](start.html). People choose what they already know (question, condition, gene, molecule, imaging, experimental data, or interest in helping) and one research goal. The site recommends **one resource**, gives the reason, a first verification task, and a methodological limitation. No personal data input or AI subscription.
 
 - [Live tool finder](https://davidwpace.github.io/open-biomedical-resource-center/start.html)
-- [Routing data](data/tool_routes.json) (7 situations / 14 paths, all linked to IDs in the 42-resource catalog)
+- [Routing data](data/tool_routes.json) (7 situations / 14 paths, all linked to IDs in the 43-resource catalog)
 - [Discovery story archive](stories.html): historical landmark stories about penicillin and insulin, plus the more detailed BRAF-melanoma walkthrough
 - [Story metadata](data/stories.json): editorial review dates, historical event years, cited institutions, linked modern resource and a mini source-check task
 - [Start a safe public contribution](contribute.html), or [read the public-only policy](CONTRIBUTING.md)
@@ -84,7 +84,7 @@ A visitor can investigate a documented **BRAF V600 melanoma** signaling example 
 index.html                      Static website
 assets/styles.css               Responsive design
 assets/app.js                   Directory rendering, filters, research pathways
-data/resources.json             Source-of-truth catalog (42 records)
+data/resources.json             Source-of-truth catalog (43 records)
 docs/RESOURCE_CATALOG.md       Human-readable initial catalog
 docs/WEBSITE_BLUEPRINT.md      MVP requirements and roadmap
 docs/SOURCE_POLICY.md          Access labels, provenance, review policy

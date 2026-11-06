@@ -1,6 +1,6 @@
 {
   "project": "Open Biomedical Research Resource Center",
-  "version": "2026-10-27-initial",
+  "version": "2026-11-06-autodna",
   "scope": "Public resource directory; research and education only",
   "resources": [
     {
@@ -835,6 +835,32 @@
       ],
       "verified_on": "2026-10-27",
       "source_type": "peer-reviewed research (Nature Computational Science, published 2026-10-26) and official repository"
+    },
+    {
+      "id": "autodna",
+      "name": "AutoDNA — AI-Native Autonomous Biomolecular Laboratory",
+      "category": "Analysis and website infrastructure",
+      "official_url": "https://github.com/IPADS-X/AutoDNA",
+      "access": "Free public Apache-2.0 source code; computing, Gemini API and physical laboratory equipment costs are separate",
+      "integration": "Open-source Python multi-agent system, UI, C++ scheduler and instrument firmware; software-only testing has limited capabilities",
+      "purpose": "Plan and coordinate DNA-related laboratory experiments using specialized AI agents; architecture reference for supervised, evidence-tracked research orchestration",
+      "limitations": "Complete experiments depend on specialized equipment and human safety oversight. Not a validated virtual cancer experiment, drug-discovery service or clinical diagnostic tool. Review code and external dependencies before running.",
+      "official_verification_url": "https://www.nature.com/articles/s41586-026-11228-6",
+      "origin": "User suggested; official repository and Nature article identified",
+      "priority": "P1",
+      "tags": [
+        "autonomous laboratory",
+        "agentic AI",
+        "DNA",
+        "biomolecular engineering",
+        "multi-agent",
+        "experimental design",
+        "hardware control",
+        "reproducibility",
+        "Apache-2.0"
+      ],
+      "verified_on": "2026-11-06",
+      "source_type": "peer-reviewed research and official open-source repository"
     }
   ]
 }
