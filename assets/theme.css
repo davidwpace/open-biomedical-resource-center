@@ -39,3 +39,8 @@ html[data-theme="dark"] :is(.footer-mark,.mark,.brand-mark){background:#0a3039;c
 html[data-theme="dark"] :is(.site-header nav a,.lab-header nav a,.bar nav a){color:#eaf7f2!important}
 @media(max-width:550px){.color-theme-toggle{right:12px;bottom:12px;padding:10px 13px;font-size:13px}body{padding-bottom:70px}:is(.lesson-card p,.story-card p,.reason-choice,.stage-context,.evidence-reveal p,.lab-tool>p,.agent-main>p){font-size:15px}}
 @media(prefers-reduced-motion:reduce){.color-theme-toggle{transition:none}}
+
+/* A headline is a real link, not a second small card button. */
+:is(.lesson-card h2 a,.story-card h2 a){font:inherit!important;letter-spacing:inherit;text-decoration:none;color:inherit}
+:is(.lesson-card h2 a,.story-card h2 a):hover{text-decoration:underline;text-decoration-thickness:2px;text-underline-offset:4px}
+:is(.lesson-card h2 a,.story-card h2 a):focus-visible{outline:3px solid #268dc1;outline-offset:4px;border-radius:4px}
