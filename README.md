@@ -22,6 +22,12 @@ unreviewed or failing changes reaching `main`. See
 [docs/PUBLISHING_SAFETY.md](docs/PUBLISHING_SAFETY.md) for the remaining
 hardening instructions. Do not commit sensitive records or credentials.
 
+## Scientific Review Panel — public pilot
+
+The [open review invitation](review.html) accepts source-backed challenges and reviewer interest through two public GitHub Issue forms. The structured review criteria distinguish original citation checking, methodological assessment, adversarial evidence searches, translational safety, and reproducibility/education. The new `scripts/review_gate.py` enforces recorded human editorial review with per-chapter evidence locators before **new** `editorial_status: approved` articles can publish. Clinical interpretations additionally require a separate independent expert-review record. The two legacy historic stories remain accessible without retrospective claims of external peer review.
+
+**Current limitation:** The five AI review roles are defined but NOT being run as five independent model services. Automated metadata checks do not authenticate expert credentials, prove scientific validity, or constitute journal peer review. See [Scientific Review Panel policy](docs/SCIENTIFIC_REVIEW_PANEL.md).
+
 ## Preview and hosting
 
 The site is intentionally **HTML + CSS + JavaScript with no build dependencies**.

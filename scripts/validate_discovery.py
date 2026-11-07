@@ -87,6 +87,14 @@ def validate():
         errors.append("Story archive missing the BRAF lab")
 
     contribution_page = (ROOT / "contribute.html").read_text(encoding="utf-8")
+    panel_page = (ROOT / "review.html").read_text(encoding="utf-8")
+    for form in ("peer_review.yml", "reviewer_volunteer.yml"):
+        if not (ROOT / ".github/ISSUE_TEMPLATE" / form).is_file():
+            errors.append(f"Missing scientific review form: {form}")
+        if form not in panel_page:
+            errors.append(f"Review panel missing public submission form link: {form}")
+    if "independent multi-model execution is not connected" not in panel_page:
+        errors.append("Review panel must distinguish planned AI agents from live independent model reviews")
     for path in ("CONTRIBUTING.md", ".github/ISSUE_TEMPLATE/research_observation.yml",
                  ".github/ISSUE_TEMPLATE/discovery_story.yml"):
         if not (ROOT / path).is_file():
@@ -175,7 +183,7 @@ def validate():
             errors.append(f"Agent documentation does not expose {target}")
     tree = ET.parse(ROOT / "sitemap.xml")
     locs = {node.text for node in tree.iter() if node.tag.endswith("}loc")}
-    for target in ("", "catalog.html", "agent-access.html", "lab/braf-melanoma.html", "start.html", "stories.html", "stories/penicillin.html", "stories/insulin.html", "contribute.html"):
+    for target in ("", "catalog.html", "agent-access.html", "lab/braf-melanoma.html", "start.html", "stories.html", "stories/penicillin.html", "stories/insulin.html", "contribute.html", "review.html"):
         if BASE + target not in locs:
             errors.append(f"Missing sitemap location: {target or '(homepage)'}")
     for loc in locs:

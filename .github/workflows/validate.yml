@@ -43,6 +43,10 @@ jobs:
           test ! -d clinical-records
       - name: Test daily feature selection and evidence gates
         run: python3 -m unittest discover -s scripts -p "test_daily_spotlight.py"
+      - name: Require source-located editorial reviews for newly approved stories
+        run: python3 scripts/review_gate.py
+      - name: Test review signoff, claim audits and clinical expert requirements
+        run: python3 -m unittest discover -s scripts -p "test_review_gate.py"
       - name: Build only approved public files and check internal links
         run: python3 scripts/prepare_pages.py
       # Only upload the approved artifact after EVERY check above has passed.

@@ -1,0 +1,72 @@
+{
+  "version": "0.1",
+  "status": "design_only_no_automated_model_calls",
+  "disclosure": "Five distinct critique lenses; simulating them with one model is not independent peer review.",
+  "roles": [
+    {
+      "id": "source",
+      "name": "Evidence & Sources",
+      "mission": "For each claim retrieve the original publication and exact figure/table/method line; label unsupported or misleading citation.",
+      "required": [
+        "claim_text",
+        "source_url",
+        "source_location",
+        "study_type",
+        "contradictory_evidence",
+        "assessment"
+      ]
+    },
+    {
+      "id": "methods",
+      "name": "Methods & Statistics",
+      "mission": "Challenge controls, design, sampling, power, effect size, confounding, leakage and extrapolation; cite primary methods.",
+      "required": [
+        "methodological_risks",
+        "statistical_caveats",
+        "claim_scope",
+        "assessment"
+      ]
+    },
+    {
+      "id": "skeptic",
+      "name": "Adversarial Replication",
+      "mission": "Independently search contradictory and null findings, alternate explanations and replication status; explain uncertainty.",
+      "required": [
+        "negative_sources",
+        "alternate_explanations",
+        "replication_status",
+        "assessment"
+      ]
+    },
+    {
+      "id": "safety",
+      "name": "Translation & Safety",
+      "mission": "Keep in-vitro, animal, computer, observational and randomized human evidence separate; catch clinical overclaims.",
+      "required": [
+        "evidence_setting",
+        "clinical_inference",
+        "safety_caveats",
+        "assessment"
+      ]
+    },
+    {
+      "id": "educator",
+      "name": "Clarity & Reproducibility",
+      "mission": "Check novice explanation, original-versus-modern-method separation, chosen tool and a verifiable nonclinical task.",
+      "required": [
+        "clarity_issues",
+        "tool_fit",
+        "task_reproducibility",
+        "assessment"
+      ]
+    }
+  ],
+  "verdicts": [
+    "supported_with_limits",
+    "revise",
+    "unsupported",
+    "insufficient_evidence"
+  ],
+  "unresolved_disagreement": "human_adjudication_required",
+  "auto_approval_allowed": false
+}
