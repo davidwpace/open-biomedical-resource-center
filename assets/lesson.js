@@ -101,4 +101,21 @@
       if (feedback) feedback.textContent = "Copy unavailable in this browser. Use Download learning notes instead.";
     }
   });
+  const aiButton = document.getElementById("copy-ai-prompt");
+  const aiArea = document.getElementById("ai-prompt-text");
+  const aiStatus = document.getElementById("ai-prompt-status");
+  const aiDetails = document.getElementById("ai-manual");
+  if (aiButton && aiArea) {
+    aiButton.addEventListener("click", async () => {
+      try {
+        if (!navigator.clipboard?.writeText) throw new Error("Clipboard not available");
+        await navigator.clipboard.writeText(aiArea.value);
+        if (aiStatus) aiStatus.textContent = "Lesson-specific prompt copied. Paste it into your own AI chat.";
+      } catch {
+        if (aiDetails) aiDetails.open = true;
+        aiArea.focus(); aiArea.select();
+        if (aiStatus) aiStatus.textContent = "Copy was unavailable. Your prompt is selected; use your device's Copy command.";
+      }
+    });
+  }
 })();

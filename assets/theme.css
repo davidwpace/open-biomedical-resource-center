@@ -44,3 +44,19 @@ html[data-theme="dark"] :is(.site-header nav a,.lab-header nav a,.bar nav a){col
 :is(.lesson-card h2 a,.story-card h2 a){font:inherit!important;letter-spacing:inherit;text-decoration:none;color:inherit}
 :is(.lesson-card h2 a,.story-card h2 a):hover{text-decoration:underline;text-decoration-thickness:2px;text-underline-offset:4px}
 :is(.lesson-card h2 a,.story-card h2 a):focus-visible{outline:3px solid #268dc1;outline-offset:4px;border-radius:4px}
+
+/* Evidence-first AI tutoring is optional and entirely client-side. */
+.ai-assist{background:#edf8f2;border:1px solid #c8e1d6;border-radius:14px;padding:clamp(21px,3vw,30px);margin:28px 0 36px;color:#18424b}
+.ai-assist h2{font-size:clamp(24px,3vw,31px);line-height:1.23;letter-spacing:-.03em;margin:8px 0}
+.ai-assist p{font-size:16px;line-height:1.65;color:#466970}
+.ai-assist a{color:#116b65;font-weight:800}
+.ai-assist label{display:block;font-size:14px;font-weight:850;margin-top:18px}
+.ai-assist details{margin-top:17px;border-top:1px solid #b6d5c9;padding-top:16px}
+.ai-assist summary{font-weight:850;font-size:15px;cursor:pointer}
+.ai-assist textarea{display:block;width:100%;background:white;color:#203e46;border:1px solid #9dc8bf;padding:15px;border-radius:9px;line-height:1.6;font-size:14px;resize:vertical;margin-top:8px}
+.ai-assist .report-actions{margin:16px 0}.ai-assist #ai-prompt-status{min-height:1em;font-size:14px}
+html[data-theme="dark"] .ai-assist{background:#193b45!important;border-color:#567a81;color:#e9f6f3}
+html[data-theme="dark"] .ai-assist p,html[data-theme="dark"] .ai-assist label{color:#d0e5e4}
+html[data-theme="dark"] .ai-assist a{color:#b5f2de}
+html[data-theme="dark"] .ai-assist textarea{background:#0d2c37;color:#eaf8f5;border-color:#7a9e9c}
+@media(max-width:570px){.ai-assist .report-actions>*{width:100%;text-align:center}}
