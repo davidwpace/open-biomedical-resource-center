@@ -36,10 +36,9 @@ jobs:
           test ! -d clinical-records
       - name: Build only approved public files and check internal links
         run: python3 scripts/prepare_pages.py
-      # Upload the approved artifact only after EVERY check above passed.
-      # While Pages is publishing from main, GitHub's branch publishing
-      # remains active. To fully gate publication, switch Pages Source to
-      # GitHub Actions AND set repository variable PAGES_ACTIONS_READY=true.
+      # Only upload the approved artifact after EVERY check above has passed.
+      # GitHub Pages Actions publishing was verified active on 2026-11-06.
+      # Pull requests validate code but never upload production artifacts.
       - name: Upload approved GitHub Pages artifact
         if: github.event_name != 'pull_request'
         uses: actions/upload-pages-artifact@v4
@@ -48,8 +47,8 @@ jobs:
 
   deploy:
     name: Deploy approved site
-    # Disabled until the repository owner completes the documented
-    # GitHub Pages Source switch. Do NOT enable before that transition.
+    # Explicit release switch; currently enabled (as verified by the
+    # successful 2026-11-06 deploy). If false or missing, fail closed.
     if: github.event_name != 'pull_request' && vars.PAGES_ACTIONS_READY == 'true'
     needs: validate
     runs-on: ubuntu-latest

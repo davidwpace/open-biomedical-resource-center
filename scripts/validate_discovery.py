@@ -100,6 +100,23 @@ def validate():
 
 
     html = (ROOT / "catalog.html").read_text(encoding="utf-8")
+    # Ensure the public catalog's visible count, metadata, page title and
+    # machine-readable description track the authoritative JSON record count.
+    # The previous 43-record catalog passed ID checks while still saying "42".
+    import re
+    count_patterns = {
+        "catalog meta description": r'directory of (\d+) biomedical research tools',
+        "catalog title": r'<title>All (\d+) Biomedical Research Resources',
+        "catalog visible introduction": r'Browse (\d+) curated tools',
+        "catalog structured metadata": r'metadata covering (\d+) biomedical research resources',
+    }
+    for label, pattern in count_patterns.items():
+        hit = re.search(pattern, html, re.IGNORECASE)
+        if not hit:
+            errors.append(f"Cannot verify current record count in {label}")
+        elif int(hit.group(1)) != len(resources):
+            errors.append(f"Stale {label}: says {hit.group(1)}, JSON has {len(resources)}")
+
     parser = ListingParser()
     parser.feed(html)
     missing = ids - parser.ids
