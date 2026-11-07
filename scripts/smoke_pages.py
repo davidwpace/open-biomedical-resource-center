@@ -28,9 +28,11 @@ PUBLIC_FILES = (
     "data/resources.json",
     "assets/lesson.css",
     "assets/lesson.js",
+    "assets/theme.js",
+    "assets/theme.css",
 )
 GENERATED_PAGES = {
-    "learn.html": ("learn/penicillin.html", "learn/insulin.html", "learn/braf-melanoma.html"),
+    "learn.html": ("learn/penicillin.html", "learn/insulin.html", "learn/braf-melanoma.html", '<h2><a href="learn/penicillin.html">', "assets/theme.css"),
     "learn/penicillin.html": ('id="research-task"', 'id="download-notes"', "pubchem.ncbi.nlm.nih.gov"),
     "learn/insulin.html": ('id="research-task"', 'id="download-notes"', "FDA"),
     "learn/braf-melanoma.html": ('id="research-task"', 'id="download-notes"', "10.1056/NEJMoa1103782"),
