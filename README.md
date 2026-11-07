@@ -35,6 +35,14 @@ The [open review invitation](review.html) accepts source-backed challenges and r
 - [Read-only AI workflow guide](data/ai_research_workflows.json) is available for AI agents; it is **not** an executable MCP service, medical advice, account or analytics collector. Per-lesson AI prompts are constructed automatically from vetted story data.
 - No prompt or personal case data is sent from this website to any AI provider. Public research citations and access restrictions remain mandatory.
 
+## Scheduled publishing of approved full articles and lessons
+
+The daily GitHub Pages build can now turn a **new, human-editor-reviewed story record** in `data/stories.json` into both a full public article (`stories/<slug>.html`) and an interactive evidence-based lesson (`learn/<slug>.html`). `scripts/generate_articles.py` updates the story archive and sitemap on the scheduled release date, while the existing daily featured page prioritizes a newly due article before rotating older stories. The two older authored penicillin/insulin stories are preserved unchanged.
+
+**It does not automatically research or approve new breakthroughs.** A public `editorial_status: "approved"` story requires the existing review gate (named public editor, claim/source locators, conflicts/AI disclosures, and independent clinical expert review when appropriate). Until enough source-checked records have been approved and scheduled, the daily feature will still rotate past discoveries. Future-dated data committed to the public repository are **visible in GitHub**, even when the website withholds their generated article pages: do not use this as a confidential publication embargo.
+
+See [daily publishing instructions](docs/DAILY_STORY_PIPELINE.md).
+
 ## Interactive Discovery-to-Lesson Engine (pilot)
 
 The mobile-first [Interactive Discovery Lessons](https://davidwpace.github.io/open-biomedical-resource-center/learn.html) are **generated automatically during Pages builds** from already published, source-linked records. The first three examples cover penicillin, insulin and the existing BRAF melanoma lab.

@@ -39,7 +39,7 @@ jobs:
       - name: Validate static human/AI discovery endpoints
         run: python3 scripts/validate_discovery.py
       - name: Check public-site generator and smoke test syntax
-        run: python3 -m py_compile scripts/smoke_pages.py scripts/render_daily_spotlight.py scripts/generate_lessons.py
+        run: python3 -m py_compile scripts/smoke_pages.py scripts/render_daily_spotlight.py scripts/generate_lessons.py scripts/generate_articles.py
       - name: Ensure no patient-facing data folder is committed
         run: |
           test ! -d patients
@@ -52,6 +52,8 @@ jobs:
         run: python3 -m unittest discover -s scripts -p "test_review_gate.py"
       - name: Verify interactive discovery lesson generator
         run: python3 -m unittest discover -s scripts -p "test_generate_lessons.py"
+      - name: Test due-dated article rendering and review gates
+        run: python3 -m unittest discover -s scripts -p "test_generate_articles.py"
       - name: Build only approved public files and check internal links
         run: python3 scripts/prepare_pages.py
       # Only upload the approved artifact after EVERY check above has passed.
