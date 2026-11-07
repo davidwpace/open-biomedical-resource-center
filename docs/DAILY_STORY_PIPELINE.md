@@ -6,7 +6,7 @@
 
 **1. Daily candidate research:** A recurring ChatGPT task named Discovery Story Research researches one historical or timely scientific discovery, compares original papers and trusted institutional sources, avoids duplicate topics, and prepares a clearly marked editorial draft. When connector access permits, it may create a GitHub Issue with public sources. It must not merge or publish unreviewed research.
 
-**2. Daily published spotlight:** The existing validated GitHub Pages workflow now has a daily 8:17 AM America/Chicago schedule (plus existing push/PR/manual triggers). It renders a date-stamped [today.html](../today.html) page and machine-readable metadata from already published, source-linked stories. The generator has no model access, no API key, and no user data.
+**2. Daily published spotlight:** The existing validated GitHub Pages workflow now has a daily 8:17 AM America/Chicago schedule (plus existing push/PR/manual triggers). It renders a date-stamped [Today’s Discovery](https://davidwpace.github.io/open-biomedical-resource-center/today.html) page and machine-readable metadata from already published, source-linked stories. The generator has no model access, no API key, and no user data.
 
 **Critical distinction:** Daily featured does NOT mean a breakthrough occurred that day, or that a NEW article will necessarily be published every morning. Initially, it rotates the two existing long-form landmark stories. The BRAF lab remains available in the library.
 
