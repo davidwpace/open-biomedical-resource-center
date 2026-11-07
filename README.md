@@ -28,6 +28,13 @@ The [open review invitation](review.html) accepts source-backed challenges and r
 
 **Current limitation:** The five AI review roles are defined but NOT being run as five independent model services. Automated metadata checks do not authenticate expert credentials, prove scientific validity, or constitute journal peer review. See [Scientific Review Panel policy](docs/SCIENTIFIC_REVIEW_PANEL.md).
 
+## Accessible learning and bring-your-own-AI experience
+
+- The website now includes a manually selectable **dark/light mode** that defaults to the device color scheme and saves only the display preference in the visitor's browser. Supporting text is larger and clickable lesson titles open the corresponding interactive investigation.
+- [Use AI with public discovery lessons](ai-learning.html) provides copyable prompts for choosing the appropriate public tool, checking a scientific claim against primary sources, learning step-by-step and preparing reproducibility plans.
+- [Read-only AI workflow guide](data/ai_research_workflows.json) is available for AI agents; it is **not** an executable MCP service, medical advice, account or analytics collector. Per-lesson AI prompts are constructed automatically from vetted story data.
+- No prompt or personal case data is sent from this website to any AI provider. Public research citations and access restrictions remain mandatory.
+
 ## Interactive Discovery-to-Lesson Engine (pilot)
 
 The mobile-first [Interactive Discovery Lessons](https://davidwpace.github.io/open-biomedical-resource-center/learn.html) are **generated automatically during Pages builds** from already published, source-linked records. The first three examples cover penicillin, insulin and the existing BRAF melanoma lab.

@@ -34,6 +34,7 @@ jobs:
           node --check assets/story.js
           node --check assets/lesson.js
           node --check assets/theme.js
+          node --check assets/ai-learning.js
           node --check lab/demo.js
       - name: Validate static human/AI discovery endpoints
         run: python3 scripts/validate_discovery.py

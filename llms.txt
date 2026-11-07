@@ -7,6 +7,9 @@
 - [Complete resource catalog (JSON)](https://davidwpace.github.io/open-biomedical-resource-center/data/resources.json): All resource records. Read-only, publicly hosted metadata, no authentication.
 - [OpenAPI description](https://davidwpace.github.io/open-biomedical-resource-center/openapi.json): Documents the static public JSON endpoint; this is NOT an executable AI-agent server.
 - [Full HTML resource directory](https://davidwpace.github.io/open-biomedical-resource-center/catalog.html): Search-indexable human-readable listings that work without JavaScript.
+- [AI learning guide for humans](https://davidwpace.github.io/open-biomedical-resource-center/ai-learning.html): Copyable prompts for source checks, research-tool selection, tutoring and reproducibility. No AI provider is connected by this page.
+- [AI research workflows (JSON)](https://davidwpace.github.io/open-biomedical-resource-center/data/ai_research_workflows.json): Public machine-readable workflows, expected inputs and limitations; not an execution endpoint.
+- [Interactive discovery lesson archive](https://davidwpace.github.io/open-biomedical-resource-center/learn.html): Beginner-friendly experiments in scientific reasoning and linked original sources.
 - [AI / agent developer guide](https://davidwpace.github.io/open-biomedical-resource-center/agent-access.html): Schema, access conditions, example workflows and safe interpretation.
 - [Interactive research directory](https://davidwpace.github.io/open-biomedical-resource-center/index.html#directory): Human-focused search and filtering.
 

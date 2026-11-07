@@ -182,6 +182,17 @@ def validate():
         errors.append("Homepage does not link to the BioDiscovery Lab")
     llms = (ROOT / "llms.txt").read_text(encoding="utf-8")
     agent = (ROOT / "agent-access.html").read_text(encoding="utf-8")
+    ai_learning = (ROOT / "ai-learning.html").read_text(encoding="utf-8")
+    routes = json.loads((ROOT / "data/ai_research_workflows.json").read_text(encoding="utf-8"))
+    for marker in ("ai-prompt-tools", "ai-prompt-check", "ai-prompt-tutor", "ai-prompt-reproduce",
+                   "data/ai_research_workflows.json", "assets/theme.css", "assets/ai-learning.js"):
+        if marker not in ai_learning:
+            errors.append(f"Human AI guide missing source or copy affordance: {marker}")
+    if len(routes.get("workflows", [])) < 4:
+        errors.append("Machine-readable AI workflows missing research routes")
+    for endpoint in ("ai-learning.html", "data/ai_research_workflows.json"):
+        if endpoint not in llms:
+            errors.append(f"AI navigation index missing: {endpoint}")
     for marker in ('id="copyCatalog"', 'id="downloadCatalog"', 'id="manualCopy"', 'data/resources.json'):
         if marker not in agent:
             errors.append(f"AI access page is missing portable fallback: {marker}")
@@ -193,7 +204,7 @@ def validate():
             errors.append(f"Agent documentation does not expose {target}")
     tree = ET.parse(ROOT / "sitemap.xml")
     locs = {node.text for node in tree.iter() if node.tag.endswith("}loc")}
-    for target in ("", "catalog.html", "agent-access.html", "lab/braf-melanoma.html", "start.html", "stories.html", "stories/penicillin.html", "stories/insulin.html", "contribute.html", "review.html"):
+    for target in ("", "catalog.html", "agent-access.html", "lab/braf-melanoma.html", "start.html", "stories.html", "stories/penicillin.html", "stories/insulin.html", "contribute.html", "review.html", "ai-learning.html"):
         if BASE + target not in locs:
             errors.append(f"Missing sitemap location: {target or '(homepage)'}")
     for loc in locs:
