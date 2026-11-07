@@ -22,6 +22,7 @@ PUBLIC_FILES = (
     "start.html",
     "stories.html",
     "contribute.html",
+    "review.html",
     "agent-access.html",
     "lab/braf-melanoma.html",
     "data/resources.json",
