@@ -105,10 +105,10 @@ def validate():
     # The previous 43-record catalog passed ID checks while still saying "42".
     import re
     count_patterns = {
-        "catalog meta description": r'directory of (\\d+) biomedical research tools',
-        "catalog title": r'<title>All (\\d+) Biomedical Research Resources',
-        "catalog visible introduction": r'Browse (\\d+) curated tools',
-        "catalog structured metadata": r'metadata covering (\\d+) biomedical research resources',
+        "catalog meta description": r'directory of (\d+) biomedical research tools',
+        "catalog title": r'<title>All (\d+) Biomedical Research Resources',
+        "catalog visible introduction": r'Browse (\d+) curated tools',
+        "catalog structured metadata": r'metadata covering (\d+) biomedical research resources',
     }
     for label, pattern in count_patterns.items():
         hit = re.search(pattern, html, re.IGNORECASE)
