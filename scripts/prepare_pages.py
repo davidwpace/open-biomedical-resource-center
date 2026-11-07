@@ -10,11 +10,13 @@ from __future__ import annotations
 import json
 import posixpath
 import shutil
+from datetime import datetime
+from zoneinfo import ZoneInfo
 from html.parser import HTMLParser
 from pathlib import Path
 from urllib.parse import urlsplit
 
-from render_daily_spotlight import render_spotlight
+from render_daily_spotlight import render_spotlight, available_stories
 
 ROOT = Path(__file__).resolve().parent.parent
 DEST = ROOT / "dist"
@@ -79,13 +81,9 @@ def _safe_path(path: str) -> Path:
 
 def _read_story_files() -> list[str]:
     data = json.loads((ROOT / "data/stories.json").read_text(encoding="utf-8"))
-    files = []
-    for record in data["stories"]:
-        slug = record["slug"]
-        if not slug or not slug.replace("-", "").isalnum():
-            raise ValueError(f"Unsafe story slug: {slug!r}")
-        files.append(f"stories/{slug}.html")
-    return files
+    today = datetime.now(ZoneInfo("America/Chicago")).date()
+    records = available_stories(data["stories"], today)
+    return [f"stories/{record['slug']}.html" for record in records]
 
 
 def _resolve_reference(page: str, ref: str) -> tuple[str | None, str | None]:
