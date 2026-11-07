@@ -55,7 +55,12 @@ def daily_choice(stories: list[dict], today: date) -> dict:
     if not stories:
         raise ValueError("No eligible reviewed stories to feature")
     stories = sorted(stories, key=lambda s: s["slug"])
-    # Predictable and auditable cycling rather than arbitrary AI judgment.
+    # Give an approved, newly published article its first-day spotlight.
+    # A future-dated story stays out of this published collection until due.
+    new_today = [s for s in stories if date.fromisoformat(s["published_on"]) == today]
+    if new_today:
+        return sorted(new_today, key=lambda s: s["slug"])[0]
+    # Otherwise rotate existing approved articles predictably.
     anchor = date(2026, 11, 8)
     index = (today - anchor).days % len(stories)
     return stories[index]
@@ -70,8 +75,8 @@ def render_spotlight(destination: Path, *, today: date | None = None) -> set[str
     slug = selected["slug"]
     target = f"stories/{slug}.html"
     # Only existing, source-backed public stories may appear in daily rotation.
-    if not (ROOT / target).is_file():
-        raise ValueError(f"Approved story missing HTML: {target}")
+    if not (destination / target).is_file() and not (ROOT / target).is_file():
+        raise ValueError(f"Approved story missing published HTML: {target}")
     title = escape(selected["title"])
     description = escape(selected["intro"])
     hook = escape(selected["hook"])

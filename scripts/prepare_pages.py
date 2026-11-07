@@ -18,6 +18,8 @@ from urllib.parse import urlsplit
 
 from render_daily_spotlight import render_spotlight, available_stories
 from generate_lessons import render_lessons
+from generate_articles import render_articles
+from render_daily_spotlight import LEGACY_PUBLISHED
 
 ROOT = Path(__file__).resolve().parent.parent
 DEST = ROOT / "dist"
@@ -94,7 +96,9 @@ def _read_story_files() -> list[str]:
     data = json.loads((ROOT / "data/stories.json").read_text(encoding="utf-8"))
     today = datetime.now(ZoneInfo("America/Chicago")).date()
     records = available_stories(data["stories"], today)
-    return [f"stories/{record['slug']}.html" for record in records]
+    # The original two authored historical pages are preserved. Any newly
+    # approved article is rendered deterministically from its reviewed data.
+    return [f"stories/{record['slug']}.html" for record in records if record['slug'] in LEGACY_PUBLISHED]
 
 
 def _resolve_reference(page: str, ref: str) -> tuple[str | None, str | None]:
@@ -177,7 +181,10 @@ def main() -> int:
         target.parent.mkdir(parents=True, exist_ok=True)
         shutil.copyfile(origin, target)
         published.add(asset)
-    # Generate interactive pages only from approved or previously published stories.
+    # Produce complete public articles and archive cards from approved due-dated
+    # story metadata; drafts and future articles are excluded by the same gate.
+    published.update(render_articles(DEST))
+    # Generate interactive journeys from the same approved original evidence.
     published.update(render_lessons(DEST))
     # Add a date-aware feature from already published, source-backed stories.
     published.update(render_spotlight(DEST))

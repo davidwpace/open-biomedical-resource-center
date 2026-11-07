@@ -49,3 +49,12 @@ Approved public story metadata now generates complete static, mobile-friendly in
 ## November 7 — Accessible dark mode and bring-your-own-AI guidance
 
 Visitors can switch between dark and light display schemes (with automatic system preference on first visit), read larger supporting text and open interactive lessons directly from clickable headlines. Each generated lesson includes a prefilled, source-linked AI tutor prompt copied locally; the public [AI learning guide](https://davidwpace.github.io/open-biomedical-resource-center/ai-learning.html) supports tool selection, primary-evidence checks, sequential instruction and a public-data reproducibility workflow. An [AI workflow JSON](https://davidwpace.github.io/open-biomedical-resource-center/data/ai_research_workflows.json) provides read-only agent guidance. This does not connect AI model accounts, perform automated experiments, or imply a scientific publication was independently verified.
+
+
+## November 7 — Ready for a pre-reviewed daily article queue
+
+`scripts/generate_articles.py` now makes new approved source-backed articles, archive cards and sitemap URLs directly from the same `data/stories.json` record used by the interactive Discovery-to-Lesson Engine. Its publishing date gate excludes drafts and not-yet-due pages, while the GitHub Actions workflow runs `scripts/review_gate.py`, then builds the allowlisted artifact. A newly due article receives priority as that day's feature. The original two authored legacy historical pages are preserved.
+
+**Required editorial input:** For a future story, add complete source-checked metadata and an `editorial_status: "approved"` record with documented claim-level evidence, public human editorial approval, AI/conflict disclosures and, for clinical interpretations, separate expert review; use an appropriate future `published_on` date. The approved article and interactive lesson will be generated on or after its publishing date without hand-authoring HTML. Keep drafts in public Issue review or unapproved records; source files in this public repository, including future-dated records, are *visible to anyone*, even if pages are not yet deployed. GitHub's scheduler is best-effort, not a hard publishing-time guarantee.
+
+**Still missing for genuinely new daily lessons:** An advance supply of verified and human-approved scientific stories. Do not invent citations or automatically approve AI drafts.

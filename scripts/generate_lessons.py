@@ -78,7 +78,7 @@ def validate_lesson(record: dict, activities: list[dict] | None) -> None:
         source_ids.add(source["id"])
         _require_https(source["url"], f"{slug} source")
     for n, chapter in enumerate(chapters):
-        for field in ("title", "body", "takeaway", "source"):
+        for field in ("kicker", "title", "body", "takeaway", "source"):
             if not chapter.get(field):
                 raise ValueError(f"{slug}: chapter {n} missing {field}")
         if chapter["source"] not in source_ids:
