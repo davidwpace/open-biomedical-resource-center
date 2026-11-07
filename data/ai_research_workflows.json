@@ -1,0 +1,77 @@
+{
+  "version": "1.0",
+  "updated_on": "2026-11-07",
+  "purpose": "Machine-readable starter workflows for public educational biomedical research, not executable agent actions or endorsements",
+  "catalog": "https://davidwpace.github.io/open-biomedical-resource-center/data/resources.json",
+  "stories": "https://davidwpace.github.io/open-biomedical-resource-center/data/stories.json",
+  "privacy": "Public sources only; do not send patient records, PII, confidential manuscripts, private keys or credentials",
+  "rules": [
+    "Retrieve and verify official source content before asserting an observation",
+    "Do not invent retrievals, models, datasets or experimental results",
+    "Separate original experiment, interpretation, hypothesis, modern teaching analogy, and clinical evidence",
+    "Preserve paper DOI/URL, study type, source location, dataset accession/version and review date",
+    "Do not infer clinical utility, diagnosis or treatment from database associations or simulations",
+    "Treat author/editorial approval as review status, not journal peer review"
+  ],
+  "workflows": [
+    {
+      "id": "select-tools",
+      "label": "Select public research tools",
+      "entry": "start.html",
+      "inputs": [
+        "public_question_or_topic"
+      ],
+      "steps": [
+        "Fetch current catalog JSON and examine record IDs, official_url, access and limitations",
+        "Recommend at most 3 source-backed tools and a beginner-sized first action",
+        "Cite original provider URLs and disclose retrieval limits"
+      ],
+      "output": "record_id and why-fit table, first task, limitations and source check"
+    },
+    {
+      "id": "verify-claim",
+      "label": "Source-level evidence checking",
+      "entry": "review.html",
+      "inputs": [
+        "public_scientific_claim",
+        "original_study_urls"
+      ],
+      "steps": [
+        "Locate original study and precise methods, results, figure or table for the claim",
+        "Find counterevidence or replication limitations",
+        "Classify observation vs interpretation vs hypothesis and clinical setting"
+      ],
+      "output": "source-located claim evidence matrix and uncertainty"
+    },
+    {
+      "id": "learn-discovery",
+      "label": "Interactive science tutoring",
+      "entry": "learn.html",
+      "inputs": [
+        "public_lesson_url"
+      ],
+      "steps": [
+        "Ask a prediction before revealing the original result",
+        "Confirm what was tested and what remains unresolved",
+        "Guide a safe verification task using the cited public research tool"
+      ],
+      "output": "learner evidence trail with original and modern-tool dates"
+    },
+    {
+      "id": "reproduce-public-result",
+      "label": "Reproduce public analysis",
+      "entry": "agent-access.html",
+      "inputs": [
+        "paper_doi",
+        "public_dataset_accession",
+        "target_figure"
+      ],
+      "steps": [
+        "Verify the dataset and method are publicly reusable",
+        "List software versions, scripts, controls, transformations and expected metrics",
+        "Propose reproducibility checks; label missing files as blocked"
+      ],
+      "output": "reproducible workflow proposal, gaps and validation checklist"
+    }
+  ]
+}

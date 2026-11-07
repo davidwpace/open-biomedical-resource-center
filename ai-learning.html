@@ -1,0 +1,61 @@
+<!doctype html><html lang="en"><head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="description" content="Bring your own AI to science. Copy beginner-safe prompts for selecting research tools, checking papers, following discovery lessons and reproducing public results.">
+<link rel="canonical" href="https://davidwpace.github.io/open-biomedical-resource-center/ai-learning.html">
+<script src="assets/theme.js"></script>
+<link rel="stylesheet" href="assets/lesson.css">
+<link rel="stylesheet" href="assets/theme.css">
+<title>Learn Science with Your AI — Open Biomedical Resource Center</title>
+<style>
+.ai-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:18px;margin:26px 0 55px}
+.ai-card{border:1px solid #d3e0dd;border-radius:13px;padding:24px;background:#f5faf8}
+.ai-card h2{font-size:25px;letter-spacing:-.03em;margin:7px 0}
+.ai-card p{color:#43636a;font-size:15px}
+.ai-card textarea{display:block;width:100%;min-height:216px;resize:vertical;margin:15px 0;background:#fff;border:1px solid #accfc5;border-radius:9px;color:#1a3d45;padding:15px;font:14px/1.6 system-ui;overflow-wrap:anywhere}
+.ai-card button{font-size:14px}.ai-step{background:#eff8f4;padding:22px;border-radius:12px;margin:20px 0 36px}
+.ai-step li{font-size:15px;margin-bottom:8px;color:#365e65}
+#copy-status{font-size:14px;min-height:24px}
+@media(max-width:730px){.ai-grid{grid-template-columns:1fr}.ai-card{padding:18px}}
+html[data-theme="dark"] .ai-card,html[data-theme="dark"] .ai-step{background:#193b46;border-color:#547880;color:#ebf6f4}
+html[data-theme="dark"] .ai-card p,html[data-theme="dark"] .ai-step li{color:#cce2e4}
+html[data-theme="dark"] .ai-card textarea{background:#092e39;color:#e6f5f4;border-color:#7ca29e}
+</style></head>
+<body><a class="skip" href="#main">Skip to AI research workflows</a>
+<header class="lab-header"><a class="brand" href="index.html">✳ OPEN BIOMED · RESOURCE CENTER</a><nav aria-label="Navigation"><a href="learn.html">Lessons</a><a href="start.html">Find a tool</a><a href="agent-access.html">Agent access</a></nav></header>
+<main class="lab-container" id="main">
+<section class="lab-hero"><div class="lab-eyebrow">YOUR AI IS A LEARNING PARTNER · NO SPECIAL ACCOUNT REQUIRED HERE</div>
+<h1>Explore a discovery <em>with your own AI.</em></h1>
+<p>Use whichever AI assistant you prefer. Choose a task, copy the instructions, and paste them into your AI chat. Your AI can help you select tools and check scientific sources—but you should verify its results.</p>
+<div class="lab-stats"><span>For beginners and agents</span><span>Copy-and-paste research guidance</span><span>No private records</span></div>
+<a class="lab-primary" href="learn.html">Choose an interactive lesson →</a></section>
+<section class="ai-step" aria-labelledby="how-title"><h2 id="how-title">How to begin</h2>
+<ol><li>Pick an example below or open a <a href="learn.html">discovery lesson</a>.</li>
+<li>Replace the bracketed words with your own public research question or topic.</li>
+<li>Copy the prompt into ChatGPT, Claude, Gemini or another assistant you use.</li>
+<li>Ask for the source link, what the evidence actually shows, and what remains uncertain. Open the original source yourself.</li></ol>
+<p><strong>Privacy:</strong> Do not paste patient records, personal medical histories, test results, confidential unpublished research, or credentials into public prompts. This website sends no prompt to any AI service.</p></section>
+<section class="ai-grid" aria-label="Copyable AI research starter prompts">
+<article class="ai-card"><span class="lab-eyebrow">01 · TOOL SELECTOR</span><h2>Which research tool fits my question?</h2><p>Helpful when you know what you want to investigate, but not which of the Resource Center's tools to open.</p>
+<label for="ai-prompt-tools"><strong>Copy this prompt</strong></label>
+<textarea id="ai-prompt-tools" readonly spellcheck="false">Act as a careful, beginner-friendly biomedical research guide. My public research topic is [TOPIC OR QUESTION]. First inspect the Open Biomedical Resource Center's current catalog at https://davidwpace.github.io/open-biomedical-resource-center/data/resources.json or tell me clearly if you cannot retrieve it. Choose no more than three tools by their actual resource IDs and official URLs. Explain why each fits, what it can and cannot show, access requirements, and exactly one task I can do first. Distinguish observed evidence from hypotheses. Do not invent tool capabilities or claim you opened a source you could not access. Do not ask for private health information.</textarea>
+<button class="lab-primary" type="button" data-copy-target="ai-prompt-tools">Copy tool-selection prompt</button></article>
+<article class="ai-card"><span class="lab-eyebrow">02 · SOURCE CHECKER</span><h2>Is this science claim really supported?</h2><p>Ask for primary sources, methods, exact claim location, counterevidence and honest uncertainty.</p>
+<label for="ai-prompt-check"><strong>Copy this prompt</strong></label>
+<textarea id="ai-prompt-check" readonly spellcheck="false">Investigate this public scientific claim: [CLAIM]. Search for and open original studies when you can. For each major claim, give the direct paper/DOI URL and the exact figure, table, section or quoted result that supports it; label any source you could not retrieve. Separate experimental results, interpretations, speculation, and clinical implications. Identify controls, study design, sample sizes and important limitations where reported. Search for contradictory results or failed replication. If insufficient evidence exists, say so rather than filling gaps. Provide a short, neutral conclusion and three things I should verify myself. Do not treat a news headline as proof.</textarea>
+<button class="lab-primary" type="button" data-copy-target="ai-prompt-check">Copy evidence-check prompt</button></article>
+<article class="ai-card"><span class="lab-eyebrow">03 · PERSONAL SCIENCE TUTOR</span><h2>Walk me through a discovery.</h2><p>Learn one clue at a time, with questions before explanations.</p>
+<label for="ai-prompt-tutor"><strong>Copy this prompt</strong></label>
+<textarea id="ai-prompt-tutor" readonly spellcheck="false">Be my interactive scientific discovery coach. I'm learning from this public lesson: [PASTE THE LESSON URL FROM THE RESOURCE CENTER]. Explain the original observation and why researchers thought it mattered using language suitable for a beginner. Ask me one prediction question at a time before revealing the answer. Use the lesson's original sources when available, and distinguish modern educational tools from what scientists historically used. Help me use one public research tool to check a specific fact. End by asking what remains unknown and how a careful experiment could test it. Correct me respectfully; do not make unsupported clinical or breakthrough claims.</textarea>
+<button class="lab-primary" type="button" data-copy-target="ai-prompt-tutor">Copy learning-coach prompt</button></article>
+<article class="ai-card"><span class="lab-eyebrow">04 · REPRODUCIBILITY</span><h2>Can we test a published result?</h2><p>Move from reading to public-data analysis without confusing a tutorial with a new discovery.</p>
+<label for="ai-prompt-reproduce"><strong>Copy this prompt</strong></label>
+<textarea id="ai-prompt-reproduce" readonly spellcheck="false">Help me assess whether I can independently reproduce a published research result using ONLY lawfully accessible public data and open tools. Original paper: [DOI OR URL]. Target result: [FIGURE OR ANALYSIS]. Identify the exact dataset/accession, release/version, software and dependencies, methodological steps and expected output. Distinguish reproducing published code from independent replication. Check for missing data, licensing restrictions, incompatible versions and potential sources of error. Draft a minimal, testable, reproducible workflow with verification checks; do not fabricate data or results. If required files aren't available, clearly explain why the experiment is blocked and what would unblock it. No private health data or clinical interpretations.</textarea>
+<button class="lab-primary" type="button" data-copy-target="ai-prompt-reproduce">Copy reproduction prompt</button></article>
+</section>
+<p role="status" aria-live="polite" id="copy-status"></p>
+<section class="archive-note"><h2>For AI agents and developers</h2>
+<p>Use the <a href="data/ai_research_workflows.json">read-only workflow specification (JSON)</a>, <a href="data/resources.json">current resource catalog</a>, and <a href="llms.txt">site navigation hints</a>. Nothing here provides a remote executable API, automatic experimental access, clinical decision service, or verified AI reviewer.</p>
+<a href="agent-access.html">Read the agent integration guide →</a></section>
+</main>
+<footer class="lab-footer"><a href="learn.html">Interactive lessons</a><a href="index.html">Home</a><p>Free public science education. No tracking, accounts or AI model requests from this page.</p></footer>
+<script src="assets/ai-learning.js" defer></script></body></html>
