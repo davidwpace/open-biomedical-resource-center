@@ -14,8 +14,8 @@ Public project base (once GitHub Pages deployment succeeds):
 
 `https://davidwpace.github.io/open-biomedical-resource-center/`
 
-- **Public JSON metadata:** `data/resources.json`. Returns all 42 resource records; filter on the client. No key, search endpoint, backend, authentication, or personalized recommendations. Resource data and descriptions are editorial, not scientific validations.
-- **Plain HTML directory:** `catalog.html`. All 42 resource summaries appear in the HTML itself without JavaScript, suitable for search indexing and readers that cannot execute JavaScript. Each has an anchor (resource ID).
+- **Public JSON metadata:** `data/resources.json`. Returns all current resource records; filter on the client. No key, search endpoint, backend, authentication, or personalized recommendations. Resource data and descriptions are editorial, not scientific validations.
+- **Plain HTML directory:** `catalog.html`. All current resource summaries appear in the HTML itself without JavaScript, suitable for search indexing and readers that cannot execute JavaScript. Each has an anchor (resource ID).
 - **For AI assistants:** `agent-access.html`. Plain-language use, API example and limitations.
 - **Optional llms.txt:** `llms.txt`. Provides links for clients that look for or are provided this file, **not** a universally adopted search-crawler standard and not an instruction hierarchy overriding users or source policies.
 - **Read-only OpenAPI:** `openapi.json`. Describes ONLY `GET /data/resources.json`. It is not an executable search service, hosted model, MCP server, or Agent2Agent endpoint.

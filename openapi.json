@@ -16,7 +16,7 @@
       "get": {
         "operationId": "getResourceCatalog",
         "summary": "Get the complete public resource directory",
-        "description": "Returns all 42 curated records. Filter by category, tags and keywords client-side. This static endpoint accepts no query parameters, authentication or POST actions; catalog accuracy should be verified with each upstream resource provider.",
+        "description": "Returns all current curated records. Filter by category, tags and keywords client-side. This static endpoint accepts no query parameters, authentication or POST actions; catalog accuracy should be verified with each upstream resource provider.",
         "tags": [
           "Public metadata"
         ],

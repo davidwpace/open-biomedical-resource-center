@@ -8,23 +8,26 @@ A public, mobile-friendly directory of biomedical research resources, including 
 
 ## Publication safety
 
-The `main`-branch GitHub Pages publisher currently runs independently of validation.
-A fail-closed GitHub Actions release pipeline and allowlisted static artifact are
-**prepared but not activated**; this intentionally avoids interrupting the site.
-See **[docs/PUBLISHING_SAFETY.md](docs/PUBLISHING_SAFETY.md)** for the one-time
-GitHub Pages **Source → GitHub Actions** change and repository variable
-`PAGES_ACTIONS_READY=true` required to activate it.
+**Active since November 6, 2026:** GitHub Actions validates the source catalog,
+discovery pages, JavaScript syntax, privacy warnings and internal links before
+deploying a deliberately allowlisted static site artifact. The deployment job
+requires a successful validation job, and the latest verified deployment was
+[run #42172821542](https://github.com/davidwpace/open-biomedical-resource-center/actions/runs/42172821542).
+Pull requests are validated without publishing.
 
-When activated, deployment depends on successful catalog, syntax, discovery,
-privacy-safety, and internal-link checks. Pull requests do not publish.
-The public repository itself must never contain sensitive records or credentials.
+The `PAGES_ACTIONS_READY=true` repository variable acts as a release switch.
+The `main` branch is **not yet protected**; the repository owner can add a rule
+requiring the exact `Catalog & syntax checks` status before merging, to stop
+unreviewed or failing changes reaching `main`. See
+[docs/PUBLISHING_SAFETY.md](docs/PUBLISHING_SAFETY.md) for the remaining
+hardening instructions. Do not commit sensitive records or credentials.
 
 ## Preview and hosting
 
 The site is intentionally **HTML + CSS + JavaScript with no build dependencies**.
 
 - Open [index.html](index.html) with a local HTTP server, for example `python3 -m http.server 8000` from the repo root, then visit `http://localhost:8000`. (Opening `index.html` as a `file://` URL may block loading the JSON data.)
-- **GitHub Pages:** Repository **Settings → Pages → Build and deployment → Deploy from a branch → main → /(root) → Save**. The published URL is expected to have the pattern `https://davidwpace.github.io/open-biomedical-resource-center/` **only after GitHub Pages is enabled and the first deployment succeeds**.
+- **GitHub Pages:** Publishing is already configured through **GitHub Actions**. The confirmed deployment URL is https://davidwpace.github.io/open-biomedical-resource-center/. Use **Actions → Validate public directory** to inspect validation and deployment history; do not switch back to branch publishing unless intentionally rolling back.
 - This is a public directory. It does not require a backend, account, cookies, analytics, or personal information.
 
 ## AI and search-engine discovery (provider agnostic)

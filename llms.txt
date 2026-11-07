@@ -1,6 +1,6 @@
 # Open Biomedical Resource Center
 
-> A free-to-browse, research-and-education-only directory of public biomedical resources. It helps researchers and AI assistants find scientific tools, evaluate access conditions and limitations, and identify official sources. The catalog currently contains 42 entries across seven fields.
+> A free-to-browse, research-and-education-only directory of public biomedical resources. It helps researchers and AI assistants find scientific tools, evaluate access conditions and limitations, and identify official sources. The live catalog JSON is the authoritative source for the current record count and is organized across seven research fields.
 
 ## Public, machine-readable access
 - [Fallback public JSON from GitHub](https://raw.githubusercontent.com/davidwpace/open-biomedical-resource-center/main/data/resources.json): Read-only raw file for tools that cannot reach GitHub Pages.
