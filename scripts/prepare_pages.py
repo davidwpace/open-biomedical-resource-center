@@ -31,6 +31,7 @@ PUBLIC = (
     "start.html",
     "stories.html",
     "contribute.html",
+    "review.html",
     "llms.txt",
     "openapi.json",
     "sitemap.xml",

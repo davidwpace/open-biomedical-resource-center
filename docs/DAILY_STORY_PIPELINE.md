@@ -34,3 +34,8 @@
 A **pre-reviewed publishing queue** containing enough stories for upcoming dates. The daily research task can help build that backlog; editors must validate sources before publication. Future work can render approved articles and their archive automatically from structured metadata and release them by scheduled date. Until then, the pipeline reliably provides a daily FEATURE from the existing library, not a guaranteed new independent breakthrough every day.
 
 Other future enhancements: Atom/RSS feed, novice testing, source link monitoring, subject filters, and an explicit expert-review process. Evidence quality takes precedence over the publishing calendar.
+
+
+## Scientific Review Panel (public pilot, November 7, 2026)
+
+Newly approved articles must pass `scripts/review_gate.py`: record a named public human editor, an evidence-linked review Issue/PR, a review date, AI-use and conflicts declarations, and one source-located claim check per chapter. Clinical interpretation requires an additional independent expert-review record. Structural validation does **not** establish review authenticity, credentials, claim truth or external peer-review status. The open [review page](https://davidwpace.github.io/open-biomedical-resource-center/review.html) invites documented challenges and volunteer reviewers; see `docs/SCIENTIFIC_REVIEW_PANEL.md`. The AI review roles are currently templates, not operating independent model agents.
