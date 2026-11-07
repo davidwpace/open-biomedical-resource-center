@@ -17,6 +17,7 @@ from pathlib import Path
 from urllib.parse import urlsplit
 
 from render_daily_spotlight import render_spotlight, available_stories
+from generate_lessons import render_lessons
 
 ROOT = Path(__file__).resolve().parent.parent
 DEST = ROOT / "dist"
@@ -44,6 +45,10 @@ PUBLIC = (
     "assets/guide.css",
     "assets/story.js",
     "assets/story.css",
+    "assets/lesson.css",
+    "assets/lesson.js",
+    "data/lesson_activities.json",
+    "data/lesson_cases.json",
     "lab/braf-melanoma.html",
     "lab/demo.css",
     "lab/demo.js",
@@ -167,7 +172,9 @@ def main() -> int:
         target.parent.mkdir(parents=True, exist_ok=True)
         shutil.copyfile(origin, target)
         published.add(asset)
-    # Add a date-aware public spotlight from already published, source-backed stories.
+    # Generate interactive pages only from approved or previously published stories.
+    published.update(render_lessons(DEST))
+    # Add a date-aware feature from already published, source-backed stories.
     published.update(render_spotlight(DEST))
     check_links(DEST, published)
     disallowed = (".github/", "docs/", "scripts/", "patients/", "clinical-records/")

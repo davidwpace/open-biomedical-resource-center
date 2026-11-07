@@ -28,6 +28,18 @@ The [open review invitation](review.html) accepts source-backed challenges and r
 
 **Current limitation:** The five AI review roles are defined but NOT being run as five independent model services. Automated metadata checks do not authenticate expert credentials, prove scientific validity, or constitute journal peer review. See [Scientific Review Panel policy](docs/SCIENTIFIC_REVIEW_PANEL.md).
 
+## Interactive Discovery-to-Lesson Engine (pilot)
+
+The mobile-first [Interactive Discovery Lessons](https://davidwpace.github.io/open-biomedical-resource-center/learn.html) are **generated automatically during Pages builds** from already published, source-linked records. The first three examples cover penicillin, insulin and the existing BRAF melanoma lab.
+
+- Canonical story source: `data/stories.json`. Existing BRAF demonstration adaptation: `data/lesson_cases.json` (the only allowed legacy case).
+- Optional interactive reasoning checkpoints: `data/lesson_activities.json`. If absent for a newly approved story, a simpler reveal-evidence lesson is generated automatically.
+- `scripts/generate_lessons.py` produces `learn.html`, `learn/<slug>.html` and sitemap entries during the allowlisted release; no paid AI API, user account or external server.
+- `assets/lesson.js` offers guided navigation, evidence-aware answer feedback, and locally generated downloadable learning notes. The full lesson remains readable without JavaScript.
+- The [daily featured discovery](https://davidwpace.github.io/open-biomedical-resource-center/today.html) links to its generated interactive lesson.
+- An approved article still needs original citations and [recorded editorial review](docs/SCIENTIFIC_REVIEW_PANEL.md). This deterministic generator is **not** a new independent scientific review, real lab experiment or automatic author of new breakthrough claims.
+- A sustainable new lesson per day needs a pre-reviewed story queue. Scheduling a feature is separate from sourcing and approving new discoveries.
+
 ## Preview and hosting
 
 The site is intentionally **HTML + CSS + JavaScript with no build dependencies**.
