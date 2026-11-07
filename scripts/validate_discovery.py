@@ -86,6 +86,16 @@ def validate():
     if "lab/braf-melanoma.html" not in story_index:
         errors.append("Story archive missing the BRAF lab")
 
+    # Interactive lessons are generated from approved public evidence, not drafts.
+    if "learn.html" not in (ROOT / "stories.html").read_text(encoding="utf-8"):
+        errors.append("Story library does not link to interactive investigations")
+    if "learn.html" not in (ROOT / "index.html").read_text(encoding="utf-8"):
+        errors.append("Homepage does not expose interactive lessons")
+    for required in ("scripts/generate_lessons.py", "assets/lesson.js", "assets/lesson.css",
+                     "data/lesson_activities.json", "data/lesson_cases.json"):
+        if not (ROOT / required).is_file():
+            errors.append(f"Missing reusable discovery lesson component: {required}")
+
     contribution_page = (ROOT / "contribute.html").read_text(encoding="utf-8")
     panel_page = (ROOT / "review.html").read_text(encoding="utf-8")
     for form in ("peer_review.yml", "reviewer_volunteer.yml"):

@@ -39,3 +39,8 @@ Other future enhancements: Atom/RSS feed, novice testing, source link monitoring
 ## Scientific Review Panel (public pilot, November 7, 2026)
 
 Newly approved articles must pass `scripts/review_gate.py`: record a named public human editor, an evidence-linked review Issue/PR, a review date, AI-use and conflicts declarations, and one source-located claim check per chapter. Clinical interpretation requires an additional independent expert-review record. Structural validation does **not** establish review authenticity, credentials, claim truth or external peer-review status. The open [review page](https://davidwpace.github.io/open-biomedical-resource-center/review.html) invites documented challenges and volunteer reviewers; see `docs/SCIENTIFIC_REVIEW_PANEL.md`. The AI review roles are currently templates, not operating independent model agents.
+
+
+## November 7 — Interactive Discovery-to-Lesson Engine
+
+Approved public story metadata now generates complete static, mobile-friendly interactive investigations (browse at [learn.html](https://davidwpace.github.io/open-biomedical-resource-center/learn.html)). Visitors follow original questions, select interpretations, see source-backed feedback, use a modern public research tool and save a local evidence-trail text file. Two preexisting historical articles and the previously published BRAF lab supply the first three examples. Optional source-checked scenario questions live in `data/lesson_activities.json`; newly approved stories without handcrafted activities still generate a basic reveal-evidence experience. No external AI calls, private-case information, or claim that a visitor has recreated a historical experiment.

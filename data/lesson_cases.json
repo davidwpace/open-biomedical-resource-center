@@ -1,0 +1,80 @@
+{
+  "version": "1.0",
+  "updated_on": "2026-11-07",
+  "scope": "Adaptation of one already published in-repository BioDiscovery Lab, not a new editorially approved article",
+  "cases": [
+    {
+      "slug": "braf-melanoma",
+      "source_type": "previously_published_lab_adaptation",
+      "original_demo": "lab/braf-melanoma.html",
+      "title": "The gene clue that changed melanoma research",
+      "eyebrow": "A DNA clue · 2002–2011",
+      "topic": "Cancer genetics",
+      "intro": "Follow how a gene change became a testable treatment idea, and what a later randomized trial could—and could not—establish.",
+      "hook": "Could a change in a tumor's DNA reveal a weakness worth testing?",
+      "original_year": "2002–2011",
+      "published_on": "2026-10-28",
+      "reviewed_on": "2026-11-07",
+      "reading_minutes": 7,
+      "category": "Landmark discovery",
+      "theme": "dna",
+      "chapters": [
+        {
+          "kicker": "NOTICE",
+          "title": "Researchers found a recurring DNA clue.",
+          "body": "A 2002 study reported BRAF mutations in 66% of the malignant melanoma specimens it examined. That was a finding in that study, not a claim about every melanoma in the world.",
+          "takeaway": "First locate the finding and the population actually studied.",
+          "source": "davies"
+        },
+        {
+          "kicker": "PREDICT",
+          "title": "What might the mutation be doing?",
+          "body": "BRAF participates in a signaling pathway affecting cell growth. A mutation can alter that pathway. Researchers could ask whether some tumor cells depended on the altered signal.",
+          "takeaway": "A molecular explanation creates a hypothesis; it is not yet clinical proof.",
+          "source": "davies"
+        },
+        {
+          "kicker": "TEST",
+          "title": "Compare responses in a randomized study.",
+          "body": "A 2011 trial compared vemurafenib with dacarbazine in people with previously untreated advanced BRAF V600-mutant melanoma. Among patients evaluable for tumor response, confirmed responses were reported in 48% versus 5%, respectively.",
+          "takeaway": "Read the methods and denominator before interpreting percentages.",
+          "source": "chapman"
+        },
+        {
+          "kicker": "INTERPRET",
+          "title": "A strong result still has boundaries.",
+          "body": "The trial showed important benefits in the studied population, but a response does not mean every patient benefits or that the disease is cured. Treatment evidence and practice have continued evolving since 2011.",
+          "takeaway": "Scientific advances must be interpreted in the precise context they were tested.",
+          "source": "chapman"
+        }
+      ],
+      "resource_id": "open-targets-platform",
+      "tool_title": "Open Targets Platform",
+      "tool_why": "Open Targets lets researchers explore public evidence connecting genes, biological functions, and diseases. This is a modern exploration tool, not what the original investigators used in 2002.",
+      "tool_url": "https://platform.opentargets.org/target/ENSG00000157764",
+      "tool_task": "Open the modern BRAF target page. Find its gene description and evidence links. Identify one disease association and note that it does not itself prove a treatment works.",
+      "tool_answer": "BRAF is a protein-coding gene involved in the MAPK signaling pathway. An evidence association is a starting point, not a patient-response prediction.",
+      "tool_limitation": "A research database is not a clinical recommendation. The 2011 drug comparison is historical and modern melanoma treatment options have evolved.",
+      "sources": [
+        {
+          "id": "davies",
+          "label": "Davies et al. — Mutations of the BRAF gene in human cancer (Nature, 2002)",
+          "url": "https://doi.org/10.1038/nature00766",
+          "kind": "Original peer-reviewed study"
+        },
+        {
+          "id": "chapman",
+          "label": "Chapman et al. — Vemurafenib in BRAF-mutant melanoma (NEJM, 2011)",
+          "url": "https://doi.org/10.1056/NEJMoa1103782",
+          "kind": "Original randomized clinical trial"
+        },
+        {
+          "id": "ot",
+          "label": "Open Targets Platform — BRAF target",
+          "url": "https://platform.opentargets.org/target/ENSG00000157764",
+          "kind": "Modern research database, not a historical study tool"
+        }
+      ]
+    }
+  ]
+}

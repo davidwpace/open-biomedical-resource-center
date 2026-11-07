@@ -104,7 +104,7 @@ def render_spotlight(destination: Path, *, today: date | None = None) -> set[str
 <h2 id="featured-title">{title}</h2><p>{description}</p></div>
 <div class="story-inner">
 <div class="intro-line"><strong>?</strong><span>{hook}</span></div>
-<a class="main-cta" href="{target}">Walk me through this discovery →</a>
+<a class="main-cta" href="learn/{slug}.html">Try the interactive investigation →</a> <a class="secondary-cta" href="{target}">Read the original story →</a>
 </div>
 </section>
 <section class="lesson" aria-labelledby="task-title">
