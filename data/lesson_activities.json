@@ -1,0 +1,193 @@
+{
+  "version": "1.0",
+  "updated_on": "2026-11-07",
+  "purpose": "Teaching checkpoints based on existing public educational stories; not new scientific discoveries",
+  "by_slug": {
+    "penicillin": [
+      {
+        "question": "What did Fleming actually observe?",
+        "choices": [
+          {
+            "text": "Bacteria grew poorly near a patch of mold.",
+            "quality": "supported",
+            "feedback": "That's an observation from the dish; it gives us a clue worth testing."
+          },
+          {
+            "text": "The mold had already cured patients of infections.",
+            "quality": "overclaim",
+            "feedback": "Not yet. A laboratory observation does not demonstrate a safe treatment in people."
+          }
+        ]
+      },
+      {
+        "question": "Which explanation would researchers need to test?",
+        "choices": [
+          {
+            "text": "The mold released something that affected nearby bacteria.",
+            "quality": "supported",
+            "feedback": "A useful hypothesis. Investigators still had to test what caused the inhibition."
+          },
+          {
+            "text": "All mold can kill all bacteria.",
+            "quality": "overclaim",
+            "feedback": "The observation did not establish that. Different molds and bacteria can behave differently."
+          }
+        ]
+      },
+      {
+        "question": "What was missing before penicillin could become useful medicine?",
+        "choices": [
+          {
+            "text": "Purification, careful testing and reliable production.",
+            "quality": "supported",
+            "feedback": "Exactly. Other researchers had to make and evaluate the substance as a treatment."
+          },
+          {
+            "text": "Nothing; a clear area on a dish was enough.",
+            "quality": "overclaim",
+            "feedback": "A petri dish cannot establish safety, dosage, effectiveness or production quality in people."
+          }
+        ]
+      },
+      {
+        "question": "Which lesson best fits the discovery?",
+        "choices": [
+          {
+            "text": "A verified small observation can start an important collaborative effort.",
+            "quality": "supported",
+            "feedback": "Yes. The initial observation and later testing/production all mattered."
+          },
+          {
+            "text": "One person found an instant, finished medical treatment.",
+            "quality": "overclaim",
+            "feedback": "That leaves out years of essential teamwork, development and evaluation."
+          }
+        ]
+      }
+    ],
+    "insulin": [
+      {
+        "question": "Why was the pancreas worth investigating?",
+        "choices": [
+          {
+            "text": "Researchers had connected the pancreas with diabetes and blood sugar control.",
+            "quality": "supported",
+            "feedback": "Yes. That clue prompted experiments to identify a substance involved in regulating sugar."
+          },
+          {
+            "text": "Researchers already knew every cause of diabetes.",
+            "quality": "overclaim",
+            "feedback": "They did not. Scientific understanding was developing and multiple questions remained."
+          }
+        ]
+      },
+      {
+        "question": "What did experiments using pancreatic extracts in animals provide?",
+        "choices": [
+          {
+            "text": "Promising experimental evidence to investigate further.",
+            "quality": "supported",
+            "feedback": "Correct. Animal results can guide the next experiment, but do not by themselves prove human benefit."
+          },
+          {
+            "text": "Proof that every person with diabetes could be treated safely.",
+            "quality": "overclaim",
+            "feedback": "Animal findings were not enough for that conclusion."
+          }
+        ]
+      },
+      {
+        "question": "Why did improving purification matter?",
+        "choices": [
+          {
+            "text": "A better-prepared extract was an important step in successful human treatment.",
+            "quality": "supported",
+            "feedback": "Yes. The first attempt was less successful; preparation and testing mattered."
+          },
+          {
+            "text": "Purification proved all insulin preparations had the same effects.",
+            "quality": "overclaim",
+            "feedback": "Different preparations and circumstances cannot be treated as identical without evidence."
+          }
+        ]
+      },
+      {
+        "question": "What makes this a teamwork story?",
+        "choices": [
+          {
+            "text": "Experiments, chemical purification, clinical care and production all contributed.",
+            "quality": "supported",
+            "feedback": "Exactly. Multiple complementary skills turned an idea into treatment."
+          },
+          {
+            "text": "The first animal experiment made further work unnecessary.",
+            "quality": "overclaim",
+            "feedback": "The human and production stages still demanded careful work."
+          }
+        ]
+      }
+    ],
+    "braf-melanoma": [
+      {
+        "question": "What was the first major clue in the 2002 study?",
+        "choices": [
+          {
+            "text": "BRAF mutations were found in many of the melanoma samples studied.",
+            "quality": "supported",
+            "feedback": "Yes. The paper reported BRAF mutations in 66% of malignant melanoma specimens in that study."
+          },
+          {
+            "text": "BRAF mutations were found in every cancer.",
+            "quality": "overclaim",
+            "feedback": "No. Frequencies varied across tumor types and samples."
+          }
+        ]
+      },
+      {
+        "question": "What is a testable next hypothesis?",
+        "choices": [
+          {
+            "text": "Some tumors might depend on altered BRAF signaling and respond to targeted inhibition.",
+            "quality": "supported",
+            "feedback": "That is a testable possibility—not yet a demonstrated clinical result."
+          },
+          {
+            "text": "Every cancer with any BRAF variation must respond to the same drug.",
+            "quality": "overclaim",
+            "feedback": "Mutations, tumor context and treatment responses differ. That claim is unsupported."
+          }
+        ]
+      },
+      {
+        "question": "What did the 2011 randomized trial report?",
+        "choices": [
+          {
+            "text": "A higher confirmed response rate with vemurafenib than dacarbazine in the trial population.",
+            "quality": "supported",
+            "feedback": "Yes. The study reported confirmed response rates of 48% and 5% in evaluable patients, with trial-specific eligibility."
+          },
+          {
+            "text": "A permanent cure for all patients with melanoma.",
+            "quality": "overclaim",
+            "feedback": "No. A response is not a cure; benefit and limitations depend on the population and follow-up."
+          }
+        ]
+      },
+      {
+        "question": "Which scientific limit should we keep in mind?",
+        "choices": [
+          {
+            "text": "Original trial results must be interpreted in the studied population and historical context.",
+            "quality": "supported",
+            "feedback": "Correct. Modern standards of care have evolved; the study is a discovery lesson, not treatment guidance."
+          },
+          {
+            "text": "A study showing tumor shrinkage removes the need for safety or follow-up data.",
+            "quality": "overclaim",
+            "feedback": "Safety, durability and long-term outcomes remain essential."
+          }
+        ]
+      }
+    ]
+  }
+}
