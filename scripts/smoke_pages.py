@@ -26,7 +26,16 @@ PUBLIC_FILES = (
     "agent-access.html",
     "lab/braf-melanoma.html",
     "data/resources.json",
+    "assets/lesson.css",
+    "assets/lesson.js",
 )
+GENERATED_PAGES = {
+    "learn.html": ("learn/penicillin.html", "learn/insulin.html", "learn/braf-melanoma.html"),
+    "learn/penicillin.html": ('id="research-task"', 'id="download-notes"', "pubchem.ncbi.nlm.nih.gov"),
+    "learn/insulin.html": ('id="research-task"', 'id="download-notes"', "FDA"),
+    "learn/braf-melanoma.html": ('id="research-task"', 'id="download-notes"', "10.1056/NEJMoa1103782"),
+    "today.html": ("TODAY", "learn/"),
+}
 EXPECTED_PREFIX = "https://davidwpace.github.io/open-biomedical-resource-center/"
 
 
@@ -59,8 +68,21 @@ def run(base_url: str) -> int:
                     print(f"OK: {name} ({len(actual):,} bytes)")
             except (HTTPError, URLError, OSError, TimeoutError, RuntimeError) as exc:
                 problems.append(f"{name}: {type(exc).__name__}: {exc}")
+        # Generated pages do not exist in the source tree. Confirm that live
+        # HTTPS responses contain our real interactive lesson controls, sources
+        # and archive entries, rather than only trusting a deployment status.
+        for name, required in GENERATED_PAGES.items():
+            try:
+                body = get_page(urljoin(url, name)).decode("utf-8")
+                absent = [marker for marker in required if marker not in body]
+                if absent:
+                    problems.append(f"{name}: missing deployed lesson markers: {absent}")
+                else:
+                    print(f"OK: {name} ({len(body):,} decoded characters, lesson markers present)")
+            except (HTTPError, URLError, OSError, TimeoutError, RuntimeError, UnicodeDecodeError) as exc:
+                problems.append(f"{name}: {type(exc).__name__}: {exc}")
         if not problems:
-            print("PUBLIC HTTPS SMOKE CHECK PASSED: all files match the validated source.")
+            print("PUBLIC HTTPS SMOKE CHECK PASSED: source files match and generated lessons are reachable.")
             return 0
         print(f"Public-site verification attempt {attempt}/5: {len(problems)} issue(s)")
         for problem in problems:
