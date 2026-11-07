@@ -46,6 +46,8 @@ PUBLIC = (
     "assets/story.js",
     "assets/story.css",
     "assets/lesson.css",
+    "assets/theme.css",
+    "assets/theme.js",
     "assets/lesson.js",
     "data/lesson_activities.json",
     "data/lesson_cases.json",

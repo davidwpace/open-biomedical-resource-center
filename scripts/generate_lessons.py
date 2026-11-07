@@ -166,7 +166,9 @@ def page(record: dict, activities: list[dict] | None) -> str:
 <meta name="description" content="{e(record["intro"])}">
 <meta name="theme-color" content="#103947">
 <link rel="canonical" href="{BASE}learn/{slug}.html">
+<script src="../assets/theme.js"></script>
 <link rel="stylesheet" href="../assets/lesson.css">
+<link rel="stylesheet" href="../assets/theme.css">
 <script src="../assets/lesson.js" defer></script>
 <title>{e(record["title"])} — Interactive Discovery Lab</title></head>
 <body>
@@ -228,11 +230,11 @@ def archive(records: list[dict]) -> str:
         slug = record["slug"]
         cards.append(f'''<article class="lesson-card">
 <span class="lab-eyebrow">{e(record["topic"])} · {e(record["original_year"])}</span>
-<h2>{e(record["title"])}</h2><p>{e(record["intro"])}</p>
+<h2><a href="learn/{slug}.html">{e(record["title"])}</a></h2><p>{e(record["intro"])}</p>
 <a href="learn/{slug}.html">Start the interactive investigation →</a></article>''')
     return f'''<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
 <meta name="description" content="Learn science by investigating real breakthroughs. Make predictions, check evidence and try free research tools.">
-<link rel="canonical" href="{BASE}learn.html"><link rel="stylesheet" href="assets/lesson.css">
+<link rel="canonical" href="{BASE}learn.html"><script src="assets/theme.js"></script><link rel="stylesheet" href="assets/lesson.css"><link rel="stylesheet" href="assets/theme.css">
 <title>Interactive Discovery Lessons — Open Biomedical Resource Center</title></head>
 <body><a class="skip" href="#main">Skip to lessons</a>
 <header class="lab-header"><a class="brand" href="index.html">✳ OPEN BIOMED · RESOURCE CENTER</a>
