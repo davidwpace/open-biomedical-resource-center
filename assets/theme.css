@@ -1,0 +1,41 @@
+/* Shared contrast and optional user-selectable dark mode for public learning pages.
+   No external fonts, tracking, or preference cookies. */
+.color-theme-toggle{position:fixed;right:15px;bottom:16px;z-index:1000;display:inline-flex;align-items:center;justify-content:center;padding:11px 16px;min-height:46px;border-radius:999px;border:2px solid #267d78;background:#f0fff7;color:#134c4c;box-shadow:0 4px 22px #082f3644;font:800 14px/1.2 system-ui,-apple-system,"Segoe UI",sans-serif;cursor:pointer;white-space:nowrap}
+.color-theme-toggle:hover{border-color:#115850;background:#d3f4e6}
+.color-theme-toggle:focus-visible{outline:3px solid #329ec4;outline-offset:3px}
+body{padding-bottom:64px;font-size:16px}
+:is(.lesson-card p,.story-card p,.stage-context,.research-wrap p,.research-sources li,.research-sources p,.archive-note p,.lab-tool>p,.task-panel p,.reason-choice,.evidence-reveal p,.lesson-card>a,.story-card>a,.chapter-source,.lesson .limit,.more-info,.footer p,.agent-main>p,.endpoint p,.choice span:last-child,.goal-choice span:last-child,.notice,.hint){font-size:max(15px,1rem)}
+:is(.lab-eyebrow,.lesson-kicker,.story-num,.eyebrow,.step-tag,.lab-stats span,.lab-footer,.site-footer,.footer,.pill,.disclaimer,.research-sources small,.story-card .year,.story-category){font-size:max(12px,.825rem)}
+:is(.choice-feedback,.source-boundary,.lab-caution,.lab-tool .lab-caution,.lesson-card a,.story-card a,.challenge legend,.review-card p,.review-card a,.contribute-card p,.contribute-card a,.review-steps ol,.contribute-steps ol,.result .privacy-note){font-size:max(14px,.95rem)}
+:root[data-theme="dark"]{color-scheme:dark;--ink:#f0faf8;--sub:#c4dade;--deep:#0b2430;--teal:#98e8d5;--aqua:#b9f1e3;--mint:#183941;--border:#47646b;--paper:#0d2029;--cream:#142f39;--shadow:0 12px 32px #010c1366;--pale:#152e38}
+html[data-theme="dark"],html[data-theme="dark"] body{background:#0d2029!important;color:#eaf7f6!important}
+html[data-theme="dark"] :is(.site-header,.lab-header,.bar,.topbar,.site-footer,.lab-footer,.footer){background:#102934!important;color:#eaf7f6!important;border-color:#415c64!important}
+html[data-theme="dark"] :is(.site-header a,.lab-header a,.bar a,.topbar a,.site-footer a,.footer a,.lab-footer a,.brand,.sitebrand,.brand-name,.nav-github,.header-nav a){color:#e8f7f4!important}
+html[data-theme="dark"] :is(.hero,.lab-hero,.index-hero,.heading,.agent-main,.catalog-main){color:#eaf7f6}
+html[data-theme="dark"] :is(.hero h1,.lab-hero h1,.index-hero h1,.heading h1,.section-heading h2,.lesson-step h2,.lesson-card h2,.story-card h2,.result h2,.review-card h2,.contribute-card h2,.agent-main h2){color:#f2fcf9!important}
+html[data-theme="dark"] :is(.hero p,.lab-hero>p,.index-hero p,.heading p,.hint,.hero-description,.stage-context,.lesson-card p,.story-card p,.archive-note p,.chapter-source,.lesson p,.agent-main>p,.catalog-intro p,.source-boundary,.research-sources p,.research-wrap p,.research-sources small,.story-head p,.goal-choice span:last-child,.choice span:last-child){color:#c6dce0!important}
+html[data-theme="dark"] :is(.lesson-card,.story-card,.lab-journey,.story-box,.story-inner,.choice,.goal-choice,.contribute-card,.review-card,.endpoint,.directory-panel,.resource-card,.workflow-card,.result-spotlight,.research-wrap,.mission,.task-panel,.search-area,.search-input,.portable-panel,.catalog-tools,.about-section,.story-head,.story-chapter,.modal,.more-info){background:#15343f!important;color:#edf9f8!important;border-color:#456873!important}
+html[data-theme="dark"] :is(.lesson-card a,.story-card a,.lab-journey a,.research-sources a,.chapter-source a,.review-card a,.contribute-card a,.endpoint a,.more-info a,.archive-note a,.agent-main a){color:#aff4dc}
+html[data-theme="dark"] :is(.lesson-card h2 a,.story-card h2 a){color:#f0faf7!important}
+html[data-theme="dark"] :is(.lab-stats span,.pill,.notice,.trust,.badge,.takeaway,.evidence-reveal,.choice-feedback,.reason-choice,.research-wrap,.archive-note,.important,.review-warning,.review-steps,.contribute-steps,.another-way,.lesson,.disclaimer,.source-boundary,.report-actions,.category-chips,.category-chip){background:#193c46!important;color:#e2f4f1!important;border-color:#547480!important}
+html[data-theme="dark"] :is(.reason-choice,.goal-choice,.choice,.control,.lab-secondary,.secondary-button,.secondary-cta,.secondary-link,.fallback-choice,.text-button){color:#e7f7f3!important;background:#193c46!important;border-color:#5b8587!important}
+html[data-theme="dark"] :is(.reason-choice:hover,.choice:hover,.goal-choice:hover){background:#24515b!important;border-color:#b0e9d3!important}
+html[data-theme="dark"] .reason-choice[aria-pressed="true"]{background:#245d59!important;border:2px solid #b5f1d6!important;color:#fff!important}
+html[data-theme="dark"] :is(.lab-primary,.main-cta,.primary-button,.primary,.control.primary){background:#a5efd6!important;border-color:#a5efd6!important;color:#0b343c!important}
+html[data-theme="dark"] :is(.lab-tool,.result,.intro-line,.central-question,.steps){background:#092934!important;color:#e8f7f3!important;border-color:#426772!important}
+html[data-theme="dark"] :is(.lab-tool p,.result p,.intro-line span,.central-question strong,.steps p){color:#d0e8e4!important}
+html[data-theme="dark"] :is(.story-head,.story-box,.story-chapter,.hero-story,.hero-meta,.demo-promo,.benefit-strip,.workflows-section,.contribute-panel,.research-sources,.more-info){border-color:#466772!important}
+html[data-theme="dark"] :is(.research-wrap strong,.takeaway strong,.story-num,.lab-eyebrow,.lesson-kicker,.step-tag,.eyebrow,.section-kicker){color:#a9f0d4!important}
+html[data-theme="dark"] :is(.task-panel p,.research-wrap p,.review-card p,.contribute-card p,.endpoint p,.archive-note p,.lesson-card p,.story-card p,.takeaway,.evidence-reveal p,.choice-feedback,.reason-choice,.story-head p){color:#d3e8e8!important}
+html[data-theme="dark"] :is(input,textarea,select){background:#112e39!important;color:#ecf8f4!important;border-color:#759ca3!important}
+html[data-theme="dark"] :is(.progress-track,.progressbar,.story-chapter-track){background:#496e70!important}
+html[data-theme="dark"] .color-theme-toggle{background:#244852;color:#f0fff8;border-color:#a1d9cc}
+html[data-theme="dark"] .color-theme-toggle:hover{background:#2e5a64}
+html[data-theme="dark"] :is(.lesson-illustration,.illustration-flow,.illustration-dna){background:linear-gradient(110deg,#14323b,#214a54)!important;border-color:#496d73!important}
+html[data-theme="dark"] .illustration-flow span{background:#153a43!important;color:#e9fff3!important;border-color:#628784!important}
+html[data-theme="dark"] :is(.illustration-note,.illustration-flow small){color:#c7e5e3!important}
+html[data-theme="dark"] .dish{box-shadow:0 12px 30px #00111688}
+html[data-theme="dark"] :is(.footer-mark,.mark,.brand-mark){background:#0a3039;color:#b0f0d7}
+html[data-theme="dark"] :is(.site-header nav a,.lab-header nav a,.bar nav a){color:#eaf7f2!important}
+@media(max-width:550px){.color-theme-toggle{right:12px;bottom:12px;padding:10px 13px;font-size:13px}body{padding-bottom:70px}:is(.lesson-card p,.story-card p,.reason-choice,.stage-context,.evidence-reveal p,.lab-tool>p,.agent-main>p){font-size:15px}}
+@media(prefers-reduced-motion:reduce){.color-theme-toggle{transition:none}}
