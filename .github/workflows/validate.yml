@@ -30,6 +30,8 @@ jobs:
           node --check lab/demo.js
       - name: Validate static human/AI discovery endpoints
         run: python3 scripts/validate_discovery.py
+      - name: Check public-site smoke test syntax
+        run: python3 -m py_compile scripts/smoke_pages.py
       - name: Ensure no patient-facing data folder is committed
         run: |
           test ! -d patients
@@ -63,3 +65,10 @@ jobs:
       - name: Deploy validated website
         id: deployment
         uses: actions/deploy-pages@v4
+      - name: Check out source for public-site comparison
+        uses: actions/checkout@v4
+      - name: Check the published HTTPS release against source
+        # Keep nonblocking during initial rollout to observe any Pages
+        # propagation/cache behavior before promoting to a required check.
+        continue-on-error: true
+        run: python3 scripts/smoke_pages.py "${{ steps.deployment.outputs.page_url }}"
