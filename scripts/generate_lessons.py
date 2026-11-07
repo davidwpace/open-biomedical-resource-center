@@ -20,7 +20,7 @@ from render_daily_spotlight import available_stories
 
 ROOT = Path(__file__).resolve().parent.parent
 BASE = "https://davidwpace.github.io/open-biomedical-resource-center/"
-SAFE_THEMES = {"mold", "pancreas", "dna"}
+SAFE_THEMES = {"mold", "pancreas", "dna", "concept"}
 LEGACY_CASES = {"braf-melanoma"}
 SITEMAP_NAMESPACE = "http://www.sitemaps.org/schemas/sitemap/0.9"
 
@@ -65,7 +65,7 @@ def validate_lesson(record: dict, activities: list[dict] | None) -> None:
     slug = record["slug"]
     if not re.fullmatch(r"[a-z0-9]+(?:-[a-z0-9]+)*", slug):
         raise ValueError(f"Unsafe lesson slug: {slug!r}")
-    if record.get("theme", "") not in SAFE_THEMES:
+    if record.get("theme", "concept") not in SAFE_THEMES:
         raise ValueError(f"{slug}: unknown visual motif")
     if not record.get("intro") or not record.get("hook"):
         raise ValueError(f"{slug}: missing beginner introduction or question")
@@ -111,6 +111,11 @@ def illustration(theme: str) -> str:
                 'aria-label="Conceptual sequence: pancreas, insulin signal, blood sugar regulation.">'
                 '<span>Pancreas</span><b aria-hidden="true">→</b><span>Insulin</span><b aria-hidden="true">→</b>'
                 '<span>Blood sugar</span><small>SIMPLIFIED BIOLOGY · NOT CLINICAL DATA</small></div>')
+    if theme == "concept":
+        return ('<div class="lesson-illustration illustration-flow" role="img" '
+                'aria-label="Conceptual scientific reasoning sequence: question, evidence, conclusion.">'
+                '<span>Question</span><b aria-hidden="true">→</b><span>Evidence</span><b aria-hidden="true">→</b>'
+                '<span>Conclusion</span><small>CONCEPTUAL SCIENCE WORKFLOW</small></div>')
     return ('<div class="lesson-illustration illustration-flow illustration-dna" role="img" '
             'aria-label="Conceptual path from a gene alteration through a pathway to a clinical research question.">'
             '<span>BRAF change</span><b aria-hidden="true">→</b><span>Cell signaling</span><b aria-hidden="true">→</b>'
@@ -173,8 +178,8 @@ def page(record: dict, activities: list[dict] | None) -> str:
 <div class="lab-eyebrow">INTERACTIVE DISCOVERY · {e(record["topic"])}</div>
 <h1 id="lesson-title">{e(record["title"])}</h1>
 <p>{e(record["intro"])}</p>
-<div class="lab-stats"><span>4 short decisions</span><span>Real original sources</span><span>No signup or patient data</span></div>
-{illustration(record["theme"])}
+<div class="lab-stats"><span>{len(chapters)} short steps</span><span>Real original sources</span><span>No signup or patient data</span></div>
+{illustration(record.get("theme", "concept"))}
 <div class="central-question"><span class="lab-eyebrow">THE QUESTION</span><strong>{e(record["hook"])}</strong></div>
 <a class="lab-primary" href="#journey">Begin the investigation <span aria-hidden="true">↓</span></a>
 </section>
