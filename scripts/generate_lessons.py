@@ -160,6 +160,19 @@ def page(record: dict, activities: list[dict] | None) -> str:
         f' <small>{e(src.get("kind", "Research source"))}</small></li>'
         for src in record["sources"]
     )
+    tutor_prompt = "\n".join([
+        "Help me learn science as an evidence-first interactive tutor.",
+        "I am studying this public educational lesson: " + BASE + "learn/" + slug + ".html",
+        "Discovery: " + str(record["title"]),
+        "Ask me one question at a time about what the researchers OBSERVED, HYPOTHESIZED, TESTED and CONCLUDED.",
+        "Don't reveal the interpretation until I've attempted a prediction; correct mistakes with sources and limitations.",
+        "For my public source-check task: " + str(record["tool_task"]),
+        "Help me use the original research and the modern tool without confusing the two.",
+        "Primary / official sources to verify (do not claim you opened a source you cannot access):",
+        *[str(source["url"]) for source in record["sources"]],
+        "Separate original results, later evidence, speculation and clinical conclusions.",
+        "Do not give patient-specific medical advice or ask for private health information.",
+    ])
     original = "An earlier published BioDiscovery Lab" if slug == "braf-melanoma" else "An already published landmark discovery story"
     return f'''<!doctype html>
 <html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
@@ -206,6 +219,17 @@ aria-label="Discovery progress" id="progress-track"><div id="progress-fill" styl
 <p>{e(record["tool_answer"])}</p></details>
 <p class="lab-caution"><strong>Important limit:</strong> {e(record["tool_limitation"])}</p>
 </section>
+<section class="ai-assist" id="bring-your-ai" aria-labelledby="ai-title">
+<div class="lab-eyebrow">AI CAN HELP YOU LEARN · YOU VERIFY THE SOURCES</div>
+<h2 id="ai-title">Bring your own AI research coach.</h2>
+<p>Copy a prompt made for this exact lesson and paste it into whichever AI assistant you already use. It can ask questions, suggest which public sources to inspect, and help you check the result. Nothing is sent to an AI from this website.</p>
+<div class="report-actions"><button type="button" id="copy-ai-prompt" class="lab-secondary">Copy my AI research prompt</button>
+<a class="lab-secondary" href="../ai-learning.html">See other research prompts →</a></div>
+<p id="ai-prompt-status" role="status" aria-live="polite"></p>
+<details id="ai-manual"><summary>View or manually copy the full prompt</summary>
+<label for="ai-prompt-text">Lesson-specific research prompt</label>
+<textarea id="ai-prompt-text" rows="9" readonly spellcheck="false">{e(tutor_prompt)}</textarea></details>
+</section>
 <section class="research-wrap" id="report" aria-labelledby="report-title">
 <div class="lab-eyebrow">SAVE WHAT YOU LEARNED</div><h2 id="report-title">Your evidence trail</h2>
 <p>You can save your choices and source links as a simple text report. It stays on your device; no answers are sent to us.</p>
@@ -244,7 +268,11 @@ def archive(records: list[dict]) -> str:
 <h1>Don't just read about a breakthrough. <em>Think like an investigator.</em></h1>
 <p>Notice a clue. Make a prediction. Check what researchers actually tested. Try one safe, public-data research task—no science degree needed.</p>
 <div class="lab-stats"><span>{len(records)} investigations</span><span>Original scientific sources</span><span>Free and no signup</span></div>
-</section><section class="lesson-grid" aria-label="Available interactive investigations">{''.join(cards)}</section>
+</section><section class="ai-assist archive-ai"><div class="lab-eyebrow">BRING YOUR OWN AI · COMPLETELY OPTIONAL</div>
+<h2>Want an AI to help you follow the clues?</h2>
+<p>Copy a beginner-friendly research prompt, choose a public tool and ask your assistant to explain how to verify the original evidence. No AI service or account is required to use these lessons.</p>
+<a href="ai-learning.html">Learn how to use AI with these lessons →</a></section>
+<section class="lesson-grid" aria-label="Available interactive investigations">{''.join(cards)}</section>
 <section class="archive-note"><h2>These are learning reconstructions, not new discoveries</h2>
 <p>Each lesson separates the original finding from later interpretations and modern tools. An answer explains what evidence supports, but no lesson replaces clinical judgment or hands-on supervised laboratory training.</p>
 <a href="review.html">Help verify scientific claims →</a></section></main>
