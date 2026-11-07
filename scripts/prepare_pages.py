@@ -14,6 +14,8 @@ from html.parser import HTMLParser
 from pathlib import Path
 from urllib.parse import urlsplit
 
+from render_daily_spotlight import render_spotlight
+
 ROOT = Path(__file__).resolve().parent.parent
 DEST = ROOT / "dist"
 PROJECT_PREFIX = "/open-biomedical-resource-center/"
@@ -166,6 +168,8 @@ def main() -> int:
         target.parent.mkdir(parents=True, exist_ok=True)
         shutil.copyfile(origin, target)
         published.add(asset)
+    # Add a date-aware public spotlight from already published, source-backed stories.
+    published.update(render_spotlight(DEST))
     check_links(DEST, published)
     disallowed = (".github/", "docs/", "scripts/", "patients/", "clinical-records/")
     if any(p.startswith(disallowed) for p in published):
