@@ -12,7 +12,7 @@ from tempfile import TemporaryDirectory
 from xml.etree import ElementTree as ET
 
 sys.path.insert(0, str(Path(__file__).resolve().parent))
-from generate_lessons import ROOT, learning_records, all_activities, page, render_lessons, validate_lesson
+from generate_lessons import ROOT, learning_records, all_activities, page, render_lessons, validate_lesson, verify_activity_targets
 
 
 class TestLessonGenerator(unittest.TestCase):
@@ -90,6 +90,19 @@ class TestLessonGenerator(unittest.TestCase):
         record["tool_url"] = "javascript:alert(1)"
         with self.assertRaisesRegex(ValueError, "HTTPS"):
             validate_lesson(record, self.activities["penicillin"])
+
+    def test_review_queue_can_stage_future_and_draft_exercises(self):
+        pending = [
+            {"slug": "future-review-approved", "editorial_status": "approved", "published_on": "2030-01-01"},
+            {"slug": "still-draft", "editorial_status": "draft", "published_on": "2030-01-01"},
+        ]
+        # The questions may exist in GitHub, but page generation still
+        # selects only already-published eligible articles.
+        verify_activity_targets({"future-review-approved", "still-draft"}, pending)
+
+    def test_unknown_exercise_cannot_enter_site(self):
+        with self.assertRaisesRegex(ValueError, "without a corresponding story"):
+            verify_activity_targets({"invented-exercise"}, [{"slug": "known"}])
 
     def test_nonapproved_braf_replacements_prohibited(self):
         original = copy.deepcopy(self.records[2])
