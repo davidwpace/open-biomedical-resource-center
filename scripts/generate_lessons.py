@@ -22,7 +22,6 @@ ROOT = Path(__file__).resolve().parent.parent
 BASE = "https://davidwpace.github.io/open-biomedical-resource-center/"
 SAFE_THEMES = {"mold", "pancreas", "dna", "concept"}
 LEGACY_CASES = {"braf-melanoma"}
-LEGACY_CASE_SLUGS = LEGACY_CASES
 SITEMAP_NAMESPACE = "http://www.sitemaps.org/schemas/sitemap/0.9"
 
 
@@ -267,6 +266,15 @@ def update_sitemap(destination: Path, new_pages: set[str]) -> None:
     tree.write(path, encoding="utf-8", xml_declaration=True)
 
 
+def verify_activity_targets(activity_slugs: set[str], story_records: list[dict]) -> None:
+    """Draft and future approved stories may be prepared but are not published."""
+    allowed = {entry["slug"] for entry in story_records}
+    allowed.update(LEGACY_CASES)
+    unknown = activity_slugs - allowed
+    if unknown:
+        raise ValueError(f"Activities without a corresponding story or case: {sorted(unknown)}")
+
+
 def render_lessons(destination: Path, *, today: date | None = None) -> set[str]:
     if today is None:
         today = datetime.now(ZoneInfo("America/Chicago")).date()
@@ -276,11 +284,7 @@ def render_lessons(destination: Path, *, today: date | None = None) -> set[str]:
     # story without forcing it into today's public archive. The metadata
     # still lives in a public GitHub repository, so it must be public-only.
     all_story_metadata = json.loads((ROOT / "data/stories.json").read_text(encoding="utf-8"))
-    all_slugs = {entry["slug"] for entry in all_story_metadata["stories"]}
-    all_slugs.update(LEGACY_CASE_SLUGS)
-    extras = set(activities) - all_slugs
-    if extras:
-        raise ValueError(f"Activities without a corresponding story or case: {sorted(extras)}")
+    verify_activity_targets(set(activities), all_story_metadata["stories"])
     destination.mkdir(parents=True, exist_ok=True)
     outputs = {"learn.html"}
     (destination / "learn.html").write_text(archive(records), encoding="utf-8")
