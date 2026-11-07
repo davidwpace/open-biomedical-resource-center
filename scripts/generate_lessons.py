@@ -22,6 +22,7 @@ ROOT = Path(__file__).resolve().parent.parent
 BASE = "https://davidwpace.github.io/open-biomedical-resource-center/"
 SAFE_THEMES = {"mold", "pancreas", "dna", "concept"}
 LEGACY_CASES = {"braf-melanoma"}
+LEGACY_CASE_SLUGS = LEGACY_CASES
 SITEMAP_NAMESPACE = "http://www.sitemaps.org/schemas/sitemap/0.9"
 
 
@@ -271,10 +272,15 @@ def render_lessons(destination: Path, *, today: date | None = None) -> set[str]:
         today = datetime.now(ZoneInfo("America/Chicago")).date()
     records = learning_records(today)
     activities = all_activities()
-    known = {r["slug"] for r in records}
-    extras = set(activities) - known
+    # An editor can prepare lesson questions for a FUTURE-DATED or DRAFT
+    # story without forcing it into today's public archive. The metadata
+    # still lives in a public GitHub repository, so it must be public-only.
+    all_story_metadata = json.loads((ROOT / "data/stories.json").read_text(encoding="utf-8"))
+    all_slugs = {entry["slug"] for entry in all_story_metadata["stories"]}
+    all_slugs.update(LEGACY_CASE_SLUGS)
+    extras = set(activities) - all_slugs
     if extras:
-        raise ValueError(f"Activities for unapproved or unavailable stories: {sorted(extras)}")
+        raise ValueError(f"Activities without a corresponding story or case: {sorted(extras)}")
     destination.mkdir(parents=True, exist_ok=True)
     outputs = {"learn.html"}
     (destination / "learn.html").write_text(archive(records), encoding="utf-8")
