@@ -1,0 +1,85 @@
+name: "Review public scientific evidence"
+description: "Critique a public discovery candidate using original sources, methods, limitations, and conflicts of interest."
+title: "[External review] "
+body:
+  - type: markdown
+    attributes:
+      value: |
+        ## Public scientific review — not confidential journal peer review
+        Review only PUBLIC research and PUBLIC candidate issues or pull requests. Your GitHub name and responses will be visible. Do not include private unpublished manuscripts without permission, PHI, patient cases, clinical records, credentials, or identifiable medical details. Editors must verify reviewer expertise; submitting this form is not a credential endorsement.
+  - type: input
+    id: submission
+    attributes:
+      label: "Public candidate link"
+      description: "Link the exact open GitHub Issue/PR or public research story under review."
+      placeholder: "https://github.com/davidwpace/open-biomedical-resource-center/issues/..."
+    validations:
+      required: true
+  - type: dropdown
+    id: domain
+    attributes:
+      label: "Primary review area"
+      options:
+        - "Primary source and citation accuracy"
+        - "Methods, data and statistical validity"
+        - "Counterevidence and reproducibility"
+        - "Clinical or translational interpretation"
+        - "Education, accessibility and tool-task correctness"
+    validations:
+      required: true
+  - type: input
+    id: expertise
+    attributes:
+      label: "Relevant expertise (self-described)"
+      description: "Optional public ORCID/institutional profile link; affiliations aren't verified automatically."
+      placeholder: "Research area, experience, optional public profile"
+    validations:
+      required: true
+  - type: textarea
+    id: sources
+    attributes:
+      label: "Original evidence and exact source location"
+      description: "Links and DOI(s), figure/table/page, dataset accession/version; distinguish source fact from inference."
+    validations:
+      required: true
+  - type: textarea
+    id: methods
+    attributes:
+      label: "Methodological assessment and reproducibility limits"
+      description: "Design, controls, sample size, alternative explanations, conflicting results, and what is NOT established."
+    validations:
+      required: true
+  - type: dropdown
+    id: verdict
+    attributes:
+      label: "Your recommendation"
+      options:
+        - "Support with explicit limitations"
+        - "Request changes before educational publication"
+        - "Material claim is unsupported"
+        - "Outside my expertise / cannot judge"
+    validations:
+      required: true
+  - type: textarea
+    id: conflicts
+    attributes:
+      label: "Relevant conflicts of interest"
+      description: "Declare funding, employment, collaboration or relationships that could affect the review; write none if none."
+    validations:
+      required: true
+  - type: textarea
+    id: ai
+    attributes:
+      label: "AI tools used (if any) and for what purpose"
+      description: "Human reviewer remains responsible. State none if none. Never upload confidential materials."
+    validations:
+      required: true
+  - type: checkboxes
+    id: safety
+    attributes:
+      label: "Public-review safeguards"
+      options:
+        - label: "I am sharing only research information I may lawfully disclose, with no patient data or confidential material."
+          required: true
+        - label: "My review is my own assessment, and I understand that the Resource Center does not automatically verify reviewer credentials or accept a scientific claim based on a vote."
+          required: true

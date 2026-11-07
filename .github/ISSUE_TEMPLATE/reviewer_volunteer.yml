@@ -1,0 +1,58 @@
+name: "Volunteer as a scientific reviewer"
+description: "Help challenge and verify publicly sourced discovery stories (GitHub account required)."
+title: "[Reviewer volunteer] "
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Reviewers of publicly shared scientific stories are welcome. This public GitHub form is an expression of interest, NOT a confidential appointment. Do not put private email, personal medical details, identifying patient facts, passwords, or unpublished manuscripts in this form. We will not claim professional credentials without independent verification.
+  - type: dropdown
+    id: field
+    attributes:
+      label: "Which areas can you assess?"
+      options:
+        - "Biology / molecular medicine"
+        - "Clinical medicine / healthcare evidence"
+        - "Chemistry / drug discovery"
+        - "Statistics / study design"
+        - "Computational biology / software reproducibility"
+        - "Physics / mathematics / engineering"
+        - "History of science / scientific education"
+        - "Another field"
+    validations:
+      required: true
+  - type: textarea
+    id: expertise
+    attributes:
+      label: "Relevant public experience and expertise"
+      description: "Link only information you are comfortable publishing; an ORCID/profile is optional."
+    validations:
+      required: true
+  - type: dropdown
+    id: preference
+    attributes:
+      label: "Review contribution you prefer"
+      options:
+        - "Check one factual claim against its original source"
+        - "Review methodology and statistical claims"
+        - "Find contradictory/negative research"
+        - "Evaluate the clinical-evidence boundaries"
+        - "Review beginner-friendly explanations and reproducibility"
+    validations:
+      required: true
+  - type: textarea
+    id: conflicts
+    attributes:
+      label: "Potential conflicts and availability"
+      description: "State limitations or conflicts; no private contact details needed."
+    validations:
+      required: true
+  - type: checkboxes
+    id: acknowledgment
+    attributes:
+      label: "Acknowledgments"
+      options:
+        - label: "I understand reviews and affiliations are public and this does not mean I am appointed to an accredited journal review board."
+          required: true
+        - label: "I will review only public material and will not post PHI, confidential manuscripts or sensitive data."
+          required: true
