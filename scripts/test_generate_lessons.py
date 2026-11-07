@@ -35,6 +35,10 @@ class TestLessonGenerator(unittest.TestCase):
             self.assertIn("learn/penicillin.html", index)
             self.assertIn("learn/insulin.html", index)
             self.assertIn("learn/braf-melanoma.html", index)
+            self.assertIn("ai-learning.html", index)
+            self.assertIn('<h2><a href="learn/penicillin.html">', index)
+            self.assertIn('assets/theme.js', index)
+            self.assertIn('assets/theme.css', index)
             for filename in outputs:
                 self.assertTrue((dest / filename).is_file())
             locations = {node.text for node in ET.parse(dest / "sitemap.xml").iter() if node.tag.endswith("}loc")}
@@ -46,6 +50,11 @@ class TestLessonGenerator(unittest.TestCase):
             html = page(record, self.activities[record["slug"]])
             self.assertEqual(html.count('class="lesson-step"'), len(record["chapters"]))
             self.assertIn('id="download-notes"', html)
+            self.assertIn('id="copy-ai-prompt"', html)
+            self.assertIn('id="ai-prompt-text"', html)
+            self.assertIn('ai-learning.html', html)
+            self.assertIn('../assets/theme.js', html)
+            self.assertIn('../assets/theme.css', html)
             self.assertIn('id="step-next"', html)
             self.assertIn('role="progressbar"', html)
             self.assertIn('id="research-task"', html)

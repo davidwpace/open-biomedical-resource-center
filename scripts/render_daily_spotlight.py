@@ -88,7 +88,7 @@ def render_spotlight(destination: Path, *, today: date | None = None) -> set[str
 <html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">
 <meta name="description" content="Today’s featured research discovery from the Open Biomedical Resource Center. One question, a documented science story, and a small research task.">
 <link rel="canonical" href="{BASE}today.html">
-<link rel="stylesheet" href="assets/story.css">
+<script src="assets/theme.js"></script><link rel="stylesheet" href="assets/story.css"><link rel="stylesheet" href="assets/theme.css">
 <title>Today's Discovery — Open Biomedical Resource Center</title></head>
 <body>
 <a class="skip" href="#main">Skip to today's story</a>
