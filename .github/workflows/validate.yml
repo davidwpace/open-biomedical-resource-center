@@ -29,6 +29,7 @@ jobs:
         run: python3 scripts/validate_catalog.py
       - name: Validate browser JavaScript syntax
         run: |
+          node --check assets/listen.js
           node --check assets/app.js
           node --check assets/guide.js
           node --check assets/story.js
@@ -54,8 +55,16 @@ jobs:
         run: python3 -m unittest discover -s scripts -p "test_generate_lessons.py"
       - name: Test due-dated article rendering and review gates
         run: python3 -m unittest discover -s scripts -p "test_generate_articles.py"
+      - name: Check public review drafts and approved-story RSS
+        run: python3 -m unittest discover -s scripts -p "test_review_drafts.py"
       - name: Build only approved public files and check internal links
         run: python3 scripts/prepare_pages.py
+      - name: Install browser QA dependency
+        run: npm install --no-save playwright@1.62.1
+      - name: Install browser QA runtime
+        run: npx playwright install --with-deps chromium
+      - name: Verify mobile review-draft reading and listening controls
+        run: node scripts/browser_review_drafts.cjs
       # Only upload the approved artifact after EVERY check above has passed.
       # GitHub Pages Actions publishing was verified active on 2026-11-06.
       # Pull requests validate code but never upload production artifacts.
@@ -88,5 +97,5 @@ jobs:
       - name: Check the published HTTPS release against source
         # Keep nonblocking during initial rollout to observe any Pages
         # propagation/cache behavior before promoting to a required check.
-        continue-on-error: true
+        continue-on-error: false
         run: python3 scripts/smoke_pages.py "${{ steps.deployment.outputs.page_url }}"

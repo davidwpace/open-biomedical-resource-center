@@ -23,6 +23,7 @@ PUBLIC_FILES = (
     "stories.html",
     "contribute.html",
     "review.html",
+    "assets/listen.js",
     "agent-access.html",
     "lab/braf-melanoma.html",
     "data/resources.json",
@@ -40,6 +41,8 @@ GENERATED_PAGES = {
     "learn/insulin.html": ('id="research-task"', 'id="download-notes"', "FDA"),
     "learn/braf-melanoma.html": ('id="research-task"', 'id="download-notes"', "10.1056/NEJMoa1103782"),
     "today.html": ("TODAY", "learn/"),
+    "review-drafts.html": ("public review draft", "Listen", "review-drafts/"),
+    "feed.xml": ("<rss", "penicillin", "insulin"),
 }
 EXPECTED_PREFIX = "https://davidwpace.github.io/open-biomedical-resource-center/"
 
