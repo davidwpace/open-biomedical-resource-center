@@ -20,6 +20,8 @@ from render_daily_spotlight import render_spotlight, available_stories
 from generate_lessons import render_lessons
 from generate_articles import render_articles
 from render_daily_spotlight import LEGACY_PUBLISHED
+from generate_review_drafts import render as render_review_drafts
+from generate_feed import render as render_feed
 
 ROOT = Path(__file__).resolve().parent.parent
 DEST = ROOT / "dist"
@@ -43,6 +45,7 @@ PUBLIC = (
     "data/tool_routes.json",
     "data/stories.json",
     "assets/app.js",
+    "assets/listen.js",
     "assets/styles.css",
     "assets/guide.js",
     "assets/guide.css",
@@ -188,6 +191,8 @@ def main() -> int:
     published.update(render_lessons(DEST))
     # Add a date-aware feature from already published, source-backed stories.
     published.update(render_spotlight(DEST))
+    published.update(render_review_drafts(DEST))
+    published.update(render_feed(DEST))
     check_links(DEST, published)
     disallowed = (".github/", "docs/", "scripts/", "patients/", "clinical-records/")
     if any(p.startswith(disallowed) for p in published):

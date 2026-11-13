@@ -162,3 +162,6 @@ The website avoids third-party runtime dependencies by design. Changes can be pr
 ## License
 
 Original source code is offered under the [MIT License](LICENSE); third-party research resources and their content are **not** relicensed here. Curated metadata may include resource names and descriptions whose rights remain with their respective owners. See [SOURCE_POLICY.md](docs/SOURCE_POLICY.md) for reuse and provenance details.
+
+## Public review drafts and listening
+Five source-linked historical drafts are published under `review-drafts.html` for source-backed annotations. Every page explicitly remains UNAPPROVED; they do not enter the approved lesson engine. Listen/Pause/Stop uses device/browser speech synthesis where available. The approved-story feed is `feed.xml`; review drafts are excluded. The post-deployment HTTPS verification now blocks a green release when the served version does not match.
