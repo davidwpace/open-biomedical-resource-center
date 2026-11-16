@@ -24,6 +24,8 @@ PUBLIC_FILES = (
     "contribute.html",
     "review.html",
     "assets/listen.js",
+    "assets/publications.js",
+    "assets/publications.css",
     "agent-access.html",
     "lab/braf-melanoma.html",
     "data/resources.json",
@@ -43,6 +45,15 @@ GENERATED_PAGES = {
     "today.html": ("TODAY", "learn/"),
     "review-drafts.html": ("public review draft", "Listen", "review-drafts/"),
     "feed.xml": ("<rss", "penicillin", "insulin"),
+    "articles.html": ("Ideas worth examining", "Copy all article links", "article-search", "biological-compilation-amplified-individual", "prion-protein-infection-1982"),
+    "articles-feed.xml": ("<rss", "Public review draft", "Public manuscript draft"),
+    "data/publications.json": ("Publication and independent review", "reverse-transcriptase-rna-to-dna-1970"),
+    "articles/biological-compilation-amplified-individual.html": ("A tape measure", "PUBLIC MANUSCRIPT DRAFT", "Copy article"),
+    "review-drafts/prion-protein-infection-1982.html": ("UNAPPROVED", "Copy article", "Source"),
+    "review-drafts/luria-delbruck-fluctuation-1943.html": ("UNAPPROVED", "Copy article"),
+    "review-drafts/reverse-transcriptase-rna-to-dna-1970.html": ("UNAPPROVED", "Copy article"),
+    "exports/all-articles.md": ("PUBLIC REVIEW DRAFT", "By David W. Pace Sr.", "Canonical article"),
+    "article-links.txt": ("Public review draft", "Public manuscript draft", "stories/penicillin.html"),
 }
 EXPECTED_PREFIX = "https://davidwpace.github.io/open-biomedical-resource-center/"
 
