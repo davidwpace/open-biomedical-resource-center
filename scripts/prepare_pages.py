@@ -22,6 +22,7 @@ from generate_articles import render_articles
 from render_daily_spotlight import LEGACY_PUBLISHED
 from generate_review_drafts import render as render_review_drafts
 from generate_feed import render as render_feed
+from generate_publications import render as render_publications
 
 ROOT = Path(__file__).resolve().parent.parent
 DEST = ROOT / "dist"
@@ -46,6 +47,8 @@ PUBLIC = (
     "data/stories.json",
     "assets/app.js",
     "assets/listen.js",
+    "assets/publications.js",
+    "assets/publications.css",
     "assets/styles.css",
     "assets/guide.js",
     "assets/guide.css",
@@ -193,6 +196,7 @@ def main() -> int:
     published.update(render_spotlight(DEST))
     published.update(render_review_drafts(DEST))
     published.update(render_feed(DEST))
+    published.update(render_publications(DEST))
     check_links(DEST, published)
     disallowed = (".github/", "docs/", "scripts/", "patients/", "clinical-records/")
     if any(p.startswith(disallowed) for p in published):

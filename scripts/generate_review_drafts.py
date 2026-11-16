@@ -36,12 +36,30 @@ def render(destination, data=None):
         for sid,source in sources.items():
             body+='<li id="source-'+escape(sid)+'"><a href="'+safe_url(source.get("url"))+'">'+escape(source.get("label") or source.get("title") or sid)+'</a></li>'
         body+='</ul>'
-        page=template(s["title"],body,"../")
+        page=template(s["title"],body,"../",article_path=name)
         target=destination/name;target.parent.mkdir(parents=True,exist_ok=True);target.write_text(page);paths.add(name)
-    body='<h1>Read, listen and help review</h1><p>These five historical research drafts are publicly readable for review. They remain separate from approved lessons. Corrections and source-backed annotations are welcome.</p><ul>'+"".join(cards)+'</ul>'
+    body='<h1>Read, listen and help review</h1><p>These '+str(len(cards))+' historical research drafts are publicly readable for review. They remain separate from approved lessons. Corrections and source-backed annotations are welcome.</p><p><a href="articles.html">Open the complete article library and sharing tools</a></p><ul>'+"".join(cards)+'</ul>'
     (destination/"review-drafts.html").write_text(template("Public review drafts",body,""))
     paths.add("review-drafts.html")
     return paths
 
 def template(title,body,prefix):
     return '<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>'+escape(title)+' — Open review</title><link rel="stylesheet" href="'+prefix+'assets/theme.css"><script src="'+prefix+'assets/theme.js"></script><script src="'+prefix+'assets/listen.js" defer></script><style>body{font:18px/1.7 system-ui,sans-serif;max-width:850px;margin:auto;padding:24px}a{color:#166b64}section{margin:36px 0}.warning{border-left:5px solid #a66b11;padding:16px;background:#fff4da;color:#493818}button{font:inherit;padding:9px 16px;margin:5px 4px 5px 0}nav{margin-bottom:20px}p{overflow-wrap:anywhere}@media(prefers-color-scheme:dark){a{color:#65cdbd}}</style></head><body><nav><a href="'+prefix+'index.html">Home</a> · <a href="'+prefix+'review.html">Human review invitation</a> · <a href="'+prefix+'review-drafts.html">All review drafts</a></nav><div aria-label="Read aloud"><button id="listen">Listen</button><button id="pause">Pause / resume</button><button id="stop">Stop</button><p id="speech-status" role="status">Use Listen for a spoken version. Voice availability depends on your browser and device.</p></div><main id="reading">'+body+'</main><footer><p>Historical science education. No clinical advice. No personal information is collected.</p></footer></body></html>'
+
+
+# Keep the original reading layout and add reusable publication controls.
+_reading_template = template
+
+def template(title, body, prefix, article_path=None):
+    page = _reading_template(title, body, prefix)
+    page = page.replace('Historical science education. No clinical advice. No personal information is collected.', 'Public science education and research perspectives. No clinical advice. Corrections are welcome.')
+    head = '<link rel="stylesheet" href="' + prefix + 'assets/publications.css"><script src="' + prefix + 'assets/publications.js" defer></script>'
+    if article_path:
+        head += '<link rel="canonical" href="https://davidwpace.github.io/open-biomedical-resource-center/' + article_path + '">'
+    page = page.replace('</head>', head + '</head>')
+    page = page.replace('<nav>', '<nav><a href="' + prefix + 'articles.html">All articles</a> · ', 1)
+    if article_path:
+        slug = Path(article_path).stem
+        toolbar = '<div class="publication-tools" aria-label="Share or reuse this article"><button data-action="copy-article">Copy article</button><button data-action="copy-link">Copy link</button><button data-action="share">Share</button><a download href="' + prefix + 'exports/' + slug + '.md">Download Markdown</a><button data-action="print">Print / save PDF</button></div><p id="publication-status" role="status"></p>'
+        page = page.replace('<main id="reading">', toolbar + '<main id="reading">', 1)
+    return page

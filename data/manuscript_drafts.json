@@ -1,0 +1,52 @@
+{
+  "publication_class": "public_manuscript_draft",
+  "records": [
+    {
+      "slug": "biological-compilation-amplified-individual",
+      "title": "Biological Compilation and the Amplified Individual",
+      "intro": "An EoD manuscript draft about human–AI partnership, reusable evidence, and accountable decisions.",
+      "author": "David W. Pace Sr.",
+      "prepared_on": "2026-11-14",
+      "published_for_review_on": "2026-11-16",
+      "review_url": "https://github.com/davidwpace/open-biomedical-resource-center/issues/new?template=peer_review.yml",
+      "provenance": "Prepared EoD manuscript subsection, published for open review at the author's request. Original scientific discoveries retain the attribution in the source list. FDA documents cited here are drafts, not treatment approvals.",
+      "paragraphs": [
+        "A tape measure does not become less useful because we need it again tomorrow. It gives us a dependable ability that our unaided senses do not possess. Human–AI partnership can be understood the same way. We should measure what the partnership enables, while asking separately what the person learns and retains.",
+        "Medicine offers a demanding example. A rare genetic condition can leave a family facing years of uncertainty while information, tools, and expertise remain scattered across institutions. EoD asks whether humans and AI can organize those resources around the individual with greater speed, clarity, and accountability.",
+        "The first opportunity is to make prior knowledge reusable. FDA's 2026 proposals explore bounded individualized products and justified evidence reuse. This gives us a practical direction: establish what can safely be reused and identify what still needs testing. [R1, R4]",
+        "I use biological compilation as a metaphor for that process. An engineered treatment has components, constraints, versions, and checks. A living body adds uncertainty, history, and responses that software cannot simply assume away.",
+        "The 2025 personalized CPS1 editing report makes the possibility concrete. Researchers developed a liver-directed treatment for one infant and reported early clinical improvements. It involved experimental studies, manufacturing, regulatory authorization, and clinical oversight over months. The initial observation was encouraging and the long-term questions remained open. [S10]",
+        "Our goal should be to shorten avoidable delay while preserving the work that makes a decision trustworthy.",
+        "The human supplies purpose, consent, judgment, and responsibility. AI can help locate evidence, compare explanations, expose inconsistencies, and prepare material for review. A useful system also makes it easy to say: this assumption is untested; this tissue differs; this result was measured during treatment; this source does not support the claim.",
+        "That is agentic self-correction in a form we can evaluate. The system changes its recommendation when evidence changes and records why. Its ability to stop and ask for the missing measurement is part of its value.",
+        "Cyberlante and Conclave contribute another requirement: participation should not require surrendering private information without limits. A patient could authorize a narrow use of genomic data and receive an auditable record of the computation and its purpose. Cryptographic verification can support that design. The biological meaning of the computation still needs independent testing.",
+        "Cancer shows why context matters. A tumor can contain evolving populations with different vulnerabilities. A reusable method for checking evidence may help across diseases, while the treatment conclusions remain specific to the patient, tissue, and mechanism. [S5]",
+        "The same distinction applies to recovery. Correcting a molecular cause, preventing additional injury, and restoring damaged tissue are separate achievements. We should record which one occurred and what evidence would establish the next.",
+        "EoD does not need to promise that every disease will become a software update. It can offer a more testable commitment: use human–AI partnership to reduce duplicated effort, expose uncertainty earlier, preserve agency, and make useful expertise easier to bring to the person who needs it.",
+        "That is a form of abundance we can start measuring.\n"
+      ],
+      "sources": [
+        {
+          "id": "R1",
+          "label": "FDA (October 2026 draft): Individualized Human Genome Editing Products",
+          "url": "https://www.fda.gov/media/195887/download"
+        },
+        {
+          "id": "R4",
+          "label": "FDA (June 2026 draft): Leveraging Prior Knowledge in Genome-Editing Product Development",
+          "url": "https://www.fda.gov/media/192810/download"
+        },
+        {
+          "id": "S10",
+          "label": "Musunuru et al. (2025): Patient-Specific In Vivo Gene Editing to Treat a Rare Genetic Disease",
+          "url": "https://pubmed.ncbi.nlm.nih.gov/40373211/"
+        },
+        {
+          "id": "S5",
+          "label": "Gerlinger et al. (2012): Intratumor Heterogeneity and Branched Evolution",
+          "url": "https://www.nejm.org/doi/full/10.1056/NEJMoa1113205"
+        }
+      ]
+    }
+  ]
+}

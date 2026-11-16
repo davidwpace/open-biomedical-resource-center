@@ -7,7 +7,7 @@ class DraftPublicationTests(unittest.TestCase):
         d=json.loads((ROOT/"data/review_drafts.json").read_text())
         with tempfile.TemporaryDirectory() as tmp:
             paths=render(Path(tmp),d)
-            self.assertEqual(len(paths),6)
+            self.assertEqual(len(paths),len(d["records"])+1)
             for p in paths-{ "review-drafts.html" }:
                 text=(Path(tmp)/p).read_text();self.assertIn("UNAPPROVED",text);self.assertIn('id="listen"',text);self.assertNotIn('<script>alert',text)
             d["records"][0]["story"]["editorial_status"]="approved"

@@ -165,3 +165,6 @@ Original source code is offered under the [MIT License](LICENSE); third-party re
 
 ## Public review drafts and listening
 Five source-linked historical drafts are published under `review-drafts.html` for source-backed annotations. Every page explicitly remains UNAPPROVED; they do not enter the approved lesson engine. Listen/Pause/Stop uses device/browser speech synthesis where available. The approved-story feed is `feed.xml`; review drafts are excluded. The post-deployment HTTPS verification now blocks a green release when the served version does not match.
+# Article publishing
+
+Read, listen, share, or download the complete [article library](https://davidwpace.github.io/open-biomedical-resource-center/articles.html). Prepared owner-authored discovery drafts are included in the existing daily publishing build with their review status visible. See [the publishing workflow](docs/PUBLISHING_WORKFLOW.md).

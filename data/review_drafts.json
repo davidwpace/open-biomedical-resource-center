@@ -509,6 +509,279 @@
         "expected_tool_answer": "Published 1944; the abstract says the active fraction consists principally, if not solely, of a highly polymerized form of DNA.",
         "tool_limitation": "An abstract summarizes a paper. It cannot substitute for inspecting original tables, controls, and experimental conditions."
       }
+    },
+    {
+      "issue_number": 26,
+      "issue_url": "https://github.com/davidwpace/open-biomedical-resource-center/issues/26",
+      "source_snapshot_sha256": "8122a4d2ba59e6f08b03eef5443b7a93080f17a6b550f29d62d92dd6eacb0059",
+      "source_updated_at": "2026-11-13T14:27:00Z",
+      "prepared_on": "2026-11-13",
+      "included_in_build_on": "2026-11-16",
+      "snapshot_note": "Published for open review at the owner's request. Source and figure checks, editorial approval, and independent peer review remain pending.",
+      "story": {
+        "editorial_status": "draft",
+        "slug": "prion-protein-infection-1982",
+        "title": "The Protein That Challenged the Rules of Infection",
+        "hook": "Can a protein spread disease without carrying its own DNA or RNA?",
+        "intro": "Researchers studying scrapie, a disease of sheep and goats, found evidence that the infectious agent depended on protein rather than a conventional virus. Later mouse experiments strengthened the case.",
+        "topic": "Genes and human biology",
+        "original_year": 1982,
+        "discovery_date_note": "A series of experiments preceded the 9 April 1982 Science publication; exact original discovery day not established. The 1982 paper introduced the name prion. This draft was researched 13 November 2026, not human-reviewed.",
+        "chapters": [
+          {
+            "kicker": "THE PUZZLE",
+            "title": "An infection that behaved strangely",
+            "body": "Scrapie damages the nervous system of sheep and goats. Scientists knew it could spread, but the agent did not behave like familiar viruses. What was carrying the infection?",
+            "takeaway": "A familiar label should not replace a test.",
+            "source": "primary"
+          },
+          {
+            "kicker": "THE EXPERIMENT",
+            "title": "What happens when proteins are damaged?",
+            "body": "Stanley Prusiner compared how infectious scrapie preparations responded to different chemical treatments. Treatments that damaged proteins reduced infectivity. Several treatments aimed at DNA or RNA did not.",
+            "takeaway": "Compare competing explanations with different tests.",
+            "source": "primary"
+          },
+          {
+            "kicker": "THE PROPOSAL",
+            "title": "A new name for an unusual agent",
+            "body": "In a 1982 paper, Prusiner proposed the word prion for a protein-based infectious particle. The experiments showed protein was required for infectivity; they did not yet prove that absolutely no other molecule was involved.",
+            "takeaway": "A strong clue is not the same as a complete mechanism.",
+            "source": "primary"
+          },
+          {
+            "kicker": "THE FOLLOW-UP",
+            "title": "Mice without the protein resisted scrapie",
+            "body": "In 1993, researchers tested mice lacking the normal prion protein, called PrP. These mice remained free of scrapie symptoms for at least 13 months after exposure in the reported experiment, while the ordinary comparison mice died within six months. Restoring a related PrP gene restored susceptibility to a matching prion strain.",
+            "takeaway": "Changing one biological factor can provide a stronger test of causation.",
+            "source": "knockout"
+          },
+          {
+            "kicker": "THE LIMIT",
+            "title": "A changed protein shape matters",
+            "body": "Later research supported a mechanism in which a misfolded prion protein helps other copies change shape. But the 1982 experiments did not establish every molecular detail or provide a treatment. Other diseases involving protein clumps are not automatically contagious prion diseases.",
+            "takeaway": "Keep the discovery, later explanations and medical claims separate.",
+            "source": "nobel"
+          }
+        ],
+        "sources": [
+          {
+            "id": "primary",
+            "label": "Prusiner, Novel proteinaceous infectious particles cause scrapie, Science 216:136–144 (1982)",
+            "url": "https://pubmed.ncbi.nlm.nih.gov/6801762/",
+            "kind": "original peer-reviewed research; abstract accessed, full article not retrieved"
+          },
+          {
+            "id": "knockout",
+            "label": "Büeler et al., Mice devoid of PrP are resistant to scrapie, Cell 73:1339–1347 (1993)",
+            "url": "https://pubmed.ncbi.nlm.nih.gov/8100741/",
+            "kind": "original peer-reviewed follow-up; abstract accessed"
+          },
+          {
+            "id": "independent",
+            "label": "Prusiner et al., Ablation of the prion protein gene in mice prevents scrapie, PNAS 90:10608–10612 (1993)",
+            "url": "https://pubmed.ncbi.nlm.nih.gov/7902565/",
+            "kind": "additional original research; abstract accessed"
+          },
+          {
+            "id": "nobel",
+            "label": "Nobel Prize in Physiology or Medicine 1997, official prize record and explanatory material",
+            "url": "https://www.nobelprize.org/prizes/medicine/1997/summary/",
+            "kind": "official institutional historical record"
+          }
+        ],
+        "resource_id": "pubmed",
+        "tool_title": "PubMed",
+        "tool_url": "https://pubmed.ncbi.nlm.nih.gov/6801762/",
+        "tool_why": "PubMed lets anyone check what the original 1982 paper actually claimed, instead of trusting a retelling.",
+        "tool_task": "Open PMID 6801762. Find the publication year and read whether the abstract says protein was REQUIRED for infectivity, or that it proved a completely protein-only agent beyond doubt.",
+        "tool_answer": "1982; the abstract states that protein is required for infectivity. It proposes the term prion and reports failure of several nucleic-acid-targeting treatments to inactivate the agent.",
+        "tool_limitation": "An abstract does not show every experiment, control, sample size or figure. This activity does not reproduce an infectious-agent experiment."
+      }
+    },
+    {
+      "issue_number": 27,
+      "issue_url": "https://github.com/davidwpace/open-biomedical-resource-center/issues/27",
+      "source_snapshot_sha256": "83297f0e551e855eee8546853f6dbf742b41cc8a76082029dd3258dfe75d1715",
+      "source_updated_at": "2026-11-14T14:07:27Z",
+      "prepared_on": "2026-11-14",
+      "included_in_build_on": "2026-11-16",
+      "snapshot_note": "Published for open review at the owner's request. Source and figure checks, editorial approval, and independent peer review remain pending.",
+      "story": {
+        "editorial_status": "draft",
+        "slug": "luria-delbruck-fluctuation-1943",
+        "title": "The Jackpot That Revealed When Mutations Happen",
+        "hook": "What if the messy results everyone wanted to smooth away were the discovery?",
+        "intro": "In 1943, Salvador Luria and Max Delbrück turned wildly different bacterial counts into evidence about when resistance mutations arise.",
+        "topic": "Genes and human biology",
+        "original_year": 1943,
+        "discovery_date_note": "Experiments and analysis completed by submission received 29 May 1943; precise discovery day not established. Publisher dates publication 20 November 1943. AI candidate preparation 14 November 2026; no human reviewed_on or published_on.",
+        "chapters": [
+          {
+            "kicker": "THE PUZZLE",
+            "title": "Did the virus teach bacteria to resist?",
+            "body": "Some bacteria survived viruses that killed other bacteria. Did the virus make them resistant, or were a few already resistant before exposure? Luria and Delbrück realized that the timing of a change could be tested without watching the change happen.",
+            "takeaway": "Two explanations can fit the same observation.",
+            "source": "original"
+          },
+          {
+            "kicker": "THE PREDICTION",
+            "title": "Early changes create jackpots",
+            "body": "If resistance began before the virus arrived, a change occurring early in a growing culture could produce many resistant descendants. A late change might produce only one or two. If resistance arose only after exposure, similar cultures should have more similar counts.",
+            "takeaway": "A good hypothesis predicts a pattern, not just an outcome.",
+            "source": "original"
+          },
+          {
+            "kicker": "THE CONTROL",
+            "title": "Check whether the counting method is noisy",
+            "body": "The team compared repeated samples from the same culture. Those counts varied much less than counts from separate cultures. This helped show that the large differences were not simply caused by the plating and counting method.",
+            "takeaway": "Before explaining a surprising result, test the measuring method.",
+            "source": "original"
+          },
+          {
+            "kicker": "THE RESULT",
+            "title": "Different cultures, wildly different counts",
+            "body": "Independent bacterial cultures had unusually uneven numbers of resistant cells. Some contained very large groups. The pattern fit mutations occurring during growth before the virus was added, followed by selection of resistant cells.",
+            "takeaway": "The variation itself was the clue.",
+            "source": "original"
+          },
+          {
+            "kicker": "THE LIMIT",
+            "title": "Random does not mean without causes",
+            "body": "The 1943 work strongly supported pre-existing resistance mutations in the tested bacteria-virus system. It did not identify the DNA changes, prove every mutation rate is constant, or rule out all stress-related mutation processes in every organism.",
+            "takeaway": "A strong result has a precise scope.",
+            "source": "history"
+          }
+        ],
+        "sources": [
+          {
+            "id": "original",
+            "label": "Luria & Delbrück, Mutations of Bacteria from Virus Sensitivity to Virus Resistance, Genetics 28:491–511 (1943)",
+            "url": "https://digirepo.nlm.nih.gov/ext/document/101584611X5/PDF/101584611X5.pdf",
+            "kind": "original peer-reviewed research, NLM scanned full paper"
+          },
+          {
+            "id": "publisher",
+            "label": "Genetics publisher original article record",
+            "url": "https://doi.org/10.1093/genetics/28.6.491",
+            "kind": "publisher bibliographic record"
+          },
+          {
+            "id": "history",
+            "label": "Murray, Salvador Luria and Max Delbrück on Random Mutation and Fluctuation Tests, Genetics (2016)",
+            "url": "https://doi.org/10.1534/genetics.115.186163",
+            "kind": "historical scientific commentary"
+          },
+          {
+            "id": "nobel",
+            "label": "Nobel Prize in Physiology or Medicine 1969",
+            "url": "https://www.nobelprize.org/prizes/medicine/1969/summary/",
+            "kind": "official prize history"
+          }
+        ],
+        "resource_id": "pubmed",
+        "tool_title": "PubMed",
+        "tool_url": "https://pubmed.ncbi.nlm.nih.gov/17247100/",
+        "tool_why": "PubMed identifies the original paper and links to a freely accessible full scan, so readers can distinguish original evidence from a retelling.",
+        "tool_task": "Open PMID 17247100, then follow the free PMC full-text link to the PDF. Find Table 1 on printed page 503 and Tables 2–3 on printed pages 504–505. Which compares repeated samples of one culture, and which compare separate cultures?",
+        "tool_answer": "Table 1 compares samples from the same culture; Tables 2 and 3 compare independently grown cultures.",
+        "tool_limitation": "PubMed is an index, not a reproduction of the experiment. The PDF is scanned; machine extraction of numeric tables is error-prone, so do not copy numerical values without checking the page image."
+      }
+    },
+    {
+      "issue_number": 28,
+      "issue_url": "https://github.com/davidwpace/open-biomedical-resource-center/issues/28",
+      "source_snapshot_sha256": "84789ede75e1b6c4f622b8c5205afaecfab1f10e579c7d94f1859da6d4ec31ef",
+      "source_updated_at": "2026-11-15T14:13:52Z",
+      "prepared_on": "2026-11-15",
+      "included_in_build_on": "2026-11-16",
+      "snapshot_note": "Published for open review at the owner's request. Source and figure checks, editorial approval, and independent peer review remain pending.",
+      "story": {
+        "editorial_status": "draft",
+        "slug": "reverse-transcriptase-rna-to-dna-1970",
+        "title": "The Enzyme That Could Copy RNA Back into DNA",
+        "hook": "What if life's genetic instructions could travel in a direction scientists had not expected?",
+        "intro": "In 1970 two research teams found enzyme activity in RNA tumor viruses that could make DNA using RNA as a template. The finding changed how scientists investigated viruses and genetic information.",
+        "topic": "Genes and human biology",
+        "original_year": 1970,
+        "discovery_date_note": "Discovery occurred by the submission of the 1970 papers; exact laboratory day not independently established. Baltimore manuscript received June 2, 1970. Both papers published June 27, 1970. Temin–Mizutani erratum July 4, 1970. AI preliminary screening November 15, 2026; no human reviewed_on or published_on recorded.",
+        "chapters": [
+          {
+            "kicker": "THE QUESTION",
+            "title": "Can an RNA virus make DNA?",
+            "body": "Many researchers expected genetic information to move from DNA to RNA. Howard Temin proposed that certain RNA viruses might make a DNA copy while infecting cells. The idea needed a direct biochemical test.",
+            "takeaway": "A surprising idea becomes science when it predicts something measurable.",
+            "source": "coffin2016"
+          },
+          {
+            "kicker": "THE SEARCH",
+            "title": "Look inside virus particles",
+            "body": "In 1970 David Baltimore, and independently Howard Temin with Satoshi Mizutani, tested preparations of RNA tumor viruses for an enzyme that could build DNA. They measured the incorporation of labeled DNA building blocks.",
+            "takeaway": "An enzyme's activity can reveal what a system is capable of doing.",
+            "source": "baltimore1970"
+          },
+          {
+            "kicker": "THE CONTROLS",
+            "title": "Was the product really DNA?",
+            "body": "Baltimore's product was broken down by DNA-digesting enzymes but resisted RNA-digesting treatment. His Table 1 also showed that the reaction depended on ingredients used to build DNA. RNA-digesting treatment reduced DNA-making activity, supporting RNA as a template.",
+            "takeaway": "Tests against alternative explanations make a result stronger.",
+            "source": "baltimore1970"
+          },
+          {
+            "kicker": "THE REPLICATION CLUE",
+            "title": "Two independent teams found the same direction",
+            "body": "Baltimore and Temin–Mizutani reported their results side by side in Nature on June 27, 1970. Their work supported RNA-to-DNA copying in the studied viruses. Later studies were needed to demonstrate the full DNA intermediate and integration steps in infected cells.",
+            "takeaway": "Two complementary discoveries can strengthen a hypothesis without settling every step.",
+            "source": "temin1970"
+          },
+          {
+            "kicker": "THE CAUTION",
+            "title": "One discovery, many claims to test",
+            "body": "The discovery helped explain retroviruses and later became useful in molecular biology. But a 1971 scientific critique warned that similar enzyme signals from synthetic templates did not automatically prove that human cancer cells contained an infectious retrovirus.",
+            "takeaway": "Finding a related signal is not proof that the same cause is present.",
+            "source": "nature1971"
+          }
+        ],
+        "sources": [
+          {
+            "id": "baltimore1970",
+            "label": "Baltimore, RNA-dependent DNA polymerase in virions of RNA tumour viruses, Nature 226:1209–1211 (1970)",
+            "url": "https://doi.org/10.1038/2261209a0",
+            "kind": "original peer-reviewed research"
+          },
+          {
+            "id": "temin1970",
+            "label": "Temin & Mizutani, RNA-dependent DNA polymerase in virions of Rous sarcoma virus, Nature 226:1211–1213 (1970)",
+            "url": "https://doi.org/10.1038/2261211a0",
+            "kind": "original peer-reviewed research; erratum July 4 1970"
+          },
+          {
+            "id": "nobel1975",
+            "label": "Nobel Prize in Physiology or Medicine 1975, press release",
+            "url": "https://www.nobelprize.org/prizes/medicine/1975/press-release/1000/",
+            "kind": "official historical account"
+          },
+          {
+            "id": "coffin2016",
+            "label": "Coffin & Fan, The Discovery of Reverse Transcriptase, Annual Review of Virology (2016)",
+            "url": "https://doi.org/10.1146/annurev-virology-110615-035556",
+            "kind": "scholarly historical review"
+          },
+          {
+            "id": "nature1971",
+            "label": "Nature New Biology editorial, Happy Birthday, Reverse Transcriptase? (1971)",
+            "url": "https://www.nature.com/articles/newbio231161a0.pdf",
+            "kind": "contemporaneous critical commentary"
+          }
+        ],
+        "resource_id": "pubmed",
+        "tool_title": "PubMed",
+        "tool_url": "https://pubmed.ncbi.nlm.nih.gov/",
+        "tool_why": "PubMed lets you check original authors, dates and published corrections before trusting a retelling.",
+        "tool_task": "Open PMID 4316300 and PMID 4316301. Compare author names, publication date and page ranges. Which one lists a July 1970 erratum?",
+        "tool_answer": "Baltimore, pages 1209–1211; Temin and Mizutani, pages 1211–1213; both June 27, 1970. PMID 4316301 lists an erratum dated July 4, 1970.",
+        "tool_limitation": "Bibliographic records do not establish the experiments' correctness; one original paper's full text and the erratum still need checking."
+      }
     }
   ]
 }
