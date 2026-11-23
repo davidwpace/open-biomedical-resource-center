@@ -6,14 +6,17 @@ import json
 from pathlib import Path
 import re
 import xml.etree.ElementTree as ET
+from urllib.parse import urlencode
 from zoneinfo import ZoneInfo
 from generate_review_drafts import ROOT, template, safe_url
 from generate_lessons import update_sitemap
 from render_daily_spotlight import available_stories
 
 BASE = "https://davidwpace.github.io/open-biomedical-resource-center/"
+REVIEW_FORM = "https://github.com/davidwpace/open-biomedical-resource-center/issues/new"
+REVIEW_INVITATION = "Suggest a correction or add a source-backed annotation"
 
-def add_existing_article_tools(destination, path, title):
+def add_existing_article_tools(destination, path, title, review_url):
     target = destination / path
     # Unit callers may build only exports; prepare_pages checks every linked page.
     if not target.exists():
@@ -25,12 +28,18 @@ def add_existing_article_tools(destination, path, title):
     controls = sample[sample.index('<div aria-label="Read aloud">'):sample.index('<main id="reading">')]
     page = page.replace("</head>", '<link rel="canonical" href="' + BASE + path + '"><link rel="stylesheet" href="../assets/publications.css"><script src="../assets/listen.js" defer></script><script src="../assets/publications.js" defer></script></head>', 1)
     page = re.sub(r"(<main\b[^>]*>)", lambda m: controls + m[1] + '<div id="reading">', page, count=1)
+    note = (
+        '<p class="collection-note"><strong>Published educational story.</strong> '
+        'Readers are invited to review the evidence. '
+        f'<a href="{e(review_url, quote=True)}">{REVIEW_INVITATION}</a>.</p>'
+    )
+    page = page.replace("</h1>", "</h1>" + note, 1)
     page = page.replace("</main>", "</div></main>", 1)
     page = page.replace("</nav>", '<a href="../articles.html">All articles</a></nav>', 1)
     target.write_text(page)
 
 
-def story_text(s, status, url):
+def story_text(s, status, url, review_url):
     lines = ["# " + s["title"], "", status, "",
              "Prepared for David W. Pace Sr. with AI assistance. Original discoveries retain their source attribution.",
              "", "Original discovery: " + str(s["original_year"]), "", s["hook"], "", s["intro"]]
@@ -40,7 +49,8 @@ def story_text(s, status, url):
     for source in s["sources"]:
         safe_url(source["url"])
         lines += ["", "- [" + source["id"] + "] " + (source.get("label") or source.get("title") or source["id"]) + ": " + source["url"]]
-    return "\n".join(lines + ["", "Canonical article: " + url, "", "Public science education. No clinical advice.", ""])
+    return "\n".join(lines + ["", f"[{REVIEW_INVITATION}]({review_url})", "",
+                              "Canonical article: " + url, "", "Public science education. No clinical advice.", ""])
 
 
 def manuscript_body(s):
@@ -76,13 +86,14 @@ def render(destination):
         entries.append(dict(slug=s["slug"], title=s["title"], intro=s["intro"], topic=s["topic"],
                             status="Public review draft", kind="draft", path=path, source_record=item["issue_url"],
                             source_snapshot_sha256=item.get("source_snapshot_sha256")))
-        texts[s["slug"]] = story_text(s, "PUBLIC REVIEW DRAFT — editorial approval and independent review pending.", BASE + path)
+        texts[s["slug"]] = story_text(s, "PUBLIC REVIEW DRAFT — editorial approval and independent review pending.", BASE + path, item["issue_url"])
     for s in originals:
         path = "stories/" + s["slug"] + ".html"
-        add_existing_article_tools(destination, path, s["title"])
+        review_url = REVIEW_FORM + "?" + urlencode({"template": "peer_review.yml", "submission": BASE + path})
+        add_existing_article_tools(destination, path, s["title"], review_url)
         entries.append(dict(slug=s["slug"], title=s["title"], intro=s["intro"], topic=s["topic"],
                             status="Published educational story", kind="story", path=path, published_on=s["published_on"]))
-        texts[s["slug"]] = story_text(s, "Published educational story. This status does not claim journal peer review.", BASE + path)
+        texts[s["slug"]] = story_text(s, "Published educational story. This status does not claim journal peer review.", BASE + path, review_url)
     for s in ms["records"]:
         slug = s["slug"]
         if not re.fullmatch(r"[a-z0-9]+(?:-[a-z0-9]+)*", slug):
@@ -99,7 +110,8 @@ def render(destination):
                  "PUBLIC MANUSCRIPT DRAFT — editorial approval and independent review pending.",
                  s["provenance"]] + s["paragraphs"] + ["## Sources"]
         lines += ["- [" + x["id"] + "] " + x["label"] + ": " + x["url"] for x in s["sources"]]
-        texts[slug] = "\n\n".join(lines + ["Canonical article: " + BASE + path, ""])
+        texts[slug] = "\n\n".join(lines + [f"[{REVIEW_INVITATION}]({s['review_url']})",
+                                          "Canonical article: " + BASE + path, ""])
     entries.sort(key=lambda x: (x["kind"] != "draft", x["title"].casefold()))
     if len({x["slug"] for x in entries}) != len(entries):
         raise ValueError("Duplicate slug across article collections")

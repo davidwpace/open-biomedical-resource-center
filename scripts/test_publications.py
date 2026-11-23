@@ -5,7 +5,7 @@ import tempfile
 import unittest
 import xml.etree.ElementTree as ET
 from generate_review_drafts import ROOT
-from generate_publications import render
+from generate_publications import REVIEW_INVITATION, render
 from sync_prepared_articles import import_issues, OWNER, REPOSITORY
 
 FENCE = chr(96) * 3
@@ -58,6 +58,10 @@ class PublicationTests(unittest.TestCase):
             dest = Path(tmp)
             (dest / "data").mkdir()
             (dest / "sitemap.xml").write_text((ROOT / "sitemap.xml").read_text())
+            (dest / "stories").mkdir()
+            for slug in ("penicillin", "insulin"):
+                path = Path("stories", slug + ".html")
+                (dest / path).write_bytes((ROOT / path).read_bytes())
             paths = render(dest)
             entries = json.loads((dest / "data/publications.json").read_text())["articles"]
             feed = ET.parse(dest / "articles-feed.xml").getroot().findall("./channel/item")
@@ -67,10 +71,15 @@ class PublicationTests(unittest.TestCase):
                 text = (dest / entry["export_path"]).read_text()
                 self.assertIn(entry["title"], text)
                 self.assertIn(entry["url"], text)
+                self.assertIn("[" + REVIEW_INVITATION + "](", text)
                 self.assertIn(entry["status"], item.findtext("title"))
                 self.assertIn(entry["export_path"], paths)
                 if entry["kind"] == "draft":
                     self.assertIn("review pending", text)
+                elif entry["slug"] in ("penicillin", "insulin"):
+                    page = (dest / entry["path"]).read_text()
+                    self.assertIn(REVIEW_INVITATION, page)
+                    self.assertIn("template=peer_review.yml&amp;submission=", page)
             self.assertIn("EoD", (dest / "articles/biological-compilation-amplified-individual.html").read_text())
 
     def test_manuscript_text_is_preserved_and_citations_link_to_sources(self):
